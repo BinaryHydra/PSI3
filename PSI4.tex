@@ -1,0 +1,704 @@
+\documentclass{VUMIFPSkursinis}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{blindtext}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{scrextend}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{xparse}
+%\usepackage{tabularx}
+\usepackage{ltxtable}
+\usepackage{tabu}
+\usepackage{xcolor}
+
+% Titulinio aprašas
+\university{Vilniaus universitetas}
+\faculty{Matematikos ir informatikos fakultetas}
+\department{Programų sistemų katedra}
+\papertype{1 laboratorinis darbas}
+\title{Grupinių Sporto Susitikimų Platforma}
+\titleineng{The Platform for Group Sport Events}
+\status{2 kurso 5 grupės studentai}
+\author{Margiris Strakšys}
+\secondauthor{Gabrielė Saletytė}
+\thirdauthor{Vytautas Strimaitis}
+\fourthauthor{Gabijus Arūnas Šukaitis}
+\supervisor{lekt. Vytautas Valaitis}
+\date{Vilnius – \the\year}
+
+% Nustatymai
+% \setmainfont{Palemonas}   % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
+%\bibliography{bibliografija}
+\input{customCommands}
+
+%==========================================================================> Dokumento pradžia <========================================================================
+\begin{document}
+    \pagenumbering{gobble}
+    \maketitle
+    \tableofcontents
+	\pagenumbering{arabic}
+    
+    \sectionnonum{Anotacija} \label{anotacija}
+		Šiame laboratoriniame darbe bus apibrėžti reikalavimai, struktūrinis srities modelis bei užduotys sistemai. Visas darbas paremtas ICONIX proceso metodologija.
+		Darbas parengtas atsižvelgiant į pradinius užsakovo pateiktus reikalavimus.
+    \sectionnonum{Įvadas} \label{ivadas}
+        \subsection*{Programų sistemos pavadinimas} \label{ivadas_psPavadinimas}
+            ,,Grupinių Sporto Susitikimų Platforma'' (sutrumpintas sistemos pavadinimas - ,,GSSP'').
+        \subsection*{Darbo tikslas} \label{ivadas_darboTikslas}
+            Remiantis ICONIX proceso principais, apibrėžti reikalavimus, struktūrinį srities modelį bei užduotis būsimai sistemai.
+        \subsection*{Temos aktualumas} \label{ivadas_aktualumas}
+            Projektas skirtas populiarinti sportą, gerinti sporto susitikimų organizuotumą. Kadangi sporto susitikimų sritis yra mažai 
+            išvystyta, nors nemažai žmonių tokius susitikimus norėtų organizuoti, bus kuriama sistema, palengvinanti tokio tipo susitikimų 
+            organizavimą bei dalyvavimą juose.
+        \subsection*{Naudotojai} \label{ivadas_naudotojai}
+            Sistema skirta sistemos administratoriui, klientams (lankytojams) bei rėmėjams.
+        \subsection*{Darbo pagrindas} \label{ivadas_pagrindas}
+            Dokumentas parengtas kaip programų sistemų inžinerijos laboratorinis darbas.
+    \section{Reikalavimai} \label{reikalavimai}
+		Šiame skyriuje aptariami programų sistemos funkciniai ir nefunkciniai reikalavimai. Jie sudaryti remiantis iš užsakovo gautais pradiniais
+		reikalavimais, kurie pateikti šio laboratorinio darbo priede.
+        \subsection{Funkciniai reikalavimai} \label{reikalavimai_fr}
+			\begin{enumerate}[label=\textbf{FR\arabic*}]
+				\item Svetainė turi būti pasiekiama:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Neužsiregistravusiems vartotojams.
+						\item Užsiregistravusiems vartotojams.
+					\end{enumerate}
+				\item Neprisijungęs/Neužsiregistravęs vartotojas užėjęs į puslapį gali pasiekti:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Naujienas.
+						\item Renginių kalendorius.
+						\item Vaizdo įrašai.
+						\item Pateikti pasiūlymą.
+					\end{enumerate}	
+				\item Prisijungęs vartotojas gali:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Pirkti biletus.
+						\item Užsiregistruoti į renginį.
+						\item Aplikuoti į siūlomas darbo vietas.
+					\end{enumerate}
+				\item Registruodamas vartotojas pateikia:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Vartotojo vardą.(būtina)
+						\item Slaptažodį.(būtina)
+						\item Vardą. (neprivaloma)
+						\item Pavardę. (neprivaloma)
+						\item Gimimo datą. (neprivaloma)
+						\item Telefono numerį. (neprivaloma)
+						\item Gyvenamąją vietą. (neprivaloma)
+					\end{enumerate}
+				\item Registruojantis į renginį arba aplikuojant į darbo pozicijas privalomą užpildyti visus papildomos informacijos anketos laukus.
+				\item Registruojantis į komandinį renginį reikia pasirinkti arba sukurti komandą, su kuria bus dalyvaujamą.
+				\item Kad sukurti komandą reikia nurodyti:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Komandos pavadinimą.
+						\item Žmones, kuriems bus išsiusti kvietimai prisijungti prie komandos.
+					\end{enumerate}
+				\item Vartotojas gavęs pakvietimą į komandą gali jį priimti arba atmesti.
+				\item Tiesioginiai rodomus renginius galima rikiuoti pagal:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Pradžios laiką.
+						\item Peržiūrų skaičių.
+					\end{enumerate}
+				\item Prie kiekvieno renginio turi būti pateikta rezultatų lentelė.
+				\item Dalyviai rezultatuose rikiuojami pagal savo pasiekta rezultatą.
+				\item Rezultatų lentelę turi būti įmanoma filtruoti pagal visas pateiktas reikšmes.
+                \item Sistema turi saugoti ir pateikti rezultatus ir bendrą statistiką:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Sporto šakų.
+						\item Invidualių dalyvių.
+						\item Komandų.
+					\end{enumerate}
+				\item Skiltis “Pateikti pasiūlymą” leidžia pateikti pasiūlymą renginio organizatoriams.
+				\item Pateikiant pasiūlymą reikia užpildyti:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Savo elektroninį paštą.
+						    \begin{enumerate}[label*=\textbf{.\arabic*}]
+						        \item Prisijungusiam vartotojui užsipildo automatiškai.
+						    \end{enumerate}
+						\item Trumpą idėjos aprašymą.
+					\end{enumerate}
+				\item Svetainės rėmėjų logotipai pateikti puslapio viršuje, kairėje, dešinėje ir apačioje.
+				\item Administratorius prisijungęs prie svetainės turi prieigą prie administratoriaus skilties.
+				\item Per administratoriaus skiltį galima:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Naujienas, renginius, renginių rezultatas, vaizdo įrašus:
+						    \begin{enumerate}[label*=\textbf{.\arabic*}]
+						        \item Peržiūrėti.
+						        \item Sukurti.
+						        \item Atnaujinti.
+						        \item Ištrinti.
+						    \end{enumerate}
+						\item Trumpą idėjos aprašymą:
+                            \begin{enumerate}[label*=\textbf{.\arabic*}]
+						        \item Apriboti.
+						        \item Nutraukti.
+						    \end{enumerate}
+						\item Peržiūrėti visų dalyvių, renginių, darbo aplikacijų sąrašus.
+					\end{enumerate}
+			    \item Prie kiekvieno renginio turi būti bilietų skiltis, kur turi būti nurodytą:
+					\begin{enumerate}[label*=\textbf{.\arabic*}]
+						\item Vieno bileto kainą.
+						\item Likusiu bilietų kiekis.
+					\end{enumerate}
+				\item Internetinis puslapis turi būti pateiktas anglų, rusų bei lietuvių kalba.
+				\item  Internetinis puslapis turi buti pasiekiamas ir naudojant mobilųjį įrenginį.
+			\end{enumerate}
+
+    \section{Struktūrinis dalykinės srities modelis} \label{strukturinisDSModelis}
+		Šiame skyriuje konstruojamas struktūrinis dalykinės srities modelis, t.y. apibrėžiamos pagrindinės su sistema susijusios esybės, nurodomi ryšiai tarp jų.
+        \subsection{Esybių diagrama} \label{strukturinisDSModelis_esybiuDiagrama}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=\textwidth, height=20cm, keepaspectratio]{img/ds-modelis_klasiu-diagrama2}
+                \caption{Dalykinės srities modelio UML klasių diagrama}
+                \label{fig:DS-klasiu-diagrama}
+            \end{figure}
+        \subsection*{Žodynas} \label{strukturinisDSModelis_zodynas}
+            \begin{enumerate}[label=\textbf{E\arabic*.}]
+                \item \textbf{Renginys} - ,,GSSP'' sistemoje esantis sporto renginys.
+				\item \textbf{Privatus renginys} - „GSSP“ sistemoje esantis sporto renginys, skirtas tik tam tikrai grupei neįtraukiant pašalinių asmenų.
+				\item \textbf{Viešas renginys} - „GSSP“ sistemoje esantis sporto renginys, skirtas visiems, norintiems dalyvauti.
+                \item \textbf{Organizatorius} - asmuo, turintis teisę kurti ir valdyti savo sukurtus renginius.
+                \item \textbf{Vartotojas} - asmuo, besinaudojantis sistema ir turintis galimybę prisijungti prie 
+				esamo renginio.
+				\item \textbf{Prisijungęs vartotojas} - vartotojas, turintis paskyrą „GSSP“ sistemoje.
+				\item \textbf{Neprisijungęs vartotojas} - vartotojas, neturintis „GSSP“ paskyros.
+				\item \textbf{Privilegijuotas vartotojas} - prisijungęs vartotojas, įgijęs privilegijuoto vartotojo sąsają.
+                \item \textbf{Žemėlapis} - vietos keitimo procese naudojamas žemėlapis.
+				\item \textbf{Sporto šaka} - sportinė veiklos sritis, kuri turi savo taisykles ir inventorių.
+				\item \textbf{Renginių tvarkaraštis} - sistemoje esantis tvarkaraštis su išrikiuotu renginių sąrašu pagal datą.
+				\item \textbf{Renginių sąrašas} - sąrašas, kuriame yra visi „GSSP“ sporto renginiai.
+				\item \textbf{Atsakingas asmuo} - organizatorius arba organizatoriaus paskirtas asmuo, atsakingas už tam tikrą sporto renginį.
+				\item \textbf{Reitingas} - vartotojo statusas, pagal kurį nustatoma, ar vartotojas gali dalyvauti renginyje.
+				\item \textbf{Kalba} - vartotojo pasirinkta kalba, kuria pateikiama visa sistemoje esanti informacija.
+				\item \textbf{Tema} - vartotojo pasirinkta tema (šviesi arba tamsi), kuria vaizduojama visa sistemos pateikiama informacija.
+				\item \textbf{Reklama} - rėmėjų pateikta vaizdinė reklama, rodoma visiems, išskyrus privilegijuotus vartotojus.
+				\item \textbf{Atsiliepimas} - raštiškas vartotojo atsakas organizatoriui apie jau įvykusį renginį.
+				\item \textbf{Grafinė sąsaja} - vaizdinė „GSSP“ sąsaja, leidžianti vartotojams patogiai naudotis sistema.
+				\item \textbf{Prisijungusio vartotojo sąsaja} - vaizdinė „GSSP“ sąsaja, leidžianti vartotojams patogiai naudotis sistema, turinti papildomų galimybių.
+				\item \textbf{Paprasto vartotojo sąsaja} - prisijungusio vartotojo „GSSP“ sąsaja, neturinti privilegijuoto statuso.
+				\item \textbf{Privilegijuoto vartotojo sąsaja} - prisijungusio vartotojo „GSSP“ sąsaja, kurioje nėra vaizduojamos reklamos.
+				\item \textbf{Neprisijungusio vartotojo sąsaja} - įprasta sąsaja, kurioje leidžiamos tik bendros prieigos.
+				
+            \end{enumerate}
+        \subsection{Reikalavimų - struktūrinio modelio atsekamumo matrica}\label{strukturinisDSModelis_matrica}
+			\begin{table}[H]
+				\centering
+				\caption{Reikalavimų - struktūrinio modelio atsekamumo matrica}
+				\label{ReikalavimųStruktūrinioModelioAtsekamumoMatrica}
+				\begin{tabular}{|
+				>{\columncolor[HTML]{9B9B9B}}l |l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+				\hline 
+				X   & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR1} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR2} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR3}& \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR4} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR5} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR6}& \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR7} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR8} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR1} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR2} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR3} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR4} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR5} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR6} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR7} \\ \hline
+				E1  & X                           & X                           &                             & X                           & X                           & X                           & X                           & X                           & X                            & X                            &                              &                              &                              & X                            &                              \\ \hline
+				E2  & X                           &                             &                             & X                           & X                           & X                           & X                           & X                           &                              & X                            &                              &                              &                              & X                            &                              \\ \hline
+				E3  & X                           & X                           &                             & X                           & X                           & X                           & X                           & X                           & X                            & X                            &                              &                              &                              & X                            &                              \\ \hline
+				E4  &                             & X                           &                             & X                           & X                           &                             & X                           &                             &                              &                              & X                            &                              &                              & X                            &                              \\ \hline
+				E5  &                             & X                           & X                           & X                           & X                           &                             & X                           & X                           &                              & X                            & X                            &                              &                              &                              & X                            \\ \hline
+				E6  &                             & X                           & X                           & X                           & X                           &                             & X                           & X                           &                              &                              &                              &                              &                              &                              & X                            \\ \hline
+				E7  &                             & X                           & X                           &                             & X                           &                             &                             &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
+				E8  &                             & X                           &                             & X                           & X                           &                             & X                           & X                           &                              & X                            & X                            &                              &                              &                              & X                            \\ \hline
+				E9  &                             &                             &                             &                             &                             &                             &                             &                             & X                            &                              &                              &                              &                              &                              &                              \\ \hline
+				E10 &                             &                             &                             &                             &                             & X                           &                             &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
+				E11 &                             & X                           &                             & X                           &                             &                             &                             &                             & X                            &                              &                              &                              &                              &                              &                              \\ \hline
+				E12 &                             & X                           &                             & X                           &                             & X                           & X                           &                             & X                            &                              &                              &                              &                              &                              &                              \\ \hline
+				E13 &                             &                             &                             &                             &                             &                             & X                           &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
+				E14 &                             &                             &                             &                             &                             &                             &                             & X                           &                              &                              &                              &                              &                              &                              & X                            \\ \hline
+				E15 &                             &                             &                             &                             &                             &                             &                             &                             &                              &                              &                              &                              & X                            &                              &                              \\ \hline
+				E16 &                             &                             &                             &                             &                             &                             &                             &                             &                              &                              &                              & X                            &                              &                              &                              \\ \hline
+				E17 &                             &                             &                             &                             &                             &                             &                             &                             &                              & X                            &                              &                              &                              &                              &                              \\ \hline
+				E18 &                             &                             &                             & X                           &                             &                             &                             &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
+				E19 &                             &                             &                             &                             &                             &                             &                             &                             &                              &                              &                              & X                            & X                            &                              &                              \\ \hline
+				E20 &                             & X                           & X                           & X                           & X                           &                             &                             &                             &                              & X                            &                              &                              &                              &                              & X                            \\ \hline
+				E21 &                             & X                           &                             & X                           & X                           &                             &                             &                             &                              & X                            &                              &                              &                              &                              & X                            \\ \hline
+				E22 &                             & X                           &                             &                             & X                           &                             &                             &                             &                              &                              &                              &                              &                              &                              & X                            \\ \hline
+				E23 &                             & X                           & X                           &                             & X                           &                             &                             &                             &                              & X                            &                              &                              &                              &                              &                              \\ \hline
+				\end{tabular}
+			\end{table}    
+    \section{Užduotys}\label{uzduotys}
+		Šiame skyriuje pateikiamos pagrindinės neprisijungusio, prisijungusio vartotojo, organizatoriaus ir atsakingo už renginį asmens užduotys.
+		Taip pat pateikiama bendra UML diagrama apibrėžianti visų šių agentų užduotis.
+			\noindent
+			\begin{figure}[H]
+                \centering
+                \includegraphics[width=\textwidth]{img/uzduociu-diagrama}
+                \caption{UML užduočių diagrama}
+                \label{fig:uzduociu-diagrama}
+            \end{figure}
+
+		\begin{enumerate} [label = \textbf{U\arabic*.}]
+			\item \textbf{Užsiregistruoti} \\
+				Vartotojas spaudžia mygtuką ,,Užsiregistruoti''.
+				Vartotojas įveda informaciją apie save (Vardas, pavardė, prisijungimo vardas, slaptažodis).
+				Vartotojas spaudžia mygtuką ,,Patvirtinti registraciją''. 
+				Sistema užregistruoja nauja vartotoją. Sistema atidaro naują langą su užrašu ,,Sėkminga registracija''.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu vartotojo informacija įvesta neteisingai arba kuris nors registracijos laukelis nėra užpildytas, 
+					sistema neleidžia paspausti mygtuko ,,Patvirtinti registraciją''. 
+				\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=11cm, keepaspectratio]{img/uzd_registracija}
+					\caption{Registracijos langas}
+					\label{fig:uzd_registracija}
+				\end{figure}
+			\item \textbf{Prisijungti} \\
+				Vartotojas spaudžia mygtuką ,,Prisijungti''. 
+				Vartotojas įveda prisijungimo vardą ir slaptažodį.	
+				Sistema patikrina, ar įvesti duomenys yra teisingi. 
+				Sistema vartotojui atidaro prisijungusio vartotojo grafinę sąsają. 
+				Vartotojas gali naudoti prisijungusio vartotojo funkcijas.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu vartotojas įveda neteisingą prisijungimo informaciją ar neužpildo kurio nors prisijungimo laukelio, 
+					sistema paprašo dar kartą įvesti duomenis.
+				\end{itemize}
+
+				\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth, height=5cm, keepaspectratio]{img/uzd_PrisijungimoLangas}
+						\caption{Prisijungimo langas}
+						\label{fig:prisijungimo-langas}
+					\end{figure}
+				\item \textbf{Peržiūrėti ateityje vyksiančių renginių sąrašą} \\
+					Vartotojas spaudžia mygtuką ,,Renginiai''. 
+					Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
+					Sistema atidaro viešų renginių, kurie vyks nuo tos akimirkos (minutės tikslumu), sąrašą. 
+					Sistema rodo 15 artimiausių renginių viename puslapyje.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
+						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
+						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+					\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_perziureti-vyksianciu-renginiu-sarasa}
+					\caption{Renginių sąrašo langas}
+					\label{fig:uzd_perziureti-vyksianciu-renginiu-sarasa}
+				\end{figure}
+			\newpage
+			\item \textbf{Peržiūrėti preliminarų renginių tvarkaraštį} \\
+				Vartotojas spaudžia mygtuką ,,Renginiai''. 
+				Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
+				Sistema atidaro visų vykstančių ir vyksiančių viešų renginių tvarkaraštį. 
+				Sistema rodo 15 artimiausių renginių per vieną puslapį.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
+					\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
+					,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+				\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8.5cm, keepaspectratio]{img/uzd_prelim-tvarkarastis}
+					\caption{Preliminaraus renginių tvarkaraščio langas}
+					\label{fig:prelim-tvark-langas}
+				\end{figure}
+			\item \textbf{Peržiūrėti preliminarų renginių tvarkaraštį} \\
+					Vartotojas spaudžia mygtuką ,,Renginiai''. 
+					Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
+					Sistema atidaro visų vykstančių ir vyksiančių viešų renginių tvarkaraštį. 
+					Sistema rodo 15 artimiausių renginių viename puslapyje.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
+						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
+						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+					\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_konkretusRenginys}
+					\caption{Konkretaus renginio langas}
+					\label{fig:konkretaus-renginio-langas}
+				\end{figure}
+			\item \textbf{Prisijungti prie viešo renginio} \\
+					Vartotojas spaudžia mygtuką ,,Renginiai''. 
+					Vartotojas pasirenka konkretų renginį paspausdamas ant jo nuorodos.
+					Sistema atidaro naują langą su informacija apie atitinkamą viešą renginį.
+					Išsirinkęs renginį, vartotojas spaudžia mygtuką ,,Dalyvauti renginyje''. 
+					Vartotojas įveda informaciją apie save (Vardas, Pavardė). 
+					Sistema atidaro naują langą su užrašu ,,Registracija sėminga. Gero žaidimo''.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jeigu vartotojo informacija yra netinkama, sistema atveria langą su prašymu įvesti informaciją iš naujo. 
+						\item Jeigu pasirinktame renginyje vietos nėra, 
+						sistema atidaro naują langą su užrašu: ,,Atsiprašome, vietų į šį renginį nėra. Pasirinkite kitą renginį.''
+						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
+						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+					\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_prisijungti-prie-vieso-renginio}
+					\caption{Prisijungimo prie viešo renginio langas}
+					\label{fig:prisijungti-prie-vieso-renginio}
+				\end{figure}
+
+				\item \textbf{Patikrinti renginio organizatoriaus informaciją} \\
+					Vartotojas spaudžia mygtuką ,,Renginiai''. 
+					Vartotojas pasirenka konkretų renginį. 
+					Sistema atidaro naują langą su informacija apie atitinkamą renginį. 
+					Vartotojas spaudžia ant teksto su užrašu ,,Organizatorius : [Vardas] [Pavardė]''.
+					Sistema parodo detalesnę informaciją apie organizatorių.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jeigu detalesnės informacijos apie organizatorių nėra, sistemoje pateikiamas užrašas ,,Šios inforamacijos nėra''.
+						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
+						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+					\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_patikrinti-renginio-organizatoriaus-informacija}
+					\caption{Renginio organizatoriaus informacijos patikrinimo langas}
+					\label{fig:patikrinti-renginio-organizatoriaus-informacija}
+				\end{figure}
+			
+			\item \textbf{Matyti privačius renginius} \\
+					Vartotojas spaudžia mygtuką ,,Renginiai''.
+					Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
+					Sistema atidaro visų vykstančių ir vyksiančių renginių sąrašą.
+					Vartotojas filtravimo skirtyje ,,Rodyti:'' pasirenka variantą ,,Privačius renginius''.
+					Renginių sąraše lieka tik privatūs renginiai.
+					Sistema rodo 15 renginių viename puslapyje.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jei sistemoje nėra jokių renginių, vietoj renginių sąrašo rodomas užrašas ,,Renginių nėra''.
+						\item Jei sistemoje privačių renginių nėra, vietoj renginių sąrašo rodomas užrašas ,,Privačių renginių nėra''.
+						\item Jei renginių yra 15 ar mažiau, puslapių numeriai nerodomi, nes visas sąrašas telpa viename puslapyje.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_matyti-privacius-renginius}
+					\caption{Privačių renginių sąrašo langas}
+					\label{fig:matyti-privacius-renginius}
+				\end{figure}
+			\item \textbf{Prašyti leidimo dalyvauti privačiame renginyje} \\
+					Vartotojas atsidaro privačių renginių sąrašą (žr. užduotį ,,Matyti privačius renginius'').
+					Atsidariusiame privačių renginių sąraše vartotojas pasirenka konkretų privatų renginį ir paspaudžia ant jo pavadinimo.
+					Atsidariusiame konkretaus privataus renginio aprašyme vartotojas spaudžia mygtuką ,,Dalyvauti''.
+					Iššoka langas, indikuojantis, kad užklausą pavyko sėkmingai nusiųsti organizatoriui.
+					Organizatoriui patvirtinus prašymą dalyvauti, vartotojas gauna pranešimą apie galimybę dalyvauti renginyje.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jei įvyksta klaida siunčiant užklausą organizatoriui, vartotojui parodomas langas su klaidos aprašymu ir prašymu pabandyti vėliau.
+						\item Jei organizatorius nepatvirtina vartotojo dalyvavimo renginyje, sistema išsiunčia vartotojui pranešimą apie atmestą prašymą dalyvauti.
+					\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_prasymas-dalyvauti-privaciame-renginyje}
+					\caption{Prašymo dalyvauti privačiame renginyje langas}
+					\label{fig:prasymas-dalyvauti-privaciame-renginyje}
+				\end{figure}
+			\item \textbf{Peržiūrėti visų renginių tvarkaraštį} \\
+				Vartotojas spaudžia mygtuką ,,Renginiai''.
+				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių tvarkaraštis'', kurį vartotojas pasirenka.
+				Sistema atidaro visų renginių tvarkaraštį, kuris vaizduojamas kalendoriaus forma.
+				Kalendorius iš pradžių rodo einamąją dieną.
+				Kalendorius vaizduoja vieno mėnesio informaciją viename lape.
+			
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jei vartotojo įrenginys nepalaiko technologijos, reikalingos kalendoriaus atvaizdavimui, parodomas pranešimas ,,Jūsų įrenginys nepalaiko kalendoriaus funkcijos''.
+					\item Jei renginių nėra, vaizduojamas tuščias kalendorius.
+					\item Jei renginys trunka ne vieną dieną, jis vaizduojamas per kelis kalendoriaus langelius (dienas).
+				\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_visas-tvarkarastis}
+					\caption{Visų renginių tvarkaraščio langas}
+					\label{fig:perziureti-renginiu-tvarkarasti}
+				\end{figure}
+			\item \textbf{Rašyti atsiliepimą apie renginį} \\
+					Vartotojas spaudžia mygtuką ,,Renginiai''.
+					Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
+					Vartotojas iš sąrašo pasirenka konkretų renginį ir spaudžia ant jo pavadinimo.
+					Atsidariusiame konkretaus renginio aprašyme vartotojas spaudžia mygtuką ,,Rašyti atsiliepimą''.
+					Atsidariusiame lange vartotojas pasirenka renginio įvertinimą (nuo 1 iki 10 balų) ir tam skirtame tekstiniame lange įrašo savo nuomonę apie renginį.
+					Kai vartotojas baigia pildyti atsiliepimo laukus, jis spaudžia mygtuka ,,Siųsti''.
+					Vartotojo atsiliepimas atsiduria bendrame renginio atsiliepimų sąraše.
+
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jei renginiui neleidžiama rašyti atsiliepimo, mygtuko ,,Rašyti atsiliepimą'' nėra.
+					\item Jei vartotojas neužpildo visų atsiliepimo laukų, mygtukas ,,Siųsti'' yra neaktyvus.
+					\item Jei įvyksta klaida užregistruojant vartotojo atsiliepimą, vartotojas apie tai informuojamas iššokančiame lange ir atsiliepimo forma išvaloma.
+				\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_rasyti-atsiliepima-apie-rengini}
+					\caption{Atsiliepimo apie renginį langas}
+					\label{fig:rasyti-atsiliepima-apie-rengini}
+				\end{figure}
+			\item \textbf{Peržiūrėti informaciją apie buvusius renginius} \\
+				Vartotojas spaudžia mygtuką ,,Renginiai''.
+				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
+				Vartotojas filtravimo skiltyje ,,Rodyti:'' pasirenka variantą ,,jau įvykusius renginius''.
+				Renginių sąraše lieka tik jau vykę renginiai.
+				Sistema rodo 15 renginių viename puslapyje.
+
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu įvykusių renginių nėra, vietoj renginių sąrašo rodomas užrašas ,,Jau įvykusių renginių nėra''.
+					\item Jeigu jau įvykusių renginių yra 15 ar mažiau, puslapių numeriai nerodomi, nes visi renginiai telpa viename puslapyje.
+				\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_matyti-jau-ivykusius-renginius}
+					\caption{Jau įvykusių renginių sąrašo langas}
+					\label{fig:matyti-jau-ivykusius-renginius}
+				\end{figure}
+			
+			\item \textbf{Paskelbti apie naują renginį} \\
+				Organizatorius spaudžia mygtuką ,,Sukurti renginį''. 
+				Organizatorius užpildo visą reikiamą informaciją apie renginį.
+				Organizatorius spaudžia mygtuką ,,Paskelbti renginį''.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu informacija yra neteisinga arba nepilnai užpildyta, sistema neleidžia paspausti mygtuko ,,Paskelbti renginį''.
+				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=17cm, keepaspectratio]{img/uzd_paskelbti-nauja-rengini}
+					\caption{Naujo renginio langas}
+					\label{fig:paskelbti-nauja-rengini}
+				\end{figure}
+				\newpage
+			\item \textbf{Paskirti naujo renginio atsakingą asmenį} \\
+				Organizatorius spaudžia mygtuką ,,Mano renginiai''. 
+				Organizatorius pasirenka redaguoti norimą renginį.
+				Organizatorius spaudžia mygtuką ,,Paskirti atsakingą asmenį''. 
+				Organizatorius įveda atsakingo asmens duomenis (vartotojo vardą).
+				Organizatorius spaudžia mygtuką ,,Patvirtinti''.
+				Sistema parodo užrašą ,,Sėkmingai priskirtas asmuo''.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu organizatorius įvedė neteisingus atsakingo asmens duomenis, sistema neleidžia paspausti mygtuko ,,Paskirti atsakingą asmenį''.
+					\item Jeigu atsakingas asmuo jau yra prisikirtas, iššoka langas, klausiantis ar norima pakeisti atsakingo asmens duomenis.
+				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_paskirti-atsakinga-asmeni}
+					\caption{Atsakingo asmens paskyrimo langas}
+					\label{fig:paskirti-atsakinga-asmeni}
+				\end{figure}
+				
+			\item \textbf{Prie renginio pridėti aprašą ir nuotrauką} \\
+				Organizatorius spaudžia mygtuką ,,Mano renginiai''. 
+				Organizatorius pasirenka norimą redaguoti renginį.
+				Organizatorius spaudžia mygtuką ,,Pridėti nuotrauką arba informaciją''. 
+				Organizatorius prideda nuotrauką arba parašo naują informaciją apie renginį.
+				Organizatorius spaudžia mygtuką ,,Atnaujinti''. 
+				Sistema parašo pranešimą ,,Atnaujinta sėkmingai''.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu nuotrauka buvo įdėta neatitinkanti standartų, sistema jos nededa prie aprašymo ir išsiunčia pranešimą apie nuotraukos klaidą.
+					\item Jeigu renginys jau yra pasibaigęs, sistema neleidžia pakeisti nuotraukos ar pakeisti aprašymo, bet įgalima papildyti jau esamą aprašymą.
+				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/uzd_prideti-aprasa}
+					\caption{Renginio papildymo langas}
+					\label{fig:prideti-aprasa}
+				\end{figure}
+				
+			\item \textbf{Ištrinti renginį} \\
+				Organizatorius spaudžia mygtuką ,,Mano renginiai''. 
+				Organizatorius pasirenka norimą renginį.
+				Organizatorius spaudžia mygtuką ,,Ištrinti renginį''. 
+				Sistema parašo pranešimą su užrašu ,,Renginys ištrintas''. 
+				Sistema ištrina atitinkamą renginį iš renginių sąrašo.
+				Sistema išsiunčia pranešimą kiekvienam vartotojui, kuris yra prisijungęs prie to renginio, apie pašalintą renginį.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu nėra galimybės vartotojui išsiųsti pranešimą, sistema pranešimo nesiunčia.
+					\item Jeigu renginys jau yra pasibaigęs, jo ištrinti sistema neleidžia, jis lieka sistemoje tarp jau vykusių renginių.
+				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/uzd_istrinti-rengini}
+					\caption{Renginio ištrynimas}
+					\label{fig:istrinti-rengini}
+				\end{figure}
+				
+			\item \textbf{Priimti ar atmesti dalyvavimo renginyje prašymą} \\
+				Organizatorius spaudžia mygtuką ,,Norintys dalyvauti renginyje''.
+				Organizatorius pasirenka asmenį, kurį jis nori patikrinti. 
+				Organizotorius spaudžia mygtuką ,,Patvirtinti dalyvavimą'' arba ,,Atmesti dalyvavimą''. 
+				Sistema vartotojui atsiunčia pranešimą, su organizatoriaus pasirinktu atsakymu.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu nėra prašančiųjų dalyvauti, sistemoje iššoka langas sakantis organizatoriui, jog nėra naujų patvirtinimų.
+					\item Jeigu dalyvis yra priimamas į renginį, bet nebėra vietų dalyvauti, jam išsiunčiama žinutė, jog jei atsiras laisvų vietų, jis bus priimtas į renginį.
+				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_priimti-dalyvi}
+					\caption{Prašymo dalyvauti peržiūra}
+					\label{fig:priimti-dalyvi}
+				\end{figure}
+
+			\item \textbf{Priimti ar atmesti organizatoriaus paskyrimą} \\
+				Atsakingas asmuo spaudžia mygtuką ,,Pasiūlymai''. 
+				Atsakingas asmuo pasirenką norimą pasiūlymą.
+				Atsakingas asmuo patvirtintina organizatoriaus paskyrimą būti atsakingam už konkretų renginį. 
+				Sistema išsiunčia pranešimą organizatoriui, kad atsakingas asmuo priėmė paskyrimą.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu atsakingas asmuo atmeta organizatoriaus paskyrimą būti atsakingam už konkretų renginį, sistema išsiunčia pranešimą organizatoriui, kad atsakingas asmuo atmetė pranešimą.
+					\item Jeigu asmuo priima pasiūlymą būti atsakingu asmeniu, bet atsakingu už renginį jau buvo paskirtas kitas žmogus, asmuo gauna pranešimą, kad jis taps atsakingu asmeniu, jei atsilaisvins vieta.
+				\end{itemize}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/uzd_pasiulymu-sarasas}
+					\caption{Atsakingo asmens pasiūlymų valdymo langas}
+					\label{fig:pasiulymu-sarasas}
+				\end{figure}
+			\item \textbf{Atsakyti į dalyvių klausimus}   \\
+					Atsakingas asmuo spaudžia mygtuką ,,Mano renginiai''. 
+					Atsakingas asmuo pasirenka norimą renginį.
+					Atsakingas asmuo pasirenka klausimą į kurį nori atsakyti. 
+					Sistema atidaro tekstinį langą, į kurį atsakingas asmuo įrašo atsakymą. 
+					Atsakingas asmuo spaudžia mygtuką ,,Atsakyti''.
+					Sistema siunčia atsakymą vartotojui, kuris jį uždavė.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jeigu atsakingas asmuo nieko neparašo į tekstinį langą, sistema neleidžia paspausti mygtuko ,,Atsakyti''.
+						\item Jeigu nėra užduota jokių naujų klausimų, sistemoje iššoka langas, pranešantis atsakingam asmeniui šią informaciją.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/uzd_atsakyti-klausimus}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+
+			\subsection* {Reikalavimų - užduočių atsekamumo matrica}
+			\begin{table}[H]
+				\centering
+				\caption{Reikalavimų - užduočių atsekamumo matrica}
+				\label{ReikalavimuUzduociuAtsekamumoMatrica}
+				\begin{tabular}{|
+				>{\columncolor[HTML]{9B9B9B}}l |l|l|l|l|l|l|l|l|}
+					\hline
+					X   & \cellcolor[HTML]{9B9B9B}FR1 & \cellcolor[HTML]{9B9B9B}FR2 & \cellcolor[HTML]{9B9B9B}FR3 & \cellcolor[HTML]{9B9B9B}FR4 & \cellcolor[HTML]{9B9B9B}FR5 & \cellcolor[HTML]{9B9B9B}FR6 & \cellcolor[HTML]{9B9B9B}FR7 & \cellcolor[HTML]{9B9B9B}FR8 \\ \hline
+					U1  &                             &                             & X                           &                             &                             &                             &                             &                             \\ \hline
+					U2  &                             &                             & X                           &                             &                             &                             &                             &                             \\ \hline
+					U3  &                             & X                           &                             & X                           & X                           & X                           &                             & X                           \\ \hline
+					U4  &                             & X                           &                             & X                           &                             &                             &                             &                             \\ \hline
+					U5  & X                           & X                           &                             & X                           & X                           &                             & X                           &                             \\ \hline
+					U6  & X                           & X                           &                             & X                           &                             &                             &                             & X                           \\ \hline
+					U7  &                             & X                           &                             & X                           &                             &                             &                             &                             \\ \hline
+					U8  & X                           &                             &                             & X                           &                             &                             &                             &                             \\ \hline
+					U9  & X                           &                             &                             & X                           &                             &                             &                             & X                           \\ \hline
+					U10 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
+					U11 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
+					U12 &                             &                             &                             & X                           & X                           & X                           &                             &                             \\ \hline
+					U13 &                             &                             &                             & X                           &                             &                             & X                           &                             \\ \hline
+					U14 &                             &                             &                             &                             &                             &                             & X                           &                             \\ \hline
+					U15 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
+					U16 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
+					U17 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
+					U18 &                             &                             &                             & X                           &                             &                             & X                           &                             \\ \hline
+					U19 &                             &                             &                             & X                           &                             &                             & X                           &                             \\ \hline
+				\end{tabular}
+			\end{table}
+		\end{enumerate}
+		
+		
+    \section{Peržiūros metu rastos klaidos} \label{klaidos}
+		\begin{itemize}
+			\item Dalykinės srities modelis suabstraktintas, nes iš pradžių buvo per daug lįsta į technines detales.
+			\item FR2.4 Patikinti renginio organizatoriaus informaciją. ,,Patikinti'' pataisyta į ,,patikrinti''.
+			\item Užduotis ,,Matyti privačius renginius''. Alternatyvus scenarijus, leidžiantis atfiltruoti tik privačius renginius perkeltas prie pagrindinio scenarijaus.
+			\item Užduotis ,,Matyti privačius renginius''. Perrašyti alternatyvūs scenarijai.
+			\item Pataisytos ir papildytos prisijungusio paprasto vartotojo užduotys.
+			\item Pataisytos neprisijungusio vartotojo užduotys.Papildyti pagrindiniai ir alternatyvūs scenarijai.
+			\item Sulietuvintos kabutės.
+			\item 6pav. - ,,Preliuminarus'' pakeista į ,,Preliminarus''.
+			\item Ištaisytos gramatikos ir skyrybos klaidos.
+			
+		\end{itemize}
+    \section{Priedai}\label{priedai}
+        \subsection{Pradiniai užsakovo reikalavimai sistemai} \label{priedai_uzsakovoReikalavimai}
+		\begin{enumerate}
+				\item Renginiai skirstomi į private ir public.
+				\item Programą galima naudoti neprisijungus.
+				\item Neprisijungus galima matyti tik public renginius.
+				\item Renginius galima pasiekti per internetinę svetainę.
+				\item Public renginiai pateikia šią informaciją:
+				\begin{itemize}
+					\item Renginio vieta
+					\item Data(YYYY.mm.dd)
+					\item Prisijungusių prie renginio žaidėjų skaičius
+				\end{itemize}
+				\item Neprisijungus galima pasirinkti ,,Dalyvauti renginyje''.
+				\item Ne premium nariams rodoma reklama.
+				\item Galima pasirinkti grafinio interfeiso 2 temas. Viena - šviesi, kita - tamsi.
+				\item Progamoje galima pakeisti kalbą.
+				\item Renginius galima rūšiuoti pagal datą, sporto šaka, vietą.
+				\item Ne premium vartotojai turi ribotą skaičių renginių kuriuos gali sukurti.
+				\item Prie renginio pridedama nuotrauka.
+				\item Kiekvienas renginys turi turėti naudotoją, kuris už jį atsakingas.
+				\item Naudotojai yra reitinguojami.
+				\item Jeigu naudotojo reitingas neatitinka renginio reikalavimo, jis negali jame dalyvauti
+		\end{enumerate}
+		
+
+    \sectionnonum{Literatūros sąrašas} \label{literaturosSarasas}
+        \begin{itemize}
+			\item Doc. dr. K. Petrausko Programų Sistemų Inžinerijos kurso konspektai
+			\item Doc. dr. K. Petrausko Pirmojo laboratorinio darbo struktūra iš: http://www.mif.vu.lt/~karolis/PSI2.html
+			\item A. Abran, J. W. Moore, P.Bourque, R. Dupuis, L. L. Tripp - ,,Guide to the Software Engineering Body of Knowledge''
+			\item Latex dokumentacija: http://www.latex-project.org/help/documentation/
+        \end{itemize}
+\end{document}
