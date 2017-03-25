@@ -227,7 +227,7 @@
 			\end{table} 
 			
     \section{Užduotys}\label{uzduotys}
-		Šiame skyriuje pateikiamos pagrindinės neprisijungusio, prisijungusio vartotojo, organizatoriaus ir atsakingo už renginį asmens užduotys.
+		Šiame skyriuje pateikiamos pagrindinės neregistruoto, prisijungusio ir paprasto vartotojo, komandos vadovo, administratoriaus ir organizatoriaus užduotys.
 		Taip pat pateikiama bendra UML diagrama apibrėžianti visų šių agentų užduotis.
 			\noindent
 			
@@ -239,16 +239,12 @@
             \end{figure}
 
 		\begin{enumerate} [label = \textbf{U\arabic*.}]
-			\item \textbf{Užsiregistruoti} \\
-				Vartotojas spaudžia mygtuką ,,Užsiregistruoti''.
-				Vartotojas įveda informaciją apie save (Vardas, pavardė, prisijungimo vardas, slaptažodis).
-				Vartotojas spaudžia mygtuką ,,Patvirtinti registraciją''. 
-				Sistema užregistruoja nauja vartotoją. Sistema atidaro naują langą su užrašu ,,Sėkminga registracija''.
+			\item \textbf{Skaityti naujienas} \\
+				Vartotojas paspaudžia ant mygtuko “Naujienos”, kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas yra puslapį “Naujienos”, kuriame yra naujienos. Juos vartotojas skaito.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu vartotojo informacija įvesta neteisingai arba kuris nors registracijos laukelis nėra užpildytas, 
-					sistema neleidžia paspausti mygtuko ,,Patvirtinti registraciją''. 
+					\item Vartotojas paspaudęs ant mygtuko “Naujienos” yra nukeliamas į puslapį “Naujienos”, kuriame nėra straipsnių, bet yra užrašas “Atsiprašome, šiuo metu straipsnių neturime”. 
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -258,17 +254,13 @@
 					\label{fig:uzd_registracija}
 				\end{figure}
 				
-			\item \textbf{Prisijungti} \\
-				Vartotojas spaudžia mygtuką ,,Prisijungti''. 
-				Vartotojas įveda prisijungimo vardą ir slaptažodį.	
-				Sistema patikrina, ar įvesti duomenys yra teisingi. 
-				Sistema vartotojui atidaro prisijungusio vartotojo grafinę sąsają. 
-				Vartotojas gali naudoti prisijungusio vartotojo funkcijas.
+			\item \textbf{Žiūrėti renginių kalendorių} \\
+				Vartotojas spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį “Renginių kalendorius”, kuriame peržiūri renginius sudėtus pagal jų datas į atitinkamas kalendoriaus dienas.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu vartotojas įveda neteisingą prisijungimo informaciją ar neužpildo kurio nors prisijungimo laukelio, 
-					sistema paprašo dar kartą įvesti duomenis.
+					\item Vartotojas nemato visų renginių vykstančių tą pačią dieną, nes jų vyksta per daug. Tada kalendoriaus dienos langelis talpina kelis renginius ir tritaškio paveiksliuką, ant kurio paspaudus atidaromas naujas puslapis su sąrašu renginių vykstančių tą dieną.
+					\item Vartotojui, norint daugiau informacijos apie renginį, paspaudžia ant renginio pavadinimo ir yra atidaromas kitas puslapis su renginio informacija.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -277,18 +269,13 @@
 						\caption{Prisijungimo langas}
 						\label{fig:prisijungimo-langas}
 					\end{figure}
-				
-			\item \textbf{Peržiūrėti ateityje vyksiančių renginių sąrašą} \\
-				Vartotojas spaudžia mygtuką ,,Renginiai''. 
-				Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
-				Sistema atidaro viešų renginių, kurie vyks nuo tos akimirkos (minutės tikslumu), sąrašą. 
-				Sistema rodo 15 artimiausių renginių viename puslapyje.
-				
+
+			\item \textbf{Ieškoti renginių} \\
+					Vartotojas paieškos laukelyje įveda paieškos žodį ir tada yra atidaromas naujas puslapis, kuriame yra visi renginiai turintys paieškos žodį.
+					
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
-					\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
-					,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+						\item Vartotojas suveda paieškos žodį, kuris neturi jokio atitikmens renginių pavadinime ar informacijoje apie juos. Tada atidaromas naujas puslapis, kuriame parašyta “Atsiprašome, nieko su paieškos žodžiu neradome.” 
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -298,17 +285,12 @@
 					\label{fig:uzd_perziureti-vyksianciu-renginiu-sarasa}
 				\end{figure}
 				
-			\item \textbf{Peržiūrėti preliminarų renginių tvarkaraštį} \\
-				Vartotojas spaudžia mygtuką ,,Renginiai''. 
-				Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
-				Sistema atidaro visų vykstančių ir vyksiančių viešų renginių tvarkaraštį. 
-				Sistema rodo 15 artimiausių renginių per vieną puslapį.
+			\item \textbf{Žiūrėti vaizdo įrašus} \\
+				Vartotojas spaudžia ant mygtuko “Vaizdo įrašai” ir tada jis yra nukeliamas į puslapį “Vaizdo įrašai”. Jame vartotojas pasirenka iš vaizdo įrašų sąrašo, kurį nori žiūrėti. Pasirinkęs vaizdo įrašą paspaudžia ant jo. Vaizdo įrašas iškylą per visą ekraną ir pasileidžia.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
-					\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
-					,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+					\item Vartotojui neturinčiam “Adobe Flash Player” ir paspaudus ant vaizdo įrašo yra išmetamas pranešimas - “Jūs neturite “Adobe Flash Player” todėl video negalėsite pasižiūrėti”.
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -317,18 +299,13 @@
 					\caption{Preliminaraus renginių tvarkaraščio langas}
 					\label{fig:prelim-tvark-langas}
 				\end{figure}
-			
-			\item \textbf{Peržiūrėti preliminarų renginių tvarkaraštį} \\
-					Vartotojas spaudžia mygtuką ,,Renginiai''. 
-					Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
-					Sistema atidaro visų vykstančių ir vyksiančių viešų renginių tvarkaraštį. 
-					Sistema rodo 15 artimiausių renginių viename puslapyje.
-					
+				
+			\item \textbf{Pateikti renginio pasiūlymą} \\
+					Vartotojas paspaudžia ant mygtuko “Pateikti pasiūlymą”, kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį su forma, kurioje reikia užpildyti savo pasiūlymo įdėją ir paspausti mygtuką “Baigta”.
+							
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
-						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
-						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+						\item Vartotojas nėra prisijungęs ir privalo užpildyti elektroninio pašto lauką, nes kitaip negalima paspausti mygtuko “Baigta”.
 					\end{itemize}
 
 				\begin{figure}[H]
@@ -337,22 +314,14 @@
 					\caption{Konkretaus renginio langas}
 					\label{fig:konkretaus-renginio-langas}
 				\end{figure}
-			
-			\item \textbf{Prisijungti prie viešo renginio} \\
-					Vartotojas spaudžia mygtuką ,,Renginiai''. 
-					Vartotojas pasirenka konkretų renginį paspausdamas ant jo nuorodos.
-					Sistema atidaro naują langą su informacija apie atitinkamą viešą renginį.
-					Išsirinkęs renginį, vartotojas spaudžia mygtuką ,,Dalyvauti renginyje''. 
-					Vartotojas įveda informaciją apie save (Vardas, Pavardė). 
-					Sistema atidaro naują langą su užrašu ,,Registracija sėminga. Gero žaidimo''.
-					
+				
+			\item \textbf{Registracija} \\
+					Vartotojas, norėdamas užsiregistruoti į tinklalapį spaudžia mygtuką “Užsiregistruoti”. Tada vartotojas yra nukeliamas į kitą puslapį, kuriame suveda privaloma informaciją - vartotojo vardą ir slaptažodį. Tuomet, vartotojas spaudžia “Baigti” ir yra nukeliamas atgal į pagrindinį puslapį - “Renginių kalendorius”.
+							
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Jeigu vartotojo informacija yra netinkama, sistema atveria langą su prašymu įvesti informaciją iš naujo. 
-						\item Jeigu pasirinktame renginyje vietos nėra, 
-						sistema atidaro naują langą su užrašu: ,,Atsiprašome, vietų į šį renginį nėra. Pasirinkite kitą renginį.''
-						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
-						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+						\item Vartotojas spaudžia ant užrašo “Daugiau informacijos” ir tada atsiranda papildoma forma su papildomos informacijos laukais (vardas, pavardė, gimimo data, telefono numeris, gyvenamoji vieta). Juos užpildžius spaudžia mygtuką “Baigti”. Vartotojas nukeliamas į pagrindinį puslapį.
+						\item Vartotojui nepateikus būtinos informacijos arba užpildžius privalomus laukus nekorektiškai, prie atitinkamų laukelių parodoma klaida ir neleidžiama paspausti mygtuką “Baigti”.
 					\end{itemize}
 
 				\begin{figure}[H]
@@ -362,18 +331,12 @@
 					\label{fig:prisijungti-prie-vieso-renginio}
 				\end{figure}
 
-			\item \textbf{Patikrinti renginio organizatoriaus informaciją} \\
-				Vartotojas spaudžia mygtuką ,,Renginiai''. 
-				Vartotojas pasirenka konkretų renginį. 
-				Sistema atidaro naują langą su informacija apie atitinkamą renginį. 
-				Vartotojas spaudžia ant teksto su užrašu ,,Organizatorius : [Vardas] [Pavardė]''.
-				Sistema parodo detalesnę informaciją apie organizatorių.
-				
+			\item \textbf{Prisijungti} \\
+					Vartotojas spaudžia mygtuką „Prisijungti”. Vartotojas įveda vartotojo vardą ir slaptažodį bei paspaudžia mygtuką “Baigti”. Sistema patikrina, ar įvesti duomenys yra teisingi. Sistema vartotojui atidaro prisijungusio vartotojo grafinę sąsają. Vartotojas gali naudoti prisijungusio vartotojo funkcijas. 
+					
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu detalesnės informacijos apie organizatorių nėra, sistemoje pateikiamas užrašas ,,Šios inforamacijos nėra''.
-					\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
-					,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+						\item Vartotojui įvedus neteisingą prisijungimo informaciją ar neužpildžius, kurio nors prisijungimo laukelio, sistema paprašo dar kartą įvesti duomenis.
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -383,19 +346,12 @@
 					\label{fig:patikrinti-renginio-organizatoriaus-informacija}
 				\end{figure}
 			
-			\item \textbf{Matyti privačius renginius} \\
-				Vartotojas spaudžia mygtuką ,,Renginiai''.
-				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
-				Sistema atidaro visų vykstančių ir vyksiančių renginių sąrašą.
-				Vartotojas filtravimo skirtyje ,,Rodyti:'' pasirenka variantą ,,Privačius renginius''.
-				Renginių sąraše lieka tik privatūs renginiai.
-				Sistema rodo 15 renginių viename puslapyje.
+			\item \textbf{Pirkti bilietus} \\
+				Vartotojas, norintis pirkti bilietą į renginį, nueina į norimo renginio puslapį. Paspaudžia mygtuką “Pirkti bilietus” ir tada yra nukreipimas į bilietų pardavimo punktą.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jei sistemoje nėra jokių renginių, vietoj renginių sąrašo rodomas užrašas ,,Renginių nėra''.
-					\item Jei sistemoje privačių renginių nėra, vietoj renginių sąrašo rodomas užrašas ,,Privačių renginių nėra''.
-					\item Jei renginių yra 15 ar mažiau, puslapių numeriai nerodomi, nes visas sąrašas telpa viename puslapyje.
+				\item Bilietų nebėra į norimą renginį. Mygtukas “Pirkti bilietus” tampa neaktyvus.
 				\end{itemize}
 			
 				\begin{figure}[H]
@@ -404,18 +360,15 @@
 					\caption{Privačių renginių sąrašo langas}
 					\label{fig:matyti-privacius-renginius}
 				\end{figure}
-
-			\item \textbf{Prašyti leidimo dalyvauti privačiame renginyje} \\
-				Vartotojas atsidaro privačių renginių sąrašą (žr. užduotį ,,Matyti privačius renginius'').
-				Atsidariusiame privačių renginių sąraše vartotojas pasirenka konkretų privatų renginį ir paspaudžia ant jo pavadinimo.
-				Atsidariusiame konkretaus privataus renginio aprašyme vartotojas spaudžia mygtuką ,,Dalyvauti''.
-				Iššoka langas, indikuojantis, kad užklausą pavyko sėkmingai nusiųsti organizatoriui.
-				Organizatoriui patvirtinus prašymą dalyvauti, vartotojas gauna pranešimą apie galimybę dalyvauti renginyje.
 				
+			\item \textbf{Registracija į renginį} \\
+					Prisijungęs vartotojas spaudžia mygtuką “Registruotis”. Vartotojas yra įtraukiamas į renginio dalyvių sąrašą ir gauna patvirtinimą apie sėkmingą registraciją.
+					
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jei įvyksta klaida siunčiant užklausą organizatoriui, vartotojui parodomas langas su klaidos aprašymu ir prašymu pabandyti vėliau.
-					\item Jei organizatorius nepatvirtina vartotojo dalyvavimo renginyje, sistema išsiunčia vartotojui pranešimą apie atmestą prašymą dalyvauti.
+						\item Registracijos į renginį mygtukas yra neaktyvus, jei renginys jau įvyko.
+						\item Registracijos į renginį mygtukas yra neaktyvus, jei užsiregistravo didžiausias galimas dalyvių skaičius.
+						\item Registracijos į renginį mygtukas yra neaktyvus, jei vartotojas yra jau užsiregistravęs į renginį.
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -425,18 +378,15 @@
 					\label{fig:prasymas-dalyvauti-privaciame-renginyje}
 				\end{figure}
 				
-			\item \textbf{Peržiūrėti visų renginių tvarkaraštį} \\
-				Vartotojas spaudžia mygtuką ,,Renginiai''.
-				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių tvarkaraštis'', kurį vartotojas pasirenka.
-				Sistema atidaro visų renginių tvarkaraštį, kuris vaizduojamas kalendoriaus forma.
-				Kalendorius iš pradžių rodo einamąją dieną.
-				Kalendorius vaizduoja vieno mėnesio informaciją viename lape.
+			\item \textbf{Kurti komandą} \\
+				Prisijungęs vartotojas spaudžia mygtuką “Kurti komandą”. Vartotojas įveda komandos pavadinimą ir kviečiamų registruotų vartotojų vardus. Komanda yra sukuriama ir vartotojas gauna pranešimą apie sėkmingai sukurtą komandą.
 			
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jei vartotojo įrenginys nepalaiko technologijos, reikalingos kalendoriaus atvaizdavimui, parodomas pranešimas ,,Jūsų įrenginys nepalaiko kalendoriaus funkcijos''.
-					\item Jei renginių nėra, vaizduojamas tuščias kalendorius.
-					\item Jei renginys trunka ne vieną dieną, jis vaizduojamas per kelis kalendoriaus langelius (dienas).
+					\item Metama klaida, jei vartotojas įveda komandos pavadinimą, kuris jau egzistuoja.
+					\item Metama klaida, jei vartotojas, kuriantis komandą, į kviečiamų vartotujų sąrašą įtraukia neegzistuojantį vardą.
+					\item Mygtukas “Kurti komandą” yra neaktyvus, jei, neįvestas komandos pavadinimas.
+					\item Mygtukas “Kurti komandą” yra neaktyvus, jei, nenurodytas nė vienas kviečiamas registruotas vartotojas.
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -445,21 +395,16 @@
 					\caption{Visų renginių tvarkaraščio langas}
 					\label{fig:perziureti-renginiu-tvarkarasti}
 				\end{figure}
-				
-			\item \textbf{Rašyti atsiliepimą apie renginį} \\
-				Vartotojas spaudžia mygtuką ,,Renginiai''.
-				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
-				Vartotojas iš sąrašo pasirenka konkretų renginį ir spaudžia ant jo pavadinimo.
-				Atsidariusiame konkretaus renginio aprašyme vartotojas spaudžia mygtuką ,,Rašyti atsiliepimą''.
-				Atsidariusiame lange vartotojas pasirenka renginio įvertinimą (nuo 1 iki 10 balų) ir tam skirtame tekstiniame lange įrašo savo nuomonę apie renginį.
-				Kai vartotojas baigia pildyti atsiliepimo laukus, jis spaudžia mygtuka ,,Siųsti''.
-				Vartotojo atsiliepimas atsiduria bendrame renginio atsiliepimų sąraše.
+
+			\item \textbf{Priimti kvietimą į komandą} \\
+					Vartotojas gavęs pakvietimą į komandą el paštu, paspaudžia nuorodą, kuri nukelia jį į komandos sandaros puslapį, tada ji peržiūri pakvietimą ir nusprendęs kad nori prisijungti prie komandos spaudžia mygtuką “Priimti kvietimą”.
 
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jei renginiui neleidžiama rašyti atsiliepimo, mygtuko ,,Rašyti atsiliepimą'' nėra.
-					\item Jei vartotojas neužpildo visų atsiliepimo laukų, mygtukas ,,Siųsti'' yra neaktyvus.
-					\item Jei įvyksta klaida užregistruojant vartotojo atsiliepimą, vartotojas apie tai informuojamas iššokančiame lange ir atsiliepimo forma išvaloma.
+					\item Vartotojas neperžiūrėjęs pakvietimo jį ištrina. Tada pakvietimas automatiškai atmetamas.
+					\item Vartotojas nori sužinoti daugiau informacijos. Tada paspaudęs ant renginio pavadinimo yra nukeliamas į renginio puslapį, kur gali susirinkti daugiau informacijos.
+					\item Jeigu komandos vadovas atšaukia kvietima, paspaudus nuorodą, atsirado puslapis su pranešimu, kad kvietimas nebegalioja.
+					\item Jei komanda yra ištrinta, paspaudus nuorodą, atsidaro puslapis su pranešimu, kad komanda nebeegzistuoja.
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -468,18 +413,15 @@
 					\caption{Atsiliepimo apie renginį langas}
 					\label{fig:rasyti-atsiliepima-apie-rengini}
 				\end{figure}
-				
-			\item \textbf{Peržiūrėti informaciją apie buvusius renginius} \\
-				Vartotojas spaudžia mygtuką ,,Renginiai''.
-				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
-				Vartotojas filtravimo skiltyje ,,Rodyti:'' pasirenka variantą ,,jau įvykusius renginius''.
-				Renginių sąraše lieka tik jau vykę renginiai.
-				Sistema rodo 15 renginių viename puslapyje.
+
+			\item \textbf{Atmesti kvietimą į komandą} \\
+				Vartotojas gavęs pakvietimą į komandą el paštu, paspaudžia nuorodą, kuri nukelia jį į komandos sandaros puslapį, peržiūri pakvietimą, nusprendžia kad nenori prisijungti prie komandos, spaudžia mygtuką “Atmesti kvietimą”.
 
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu įvykusių renginių nėra, vietoj renginių sąrašo rodomas užrašas ,,Jau įvykusių renginių nėra''.
-					\item Jeigu jau įvykusių renginių yra 15 ar mažiau, puslapių numeriai nerodomi, nes visi renginiai telpa viename puslapyje.
+					\item Vartotojas neperžiūrėjęs pakvietimo jį ištrina. Tada pakvietimas atmetamas.
+					\item Jeigu komandos vadovas atšaukia kvietima, paspaudus nuorodą, atsirado puslapis su pranešimu, kad kvietimas nebegalioja.
+					\item Jei komanda yra ištrinta, paspaudus nuorodą, atsidaro puslapis su pranešimu, kad komanda nebeegzistuoja.
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -489,14 +431,12 @@
 					\label{fig:matyti-jau-ivykusius-renginius}
 				\end{figure}
 			
-			\item \textbf{Paskelbti apie naują renginį} \\
-				Organizatorius spaudžia mygtuką ,,Sukurti renginį''. 
-				Organizatorius užpildo visą reikiamą informaciją apie renginį.
-				Organizatorius spaudžia mygtuką ,,Paskelbti renginį''.
+			\item \textbf{Išeiti iš komandos} \\
+				Vartotojas būdamas komandos puslapyje paspaudžia mygtuką “Išeiti iš komandos”. Iššokusiame lange, kur klausia “Ar tikrai norite išeiti iš šios komandos” paspaudžia mygtuką “Taip”.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu informacija yra neteisinga arba nepilnai užpildyta, sistema neleidžia paspausti mygtuko ,,Paskelbti renginį''.
+					\item Vartotojas bando išeiti iš komandos, dalyvaujančios tuo metu vykstančiame renginyje. Tokiu atveju mygtukas  “Išeiti iš komandos” yra neaktyvus ir vartotojui yra skaičiuojami visi taškai kaip ir per varžybas.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -505,19 +445,16 @@
 					\caption{Naujo renginio langas}
 					\label{fig:paskelbti-nauja-rengini}
 				\end{figure}
-				
-			\item \textbf{Paskirti naujo renginio atsakingą asmenį} \\
-				Organizatorius spaudžia mygtuką ,,Mano renginiai''. 
-				Organizatorius pasirenka redaguoti norimą renginį.
-				Organizatorius spaudžia mygtuką ,,Paskirti atsakingą asmenį''. 
-				Organizatorius įveda atsakingo asmens duomenis (vartotojo vardą).
-				Organizatorius spaudžia mygtuką ,,Patvirtinti''.
-				Sistema parodo užrašą ,,Sėkmingai priskirtas asmuo''.
+
+			\item \textbf{Pateikti prašymą priimti į komandą} \\
+				Prisijungęs vartotojas spaudžia mygtuką “Pateiktį prašymą priimti į komandą”. Į teksto lauką vartotojas įveda komandos pavadinimą ir spaudžia mygtuką “Pateikti”. Vartotojas yra pridedamas į pasirinktos komandos sąrašą, kaip norintis prisijungti.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu organizatorius įvedė neteisingus atsakingo asmens duomenis, sistema neleidžia paspausti mygtuko ,,Paskirti atsakingą asmenį''.
-					\item Jeigu atsakingas asmuo jau yra prisikirtas, iššoka langas, klausiantis ar norima pakeisti atsakingo asmens duomenis.
+					\item Mygtukas “Pateikti” yra neaktyvus, jei įvestas komandos pavadinimas neegzistuoja.
+					\item Mygtukas “Pateikti” yra neaktyvus, jei vartotojas jau priklauso komandai, kurios pavadinimą įvedė.
+					\item Mygtukas “Pateikti” yra neaktyvus, jei vartotojas jau pateikė prašymą priimti į komandą, kurios pavadinimą įvedė.
+					\item Metama klaida, jei komanda, kurios pavadinimas įvestas, yra ištrinama tuo pačiu metu.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -527,18 +464,14 @@
 					\label{fig:paskirti-atsakinga-asmeni}
 				\end{figure}
 				
-			\item \textbf{Prie renginio pridėti aprašą ir nuotrauką} \\
-				Organizatorius spaudžia mygtuką ,,Mano renginiai''. 
-				Organizatorius pasirenka norimą redaguoti renginį.
-				Organizatorius spaudžia mygtuką ,,Pridėti nuotrauką arba informaciją''. 
-				Organizatorius prideda nuotrauką arba parašo naują informaciją apie renginį.
-				Organizatorius spaudžia mygtuką ,,Atnaujinti''. 
-				Sistema parašo pranešimą ,,Atnaujinta sėkmingai''.
+			\item \textbf{Registruoti komandą į renginį} \\
+				Vartotojas spaudžia mygtuką “Registruoti komandą”. Vartotojui yra parodomas jo sukurtų komandų sąrašas. Vartotojas pasirenka komandą ir spaudžia mygtuką “Registruoti”. Komanda yra pridedama į renginio dalyvių sąrašą.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu nuotrauka buvo įdėta neatitinkanti standartų, sistema jos nededa prie aprašymo ir išsiunčia pranešimą apie nuotraukos klaidą.
-					\item Jeigu renginys jau yra pasibaigęs, sistema neleidžia pakeisti nuotraukos ar pakeisti aprašymo, bet įgalima papildyti jau esamą aprašymą.
+					\item Mygtukas “Registruoti komandą” yra neaktyvus, jei jau yra pasiektas maksimalus dalyvių skaičius.
+					\item Mygtukas “Registruoti” yra neaktyvus, jei nepasirinkta komanda.
+					\item Jei vartotojas neturi komandų, jam pateikiama nuoroda į komandos kūrimo puslapį.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -548,18 +481,14 @@
 					\label{fig:prideti-aprasa}
 				\end{figure}
 				
-			\item \textbf{Ištrinti renginį} \\
-				Organizatorius spaudžia mygtuką ,,Mano renginiai''. 
-				Organizatorius pasirenka norimą renginį.
-				Organizatorius spaudžia mygtuką ,,Ištrinti renginį''. 
-				Sistema parašo pranešimą su užrašu ,,Renginys ištrintas''. 
-				Sistema ištrina atitinkamą renginį iš renginių sąrašo.
-				Sistema išsiunčia pranešimą kiekvienam vartotojui, kuris yra prisijungęs prie to renginio, apie pašalintą renginį.
+			\item \textbf{Aplikuoti į darbo poziciją} \\
+				Prisijungęs vartotojas atsidaro darbo pasiūlymų sąrašą. Atidaro dominančios darbo pozicijos aprašymą. Jei nori aplikuoti į darbo pozicija, kurios aprašymą yra atidaręs, spaudžia mygtuką “Aplikuoti”. Į teksto lauką įveda savo žinutę ir, paspaudęs mygtuką “Pridėti failą”, prisega daugiausiai 10 iki 2 MB dydžio failų. Spaudžia mygtuką “Siųsti”. Aplikaciją į darbo poziciją yra siunčiama į administratoriaus skiltį.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu nėra galimybės vartotojui išsiųsti pranešimą, sistema pranešimo nesiunčia.
-					\item Jeigu renginys jau yra pasibaigęs, jo ištrinti sistema neleidžia, jis lieka sistemoje tarp jau vykusių renginių.
+					\item Mygtukas “Siųsti” yra neaktyvus, jei vartotojas paliko tuščią teksto lauką.
+					\item Išmetamas pranešimas, jei failas, kurį vartotojas norį įkelti, viršija 2 MB.
+					\item Mygtukas “Pridėti failą” yra neaktyvus, jei vartotojas jau įkėlė 10 failų.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -569,16 +498,12 @@
 					\label{fig:istrinti-rengini}
 				\end{figure}
 				
-			\item \textbf{Priimti ar atmesti dalyvavimo renginyje prašymą} \\
-				Organizatorius spaudžia mygtuką ,,Norintys dalyvauti renginyje''.
-				Organizatorius pasirenka asmenį, kurį jis nori patikrinti. 
-				Organizotorius spaudžia mygtuką ,,Patvirtinti dalyvavimą'' arba ,,Atmesti dalyvavimą''. 
-				Sistema vartotojui atsiunčia pranešimą, su organizatoriaus pasirinktu atsakymu.
+			\item \textbf{Papildyti asmeninę informaciją} \\
+				Prisijungęs vartotojas spaudžia mygtuką “Keisti asmeninę informaciją”. Atidaroma forma su teksto laukais, turinčiais etiketes “Vardas”, “Pavardė”, “Gimimo data”, “Telefono numeris”, “Gyvenamoji vieta”, “El-pašto adresas”. Teksto laukuose yra informacija, kurią vartotojas pateikė anksčiau. Vartotojas pakeičia norimą informaciją ir spaudžia “Saugoti”. Nauja informacija yra išsaugoma.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu nėra prašančiųjų dalyvauti, sistemoje iššoka langas sakantis organizatoriui, jog nėra naujų patvirtinimų.
-					\item Jeigu dalyvis yra priimamas į renginį, bet nebėra vietų dalyvauti, jam išsiunčiama žinutė, jog jei atsiras laisvų vietų, jis bus priimtas į renginį.
+					\item Mygtukas “Saugoti” yra neaktyvus, jei vartotojas įveda netinkamą informaciją.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -587,17 +512,12 @@
 					\caption{Prašymo dalyvauti peržiūra}
 					\label{fig:priimti-dalyvi}
 				\end{figure}
-				
-			\item \textbf{Priimti ar atmesti organizatoriaus paskyrimą} \\
-				Atsakingas asmuo spaudžia mygtuką ,,Pasiūlymai''. 
-				Atsakingas asmuo pasirenką norimą pasiūlymą.
-				Atsakingas asmuo patvirtintina organizatoriaus paskyrimą būti atsakingam už konkretų renginį. 
-				Sistema išsiunčia pranešimą organizatoriui, kad atsakingas asmuo priėmė paskyrimą.
-				
+
+			\item \textbf{Keisti komandos sudėtį} \\
+				Prisijungęs vartotojas paspaudžia ant komandos, kurios sudėtį nori keisti, pavadinimo. Atidaromas tos komandos narių, pakviestų vartotojų ir vartotojų, kurie nori prisijungti sąrašas. Prie kiekvieno komandos naro vardo yra mygtukai “Ištrinti” ir “Skirti vadovu”. Prie kiekvienio pakviesto vartotojo yra mygtukas “Atšaukti kvietimą”. Prie kiekvieno vartotojo, kuris nori prisijungti, vardo yra mygtukai “Priimti” ir “Atmesti”. 
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Jeigu atsakingas asmuo atmeta organizatoriaus paskyrimą būti atsakingam už konkretų renginį, sistema išsiunčia pranešimą organizatoriui, kad atsakingas asmuo atmetė pranešimą.
-					\item Jeigu asmuo priima pasiūlymą būti atsakingu asmeniu, bet atsakingu už renginį jau buvo paskirtas kitas žmogus, asmuo gauna pranešimą, kad jis taps atsakingu asmeniu, jei atsilaisvins vieta.
+					\item Jei vartotojas spaudžia “Priimti”, o pasirinktas vartotojas tuo metu atšaukia prašymą priimti į komandą, pasirinktas vartotojas yra pašalinamas iš sąrašo.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -606,19 +526,15 @@
 					\caption{Atsakingo asmens pasiūlymų valdymo langas}
 					\label{fig:pasiulymu-sarasas}
 				\end{figure}
-			
-			\item \textbf{Atsakyti į dalyvių klausimus}   \\
-					Atsakingas asmuo spaudžia mygtuką ,,Mano renginiai''. 
-					Atsakingas asmuo pasirenka norimą renginį.
-					Atsakingas asmuo pasirenka klausimą į kurį nori atsakyti. 
-					Sistema atidaro tekstinį langą, į kurį atsakingas asmuo įrašo atsakymą. 
-					Atsakingas asmuo spaudžia mygtuką ,,Atsakyti''.
-					Sistema siunčia atsakymą vartotojui, kuris jį uždavė.
+				
+			\item \textbf{Pakviesti registruotą vartotoją į komandą}   \\
+					Prisijungęs vartotojas paspaudžia ant komandos, kurios vadovo pareigas nori perleisti, pavadinimo. Atidaromas tos komandos narių, pakviestų vartotojų ir vartotojų, kurie nori prisijungti sąrašas.  
+					Vartotojas spaudžia, po sąrašu esantį, mygtuką “Naujas”. Vartotojui parodomas laukas, į kurį vartotojas įveda kviečiamo registruoto vartotojo vardą. Įvedęs vardą, vartotojas spaudžia mygtuką “Kviesti” ir nurodytam vartotojui yra išsiunčiamas kvietimas.
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Jeigu atsakingas asmuo nieko neparašo į tekstinį langą, sistema neleidžia paspausti mygtuko ,,Atsakyti''.
-						\item Jeigu nėra užduota jokių naujų klausimų, sistemoje iššoka langas, pranešantis atsakingam asmeniui šią informaciją.
+						\item Jei vartotojas palieka teksto lauką tuščią, mygtukas “Kviesti” yra neaktyvus.
+						\item Jei įvedamas neegzistuojantis vardas, metama klaida.
 					\end{itemize}
 				
 				\begin{figure}[H]
@@ -627,7 +543,330 @@
 					\caption{Dalyvių klausimų atsakymo langas}
 					\label{fig:atsakyti-klausimus}
 				\end{figure}
+				
+			\item \textbf{Perleisti komandos vadovo pareigas kitam vartotojui}   \\
+					Prisijungęs vartotojas paspaudžia ant komandos, į kurią nori pakviesti naują narį, pavadinimo. Atidaromas tos komandos narių, pakviestų vartotojų ir vartotojų, kurie nori prisijungti sąrašas. Pasirinkęs komandos narį, kuriam nori perleisti vadovo pareigas, spaudžia prie jo vardo esantį mygtuką “Skirti vadovu”. Vartotojui parodomas patvirtinimo langas su mygtuku “Patvirtinti”. Vartotojas spaudžia mygtuką “Patvirtinti” ir komandos vadovas yra pakeičiamas.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratorius spaudžia mygtuką “Skirti vadovu” ir uždaro patvirtinimo langą. Vadovas nėra pakeičiamas.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+								
+			\item \textbf{Pridėti naujienas}   \\
+					Administratorius paspaudžia ant mygtuko “Naujienos”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Naujienos”, kurio kairėje pusėje yra pasirinkimas “Pridėti naujienas”. Paspaudus ant tų žodžių, atidaroma forma, kurioje reikia užpildyti laukus (privalomi - pavadinimas, tekstas) ir paspausti mygtuką “Įkelti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratoriui neužpildžius privalomų laukų negalima paspausti mygtuko “Įkelti” ir prie laukų, kurie nebuvo užpildyti yra parašoma - “Būtina užpildyti”.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+					
+			\item \textbf{Ištrinti naujienas}   \\
+					Administratorius paspaudžia ant mygtuko “Naujienos”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Naujienos”, kurio kairėje pusėje yra pasirinkimas “Ištrinti naujienas”. Paspaudus ant jų, po jais iškrenta pasirinkimas - įvesti naujienų pavadinimą arba pasirinkti iš sąrašo. Paspaudus ant įvesti naujienų pavadinimą, atidaromas naujas puslapis su paieškos laukeliu, į kurį įvedus pavadinimą atidaro visas naujienas turinčias tą pavadinimą. Tada administratorius išsirenka, kurias nori ištrinti. Paspaudžia ant jų ir mygtuką “Ištrinti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratoriui pasirinkus opciją pasirinkti iš sąrašo. Prie esančių puslapio “Naujienos” naujienų atsiranda varnelės opcija, pažymėjus varneles kairėje pusėje galima paspausti mygtuką “Ištrinti”.
+						\item Administratoriui suvedus netinkamą pavadinimą, kai pasirinktas pasirinkimas įvesti naujienų pavadinimą, atsirandą užrašas “Tokių naujienų nėra.”
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+					
+			\item \textbf{Redaguoti naujienas}   \\
+					Administratorius paspaudžia  ant mygtuko “Naujienos”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Naujienos”, kurio kairėje pusėje yra pasirinkimas “Redaguoti naujienas”. Paspaudus ant jų administratorius pasirenka naujienas. Tada paspausti ant pasirinktų naujienų pavadinimo ir atsidaro naujas puslapis su redaguojamais laukais. Redagavus norimus laukus galima paspausti “Išsaugoti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratorius paspaudęs ant naujienų pavadinimo nieko neredaguoja ir nori toliau ieškoti norimų naujienų. Tada jis spaudžia mygtuką “Išeiti”.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Pridėti renginį}   \\
+					Administratorius paspaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Atidaromas puslapis “Renginių kalendorius”, kurio kairėje pusėje yra pasirinkimas “Pridėti renginį”. Paspaudus ant jo atsidaro naujas puslapis su forma, kurioje yra laukai (renginio pavadinimas, sporto šaka, vienos komandos dydis (intervalas), maksimalus dalyvių skaičius, registravimosi termino data, renginio data, vieta, bilietu pardavimo vieta). Įvedus visus reikalingus laukus, administratorius paspaudžia mygtuką “Baigti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko “Baigti” ir prie atitinkamų laukų rašoma klaida.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Redaguoti renginį}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje administratorius pasirenka renginį, kurį nori redaguoti. Prie renginio spaudžia mygtuką “Redaguoti”. Paspaudus ant jo atsidaro naujas puslapis su renginio informacijos redagavimo forma. Laukai yra užpildyti anksčiau įvesta informacija. Pakeitęs norimus laukus, administratorius paspaudžia mygtuką “Baigti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko “Baigti” ir prie atitinkamų laukų rašoma klaida.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Ištrinti renginį}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje administratorius pasirenka renginį, kurį nori ištrinti. Prie renginio spaudžia mygtuką “Ištrinti”. Sistema parodo patvirtinimo dialogą, administratorius patvirtina ištrinimą, sistema išsiunčia visiems užregistravusiems renginio dalyviams pranešimą kad renginys atšauktas, ir renginys yra ištrinamas.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jei administratorius atsiradus dialogui atšaukia ištrinimą, dialogas pašalinamas ir parodomas renginio puslapis.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Pridėti rezultatus}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori pridėti. Prie renginio spaudžia mygtuką “Rezultatai”. Paspaudus ant jo parodoma renginio formatą atitinkanti lentelė, kurią galima užpildyti renginio rezultatais. Administratorius suveda renginio rezultatus ir spaudžia mygtuką “Patvirtinti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Metamos klaidos, jei rezultatai yra vedami neteisingai (pvz.: kai į skaitinius laukus bandomos įvesti raidės).
+						\item Mygtukas “Rezultatai” yra neaktyvus, jei renginys dar neprasidėjo.
+						\item Mygtukas “Patvirtinti” yra neaktyvus, jei administratorius rezultatų nesuvedė.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+					
+			\item \textbf{Redaguoti rezultatus}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori pridėti. Prie renginio spaudžia mygtuką “Rezultatai”. Paspaudus ant jo parodoma renginio formatą atitinkanti lentelė, kurioje galima matyti ir redaguoti renginio rezultatais. Administratorius pakeičia rezultatus ir spaudžia mygtuką “Patvirtinti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Metamos klaidos, jei rezultatai yra vedami neteisingai (pvz.: kai į skaitinius laukus bandomos įvesti raidės).
+						\item Mygtukas “Patvirtinti” yra neaktyvus, jei administratorius nepadarė pakeitimų.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Ištrinti rezultatus}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori pridėti. Prie renginio spaudžia mygtuką “Rezultatai”. Paspaudus ant jo parodoma renginio formatą atitinkanti lentelė, kurioje galima matyti ir redaguoti renginio rezultatais. Administratorius spaudžia mygtuką “Išvalyti” ir mygtuką “Patvirtinti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Mygtukas “Išvalyti” yra neaktyvus, jei rezultatų lentelė yra tuščia.
+						\item Mygtukas “Patvirtinti” yra neaktyvus, jei administratorius nepadarė pakeitimų.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Pridėti vaizdo įrašą}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori pridėti. Prie renginio spaudžia mygtuką “Vaizdo įrašai”. Paspaudus ant jo parodomas renginio vaizdo įrašų sąrašas. Administratorius spaudžia mygtuką “Pridėti”. Atsidaro naujas langas su lauku į kurį galima vaizdo įrašo nuorodą bei mygtuku “Įkelti”, kurį paspaudus leidžiama pasirinkti vaizdo įrašą iš kompiuterio. Administratorius įveda vaizdo įrašo nuorodą arba spaudžia mygtuką “Įkelti” ir pasirenka failą iš kompiuterio. Administratorius spaudžia mygtuką “Išsaugoti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Metama klaida, jei bandoma įkelti failą iš kompiuterio ir įvesti nuorodą.
+						\item Metama klaida, jei bando talpinti netinkamo formato failą.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+					
+			\item \textbf{Ištrinti vaizdo įrašą}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori pridėti. Prie renginio spaudžia mygtuką “Vaizdo įrašai”. Paspaudus ant jo parodomas renginio vaizdo įrašų sąrašas. Prie kiekvieno vaizdo įrašo yra mygtukas “Ištrinti”. Administratorius spaudžia mygtuką “Ištrinti” prie pasirinkto vaizdo įrašo. Parodomas langas, kuriame prašoma patvirtinti, kad nori ištrinti vaizdo įrašą. Administratorius spaudžia mygtuką “Patvirtinti”. Vaizdo įrašas ištrinamas.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratorius spaudžia mygtuką “Ištrinti” ir uždaro patvirtinimo langą. Vaizdo įrašas nėra ištrinamas.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+					
+			\item \textbf{Apriboti, blokuoti, ištrinti vartotojus}   \\
+					Administratorius užeina į atitinkamo vartotojo puslapį pasirenka, ką nori daryti ir paspaudžia mygtukus “Apriboti prieiga”, “Blokuoti prieigą”, “Ištrinti vartotoją”. Pasirinkęs “Apriboti prieiga” arba “Blokuoti prieigą” administratorius iššokusiame lange pasirenka iki kada jis nori, kad tai galiotų ir spaudžia “Patvirtinti”. Jei administratorius paspaudžia “Ištrinti vartotoją”, jis turi papildomai suvesti savo slaptažodį ir spausti “Taip”, kai iškyla langas, kuriame parašoma, kad tai yra negrįžtamas procesas.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Administratorius bando atlikti vieną iš šių veiksmų kito administratoriaus paskyrai. Tokiu atveju mygtukai yra neaktyvūs ir virš jų atsiranda užrašas, kad administratoriai negali redaguoti kitų administratorių prieigos.
+						\item Administratorius bando apriboti arba blokuoti savo paskyrą. Tokių atveju iššoka langas, kuriame parnešame, kad administratorius gali savo paskyra tik ištrinti.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Peržiūrėti renginių sąrašus}   \\
+					Administratorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”, kuriame chronologiška tvarka lentelėje rodomas renginių sąrašas. Dešinėje pusėje prie kalendoriaus yra laukas, kuriame galima pasirinkti filtrus (sporto šaka, individualūs / komandiniai, laiko intervalas). Administratorius pažymi kokius filtrus nori taikyti peržiūrai.
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Peržiūrėti darbo aplikacijų sąrašus}   \\
+					Administratorius spaudžia ant mygtuko “Darbo aplikacijos”, kuris yra navigacijos meniu. Atidaromas langas su darbo aplikacijų sąrašų. Viršuje yra paryškintos naujos aplikacijos. Administratorius peržiūri darbo aplikacijas ir susisiekia su pasirinktais kandidatais.
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
 
+			\item \textbf{Užregistruoti naują renginį}   \\
+					Renginio organizatorius paspaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Atidaromas puslapis “Renginių kalendorius”, kurio kairėje pusėje yra pasirinkimas “Pridėti renginį”. Paspaudus ant jo atsidaro naujas puslapis su forma, kurioje yra laukai (renginio pavadinimas, sporto šaka, vienos komandos dydis (intervalas), maksimalus dalyvių skaičius, registravimosi termino data, renginio data, vieta, bilietu pardavimo vieta ). Įvedus visus reikalingus laukus, administratorius paspaudžia mygtuką “Baigti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Renginio organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko “Baigti” ir prie atitinkamų laukų rašoma klaida.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}	
+			
+			\item \textbf{Redaguoti renginį}   \\
+					Renginio organizatorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje organizatorius pasirenka savo renginį, kurį nori redaguoti. Prie renginio spaudžia mygtuką “Redaguoti”. Paspaudus ant jo atsidaro naujas puslapis su renginio informacijos redagavimo forma. Laukai yra užpildyti anksčiau įvesta informacija. Pakeitęs norimus laukus, administratorius paspaudžia mygtuką “Baigti”.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko “Baigti” ir prie atitinkamų laukų rašoma klaida.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+			
+			\item \textbf{Ištrinti renginį}   \\
+					Renginio organizatorius spaudžia ant mygtuko “Renginių kalendorius”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Renginių kalendorius”. Kalendoriuje organiztorius pasirenka savo organizuojama renginį, kurį nori ištrinti. Prie renginio spaudžia mygtuką “Ištrinti”. Sistema parodo patvirtinimo dialogą, organizatorius patvirtina ištrinimą, sistema išsiunčia visiems užregistravusiems renginio dalyviams pranešimą kad renginys atšauktas ir renginys yra ištrinamas.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jei organizatorius atsiradus dialogui atšaukia ištrinimą, dialogas pašalinamas ir parodomas renginio puslapis.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}	
+				
+			\item \textbf{Peržiūrėti visų dalyvių sąrašus}   \\
+					Renginio organizatorius atidaro savo renginio puslapį ir spaudžia mygtuką “Dalyviai”. Atidaromas langas, kuriame yra rodomas pasirinkto renginio dalyvių sąrašas.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Jeigu dalyvių sąrašas yra tuščias, renginio organizatoriui yra rodomas pranešimas kad nė vienas vartotojas neužsiregsitravo.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}	
+				
+			\item \textbf{Pridėti naujienas}   \\
+					Renginio organizatorius paspaudžia ant mygtuko “Naujienos”, kuris yra navigacijos meniu. Tada atidaromas puslapis “Naujienos”, kurio kairėje pusėje yra pasirinkimas “Pridėti naujienas”. Paspaudus ant šio mygtuko, atidaroma forma, kurioje reikia užpildyti laukus (privalomi - pavadinimas, tekstas, renginys (leidžiama pasirinkti iš organizuojamų renginio)). Organizatorius užpildo laukus ir paspaudžią mygtuką “Įkelti”, sistema sukuria naują renginį.
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko “Įkelti” ir prie atitinkamų laukų rašoma klaida.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+				
+			\item \textbf{Redaguoti sukurtą naujieną}   \\
+					Organizatorius paspaudžia ant naujienos kurią sukūrė, atsidarius naujienos puslapiui, paspaudžia mygtuką “Redaguoti”. Atsidaro naujienų redagavimo forma. Formos laukai yra užpildyti anksčiau įvesta informacija. Redagavus norimus laukus organizatorius paspaudžia “Išsaugoti”. Sistema atnaujina naujieną ir nukreipia į naujienos puslapį. 
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko “Išsaugoti” ir prie atitinkamų laukų rašoma klaida.
+					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}	
+				
+			\item \textbf{Ištrinti sukurtą naujieną}   \\
+					Organizatorius paspaudžia ant naujienos kurią sukūrė, atsidarius naujienos puslapiui, paspaudžia mygtuką “Ištrinti”. Sistema parodo patvirtinimo dialogą, organizatorius patvirtina ištrinimą, sistema panaikiną naujieną.
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth, height=8cm, keepaspectratio]{img/MLP.png}
+					\caption{Dalyvių klausimų atsakymo langas}
+					\label{fig:atsakyti-klausimus}
+				\end{figure}
+
+				
 			\subsection* {Reikalavimų - užduočių atsekamumo matrica}
 			\begin{table}[H]
 				\centering
