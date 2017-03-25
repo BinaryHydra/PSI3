@@ -53,6 +53,7 @@
     \sectionnonum{Anotacija} \label{anotacija}
 		Šiame laboratoriniame darbe bus apibrėžti reikalavimai, struktūrinis srities modelis bei užduotys sistemai. Visas darbas paremtas ICONIX proceso metodologija.
 		Darbas parengtas atsižvelgiant į pradinius užsakovo pateiktus reikalavimus.
+		
     \sectionnonum{Įvadas} \label{ivadas}
         \subsection*{Programų sistemos pavadinimas} \label{ivadas_psPavadinimas}
             ,,Lietuvos Nacionalinė Sporto Organizacija'' (sutrumpintas sistemos pavadinimas - ,,NSO'').
@@ -64,6 +65,7 @@
             Sistema skirta vartotojams, administratoriams bei remėjams.
         \subsection*{Darbo pagrindas} \label{ivadas_pagrindas}
             Dokumentas parengtas kaip programų sistemų inžinerijos laboratorinis darbas.
+			
     \section{Reikalavimai} \label{reikalavimai}
 		Šiame skyriuje aptariami programų sistemos funkciniai reikalavimai. Jie sudaryti remiantis iš užsakovo gautais pradiniais reikalavimais, kurie pateikti šio laboratorinio darbo priede.
         \subsection{Funkciniai reikalavimai} \label{reikalavimai_fr}
@@ -187,8 +189,7 @@
 				\item \textbf{Prisijungusio vartotojo sąsaja} - vaizdinė „GSSP“ sąsaja, leidžianti vartotojams patogiai naudotis sistema, turinti papildomų galimybių.
 				\item \textbf{Paprasto vartotojo sąsaja} - prisijungusio vartotojo „GSSP“ sąsaja, neturinti privilegijuoto statuso.
 				\item \textbf{Privilegijuoto vartotojo sąsaja} - prisijungusio vartotojo „GSSP“ sąsaja, kurioje nėra vaizduojamos reklamos.
-				\item \textbf{Neprisijungusio vartotojo sąsaja} - įprasta sąsaja, kurioje leidžiamos tik bendros prieigos.
-				
+				\item \textbf{Neprisijungusio vartotojo sąsaja} - įprasta sąsaja, kurioje leidžiamos tik bendros prieigos.	
             \end{enumerate}
         \subsection{Reikalavimų - struktūrinio modelio atsekamumo matrica}\label{strukturinisDSModelis_matrica}
 			\begin{table}[H]
@@ -198,36 +199,38 @@
 				\begin{tabular}{|
 				>{\columncolor[HTML]{9B9B9B}}l |l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline 
-				X   & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR1} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR2} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR3}& \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR4} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR5} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR6}& \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR7} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR8} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR1} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR2} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR3} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR4} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR5} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR6} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR7} \\ \hline
-				E1  & X                           & X                           &                             & X                           & X                           & X                           & X                           & X                           & X                            & X                            &                              &                              &                              & X                            &                              \\ \hline
-				E2  & X                           &                             &                             & X                           & X                           & X                           & X                           & X                           &                              & X                            &                              &                              &                              & X                            &                              \\ \hline
-				E3  & X                           & X                           &                             & X                           & X                           & X                           & X                           & X                           & X                            & X                            &                              &                              &                              & X                            &                              \\ \hline
-				E4  &                             & X                           &                             & X                           & X                           &                             & X                           &                             &                              &                              & X                            &                              &                              & X                            &                              \\ \hline
-				E5  &                             & X                           & X                           & X                           & X                           &                             & X                           & X                           &                              & X                            & X                            &                              &                              &                              & X                            \\ \hline
-				E6  &                             & X                           & X                           & X                           & X                           &                             & X                           & X                           &                              &                              &                              &                              &                              &                              & X                            \\ \hline
-				E7  &                             & X                           & X                           &                             & X                           &                             &                             &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
-				E8  &                             & X                           &                             & X                           & X                           &                             & X                           & X                           &                              & X                            & X                            &                              &                              &                              & X                            \\ \hline
-				E9  &                             &                             &                             &                             &                             &                             &                             &                             & X                            &                              &                              &                              &                              &                              &                              \\ \hline
-				E10 &                             &                             &                             &                             &                             & X                           &                             &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
-				E11 &                             & X                           &                             & X                           &                             &                             &                             &                             & X                            &                              &                              &                              &                              &                              &                              \\ \hline
-				E12 &                             & X                           &                             & X                           &                             & X                           & X                           &                             & X                            &                              &                              &                              &                              &                              &                              \\ \hline
-				E13 &                             &                             &                             &                             &                             &                             & X                           &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
-				E14 &                             &                             &                             &                             &                             &                             &                             & X                           &                              &                              &                              &                              &                              &                              & X                            \\ \hline
-				E15 &                             &                             &                             &                             &                             &                             &                             &                             &                              &                              &                              &                              & X                            &                              &                              \\ \hline
-				E16 &                             &                             &                             &                             &                             &                             &                             &                             &                              &                              &                              & X                            &                              &                              &                              \\ \hline
-				E17 &                             &                             &                             &                             &                             &                             &                             &                             &                              & X                            &                              &                              &                              &                              &                              \\ \hline
-				E18 &                             &                             &                             & X                           &                             &                             &                             &                             &                              &                              &                              &                              &                              &                              &                              \\ \hline
-				E19 &                             &                             &                             &                             &                             &                             &                             &                             &                              &                              &                              & X                            & X                            &                              &                              \\ \hline
-				E20 &                             & X                           & X                           & X                           & X                           &                             &                             &                             &                              & X                            &                              &                              &                              &                              & X                            \\ \hline
-				E21 &                             & X                           &                             & X                           & X                           &                             &                             &                             &                              & X                            &                              &                              &                              &                              & X                            \\ \hline
-				E22 &                             & X                           &                             &                             & X                           &                             &                             &                             &                              &                              &                              &                              &                              &                              & X                            \\ \hline
-				E23 &                             & X                           & X                           &                             & X                           &                             &                             &                             &                              & X                            &                              &                              &                              &                              &                              \\ \hline
+				X   & \cellcolor[HTML]{D3D3D3}\rotatebox[origin=c]{90}{FR1} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR2} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR3}& \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR4} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR5} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR6}& \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR7} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{FR8} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR1} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR2} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR3} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR4} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR5} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR6} & \cellcolor[HTML]{9B9B9B}\rotatebox[origin=c]{90}{NFR7} \\ \hline
+				E1  & X   & X   &     & X   & X   & X   & X   & X   & X    & X    &      &      &      & X    &      \\ \hline
+				E2  & X   &     &     & X   & X   & X   & X   & X   &      & X    &      &      &      & X    &      \\ \hline
+				E3  & X   & X   &     & X   & X   & X   & X   & X   & X    & X    &      &      &      & X    &      \\ \hline
+				E4  &     & X   &     & X   & X   &     & X   &     &      &      & X    &      &      & X    &      \\ \hline
+				E5  &     & X   & X   & X   & X   &     & X   & X   &      & X    & X    &      &      &      & X    \\ \hline
+				E6  &     & X   & X   & X   & X   &     & X   & X   &      &      &      &      &      &      & X    \\ \hline
+				E7  &     & X   & X   &     & X   &     &     &     &      &      &      &      &      &      &      \\ \hline
+				E8  &     & X   &     & X   & X   &     & X   & X   &      & X    & X    &      &      &      & X    \\ \hline
+				E9  &     &     &     &     &     &     &     &     & X    &      &      &      &      &      &      \\ \hline
+				E10 &     &     &     &     &     & X   &     &     &      &      &      &      &      &      &      \\ \hline
+				E11 &     & X   &     & X   &     &     &     &     & X    &      &      &      &      &      &      \\ \hline
+				E12 &     & X   &     & X   &     & X   & X   &     & X    &      &      &      &      &      &      \\ \hline
+				E13 &     &     &     &     &     &     & X   &     &      &      &      &      &      &      &      \\ \hline
+				E14 &     &     &     &     &     &     &     & X   &      &      &      &      &      &      & X    \\ \hline
+				E15 &     &     &     &     &     &     &     &     &      &      &      &      & X    &      &      \\ \hline
+				E16 &     &     &     &     &     &     &     &     &      &      &      & X    &      &      &      \\ \hline
+				E17 &     &     &     &     &     &     &     &     &      & X    &      &      &      &      &      \\ \hline
+				E18 &     &     &     & X   &     &     &     &     &      &      &      &      &      &      &      \\ \hline
+				E19 &     &     &     &     &     &     &     &     &      &      &      & X    & X    &      &      \\ \hline
+				E20 &     & X   & X   & X   & X   &     &     &     &      & X    &      &      &      &      & X    \\ \hline
+				E21 &     & X   &     & X   & X   &     &     &     &      & X    &      &      &      &      & X    \\ \hline
+				E22 &     & X   &     &     & X   &     &     &     &      &      &      &      &      &      & X    \\ \hline
+				E23 &     & X   & X   &     & X   &     &     &     &      & X    &      &      &      &      &      \\ \hline
 				\end{tabular}
-			\end{table}    
+			\end{table} 
+			
     \section{Užduotys}\label{uzduotys}
 		Šiame skyriuje pateikiamos pagrindinės neprisijungusio, prisijungusio vartotojo, organizatoriaus ir atsakingo už renginį asmens užduotys.
 		Taip pat pateikiama bendra UML diagrama apibrėžianti visų šių agentų užduotis.
 			\noindent
+			
 			\begin{figure}[H]
                 \centering
                 \includegraphics[width=\textwidth]{img/MLP.png}
@@ -254,6 +257,7 @@
 					\caption{Registracijos langas}
 					\label{fig:uzd_registracija}
 				\end{figure}
+				
 			\item \textbf{Prisijungti} \\
 				Vartotojas spaudžia mygtuką ,,Prisijungti''. 
 				Vartotojas įveda prisijungimo vardą ir slaptažodį.	
@@ -266,25 +270,26 @@
 					\item Jeigu vartotojas įveda neteisingą prisijungimo informaciją ar neužpildo kurio nors prisijungimo laukelio, 
 					sistema paprašo dar kartą įvesti duomenis.
 				\end{itemize}
-
+				
 				\begin{figure}[H]
 						\centering
 						\includegraphics[width=\textwidth, height=5cm, keepaspectratio]{img/MLP.png}
 						\caption{Prisijungimo langas}
 						\label{fig:prisijungimo-langas}
 					\end{figure}
-				\item \textbf{Peržiūrėti ateityje vyksiančių renginių sąrašą} \\
-					Vartotojas spaudžia mygtuką ,,Renginiai''. 
-					Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
-					Sistema atidaro viešų renginių, kurie vyks nuo tos akimirkos (minutės tikslumu), sąrašą. 
-					Sistema rodo 15 artimiausių renginių viename puslapyje.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
-						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
-						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
-					\end{itemize}
+				
+			\item \textbf{Peržiūrėti ateityje vyksiančių renginių sąrašą} \\
+				Vartotojas spaudžia mygtuką ,,Renginiai''. 
+				Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
+				Sistema atidaro viešų renginių, kurie vyks nuo tos akimirkos (minutės tikslumu), sąrašą. 
+				Sistema rodo 15 artimiausių renginių viename puslapyje.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu sistemoje yra mažiau nei 15 renginių, pirmame puslapyje vaizduojami visi esantys renginiai. 
+					\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
+					,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+				\end{itemize}
 
 				\begin{figure}[H]
 					\centering
@@ -292,7 +297,7 @@
 					\caption{Renginių sąrašo langas}
 					\label{fig:uzd_perziureti-vyksianciu-renginiu-sarasa}
 				\end{figure}
-			\newpage
+				
 			\item \textbf{Peržiūrėti preliminarų renginių tvarkaraštį} \\
 				Vartotojas spaudžia mygtuką ,,Renginiai''. 
 				Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
@@ -312,6 +317,7 @@
 					\caption{Preliminaraus renginių tvarkaraščio langas}
 					\label{fig:prelim-tvark-langas}
 				\end{figure}
+			
 			\item \textbf{Peržiūrėti preliminarų renginių tvarkaraštį} \\
 					Vartotojas spaudžia mygtuką ,,Renginiai''. 
 					Atsivėrusiame pasirinkimų lange vartotojas pasirenka ,,Renginių sąrašas''.
@@ -331,6 +337,7 @@
 					\caption{Konkretaus renginio langas}
 					\label{fig:konkretaus-renginio-langas}
 				\end{figure}
+			
 			\item \textbf{Prisijungti prie viešo renginio} \\
 					Vartotojas spaudžia mygtuką ,,Renginiai''. 
 					Vartotojas pasirenka konkretų renginį paspausdamas ant jo nuorodos.
@@ -355,19 +362,19 @@
 					\label{fig:prisijungti-prie-vieso-renginio}
 				\end{figure}
 
-				\item \textbf{Patikrinti renginio organizatoriaus informaciją} \\
-					Vartotojas spaudžia mygtuką ,,Renginiai''. 
-					Vartotojas pasirenka konkretų renginį. 
-					Sistema atidaro naują langą su informacija apie atitinkamą renginį. 
-					Vartotojas spaudžia ant teksto su užrašu ,,Organizatorius : [Vardas] [Pavardė]''.
-					Sistema parodo detalesnę informaciją apie organizatorių.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Jeigu detalesnės informacijos apie organizatorių nėra, sistemoje pateikiamas užrašas ,,Šios inforamacijos nėra''.
-						\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
-						,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
-					\end{itemize}
+			\item \textbf{Patikrinti renginio organizatoriaus informaciją} \\
+				Vartotojas spaudžia mygtuką ,,Renginiai''. 
+				Vartotojas pasirenka konkretų renginį. 
+				Sistema atidaro naują langą su informacija apie atitinkamą renginį. 
+				Vartotojas spaudžia ant teksto su užrašu ,,Organizatorius : [Vardas] [Pavardė]''.
+				Sistema parodo detalesnę informaciją apie organizatorių.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jeigu detalesnės informacijos apie organizatorių nėra, sistemoje pateikiamas užrašas ,,Šios inforamacijos nėra''.
+					\item Jeigu sistemoje nėra renginių, vartotojui pateikiama žinutė:
+					,,Atsiprašome, jums prieinamų renginių nėra. Norėdami pamatyti daugiau pasirinkimų, prisijunkite.''
+				\end{itemize}
 
 				\begin{figure}[H]
 					\centering
@@ -377,38 +384,39 @@
 				\end{figure}
 			
 			\item \textbf{Matyti privačius renginius} \\
-					Vartotojas spaudžia mygtuką ,,Renginiai''.
-					Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
-					Sistema atidaro visų vykstančių ir vyksiančių renginių sąrašą.
-					Vartotojas filtravimo skirtyje ,,Rodyti:'' pasirenka variantą ,,Privačius renginius''.
-					Renginių sąraše lieka tik privatūs renginiai.
-					Sistema rodo 15 renginių viename puslapyje.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Jei sistemoje nėra jokių renginių, vietoj renginių sąrašo rodomas užrašas ,,Renginių nėra''.
-						\item Jei sistemoje privačių renginių nėra, vietoj renginių sąrašo rodomas užrašas ,,Privačių renginių nėra''.
-						\item Jei renginių yra 15 ar mažiau, puslapių numeriai nerodomi, nes visas sąrašas telpa viename puslapyje.
-					\end{itemize}
+				Vartotojas spaudžia mygtuką ,,Renginiai''.
+				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
+				Sistema atidaro visų vykstančių ir vyksiančių renginių sąrašą.
+				Vartotojas filtravimo skirtyje ,,Rodyti:'' pasirenka variantą ,,Privačius renginius''.
+				Renginių sąraše lieka tik privatūs renginiai.
+				Sistema rodo 15 renginių viename puslapyje.
 				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jei sistemoje nėra jokių renginių, vietoj renginių sąrašo rodomas užrašas ,,Renginių nėra''.
+					\item Jei sistemoje privačių renginių nėra, vietoj renginių sąrašo rodomas užrašas ,,Privačių renginių nėra''.
+					\item Jei renginių yra 15 ar mažiau, puslapių numeriai nerodomi, nes visas sąrašas telpa viename puslapyje.
+				\end{itemize}
+			
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=\textwidth]{img/MLP.png}
 					\caption{Privačių renginių sąrašo langas}
 					\label{fig:matyti-privacius-renginius}
 				\end{figure}
+
 			\item \textbf{Prašyti leidimo dalyvauti privačiame renginyje} \\
-					Vartotojas atsidaro privačių renginių sąrašą (žr. užduotį ,,Matyti privačius renginius'').
-					Atsidariusiame privačių renginių sąraše vartotojas pasirenka konkretų privatų renginį ir paspaudžia ant jo pavadinimo.
-					Atsidariusiame konkretaus privataus renginio aprašyme vartotojas spaudžia mygtuką ,,Dalyvauti''.
-					Iššoka langas, indikuojantis, kad užklausą pavyko sėkmingai nusiųsti organizatoriui.
-					Organizatoriui patvirtinus prašymą dalyvauti, vartotojas gauna pranešimą apie galimybę dalyvauti renginyje.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Jei įvyksta klaida siunčiant užklausą organizatoriui, vartotojui parodomas langas su klaidos aprašymu ir prašymu pabandyti vėliau.
-						\item Jei organizatorius nepatvirtina vartotojo dalyvavimo renginyje, sistema išsiunčia vartotojui pranešimą apie atmestą prašymą dalyvauti.
-					\end{itemize}
+				Vartotojas atsidaro privačių renginių sąrašą (žr. užduotį ,,Matyti privačius renginius'').
+				Atsidariusiame privačių renginių sąraše vartotojas pasirenka konkretų privatų renginį ir paspaudžia ant jo pavadinimo.
+				Atsidariusiame konkretaus privataus renginio aprašyme vartotojas spaudžia mygtuką ,,Dalyvauti''.
+				Iššoka langas, indikuojantis, kad užklausą pavyko sėkmingai nusiųsti organizatoriui.
+				Organizatoriui patvirtinus prašymą dalyvauti, vartotojas gauna pranešimą apie galimybę dalyvauti renginyje.
+				
+				\underline{Alternatyvūs scenarijai:}
+				\begin{itemize}
+					\item Jei įvyksta klaida siunčiant užklausą organizatoriui, vartotojui parodomas langas su klaidos aprašymu ir prašymu pabandyti vėliau.
+					\item Jei organizatorius nepatvirtina vartotojo dalyvavimo renginyje, sistema išsiunčia vartotojui pranešimą apie atmestą prašymą dalyvauti.
+				\end{itemize}
 
 				\begin{figure}[H]
 					\centering
@@ -416,6 +424,7 @@
 					\caption{Prašymo dalyvauti privačiame renginyje langas}
 					\label{fig:prasymas-dalyvauti-privaciame-renginyje}
 				\end{figure}
+				
 			\item \textbf{Peržiūrėti visų renginių tvarkaraštį} \\
 				Vartotojas spaudžia mygtuką ,,Renginiai''.
 				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių tvarkaraštis'', kurį vartotojas pasirenka.
@@ -436,14 +445,15 @@
 					\caption{Visų renginių tvarkaraščio langas}
 					\label{fig:perziureti-renginiu-tvarkarasti}
 				\end{figure}
+				
 			\item \textbf{Rašyti atsiliepimą apie renginį} \\
-					Vartotojas spaudžia mygtuką ,,Renginiai''.
-					Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
-					Vartotojas iš sąrašo pasirenka konkretų renginį ir spaudžia ant jo pavadinimo.
-					Atsidariusiame konkretaus renginio aprašyme vartotojas spaudžia mygtuką ,,Rašyti atsiliepimą''.
-					Atsidariusiame lange vartotojas pasirenka renginio įvertinimą (nuo 1 iki 10 balų) ir tam skirtame tekstiniame lange įrašo savo nuomonę apie renginį.
-					Kai vartotojas baigia pildyti atsiliepimo laukus, jis spaudžia mygtuka ,,Siųsti''.
-					Vartotojo atsiliepimas atsiduria bendrame renginio atsiliepimų sąraše.
+				Vartotojas spaudžia mygtuką ,,Renginiai''.
+				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
+				Vartotojas iš sąrašo pasirenka konkretų renginį ir spaudžia ant jo pavadinimo.
+				Atsidariusiame konkretaus renginio aprašyme vartotojas spaudžia mygtuką ,,Rašyti atsiliepimą''.
+				Atsidariusiame lange vartotojas pasirenka renginio įvertinimą (nuo 1 iki 10 balų) ir tam skirtame tekstiniame lange įrašo savo nuomonę apie renginį.
+				Kai vartotojas baigia pildyti atsiliepimo laukus, jis spaudžia mygtuka ,,Siųsti''.
+				Vartotojo atsiliepimas atsiduria bendrame renginio atsiliepimų sąraše.
 
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
@@ -458,6 +468,7 @@
 					\caption{Atsiliepimo apie renginį langas}
 					\label{fig:rasyti-atsiliepima-apie-rengini}
 				\end{figure}
+				
 			\item \textbf{Peržiūrėti informaciją apie buvusius renginius} \\
 				Vartotojas spaudžia mygtuką ,,Renginiai''.
 				Atsidaro pasirinkimo langas, kuriame yra variantas ,,Renginių sąrašas'', kurį vartotojas pasirenka.
@@ -494,7 +505,7 @@
 					\caption{Naujo renginio langas}
 					\label{fig:paskelbti-nauja-rengini}
 				\end{figure}
-				\newpage
+				
 			\item \textbf{Paskirti naujo renginio atsakingą asmenį} \\
 				Organizatorius spaudžia mygtuką ,,Mano renginiai''. 
 				Organizatorius pasirenka redaguoti norimą renginį.
@@ -576,7 +587,7 @@
 					\caption{Prašymo dalyvauti peržiūra}
 					\label{fig:priimti-dalyvi}
 				\end{figure}
-
+				
 			\item \textbf{Priimti ar atmesti organizatoriaus paskyrimą} \\
 				Atsakingas asmuo spaudžia mygtuką ,,Pasiūlymai''. 
 				Atsakingas asmuo pasirenką norimą pasiūlymą.
@@ -588,13 +599,14 @@
 					\item Jeigu atsakingas asmuo atmeta organizatoriaus paskyrimą būti atsakingam už konkretų renginį, sistema išsiunčia pranešimą organizatoriui, kad atsakingas asmuo atmetė pranešimą.
 					\item Jeigu asmuo priima pasiūlymą būti atsakingu asmeniu, bet atsakingu už renginį jau buvo paskirtas kitas žmogus, asmuo gauna pranešimą, kad jis taps atsakingu asmeniu, jei atsilaisvins vieta.
 				\end{itemize}
-
+				
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=\textwidth]{img/MLP.png}
 					\caption{Atsakingo asmens pasiūlymų valdymo langas}
 					\label{fig:pasiulymu-sarasas}
 				\end{figure}
+			
 			\item \textbf{Atsakyti į dalyvių klausimus}   \\
 					Atsakingas asmuo spaudžia mygtuką ,,Mano renginiai''. 
 					Atsakingas asmuo pasirenka norimą renginį.
@@ -625,25 +637,25 @@
 				>{\columncolor[HTML]{9B9B9B}}l |l|l|l|l|l|l|l|l|}
 					\hline
 					X   & \cellcolor[HTML]{9B9B9B}FR1 & \cellcolor[HTML]{9B9B9B}FR2 & \cellcolor[HTML]{9B9B9B}FR3 & \cellcolor[HTML]{9B9B9B}FR4 & \cellcolor[HTML]{9B9B9B}FR5 & \cellcolor[HTML]{9B9B9B}FR6 & \cellcolor[HTML]{9B9B9B}FR7 & \cellcolor[HTML]{9B9B9B}FR8 \\ \hline
-					U1  &                             &                             & X                           &                             &                             &                             &                             &                             \\ \hline
-					U2  &                             &                             & X                           &                             &                             &                             &                             &                             \\ \hline
-					U3  &                             & X                           &                             & X                           & X                           & X                           &                             & X                           \\ \hline
-					U4  &                             & X                           &                             & X                           &                             &                             &                             &                             \\ \hline
-					U5  & X                           & X                           &                             & X                           & X                           &                             & X                           &                             \\ \hline
-					U6  & X                           & X                           &                             & X                           &                             &                             &                             & X                           \\ \hline
-					U7  &                             & X                           &                             & X                           &                             &                             &                             &                             \\ \hline
-					U8  & X                           &                             &                             & X                           &                             &                             &                             &                             \\ \hline
-					U9  & X                           &                             &                             & X                           &                             &                             &                             & X                           \\ \hline
-					U10 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
-					U11 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
-					U12 &                             &                             &                             & X                           & X                           & X                           &                             &                             \\ \hline
-					U13 &                             &                             &                             & X                           &                             &                             & X                           &                             \\ \hline
-					U14 &                             &                             &                             &                             &                             &                             & X                           &                             \\ \hline
-					U15 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
-					U16 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
-					U17 &                             &                             &                             & X                           &                             &                             &                             &                             \\ \hline
-					U18 &                             &                             &                             & X                           &                             &                             & X                           &                             \\ \hline
-					U19 &                             &                             &                             & X                           &                             &                             & X                           &                             \\ \hline
+					U1  &      &      & X    &      &      &      &      &      \\ \hline
+					U2  &      &      & X    &      &      &      &      &      \\ \hline
+					U3  &      & X    &      & X    & X    & X    &      & X    \\ \hline
+					U4  &      & X    &      & X    &      &      &      &      \\ \hline
+					U5  & X    & X    &      & X    & X    &      & X    &      \\ \hline
+					U6  & X    & X    &      & X    &      &      &      & X    \\ \hline
+					U7  &      & X    &      & X    &      &      &      &      \\ \hline
+					U8  & X    &      &      & X    &      &      &      &      \\ \hline
+					U9  & X    &      &      & X    &      &      &      & X    \\ \hline
+					U10 &      &      &      & X    &      &      &      &      \\ \hline
+					U11 &      &      &      & X    &      &      &      &      \\ \hline
+					U12 &      &      &      & X    & X    & X    &      &      \\ \hline
+					U13 &      &      &      & X    &      &      & X    &      \\ \hline
+					U14 &      &      &      &      &      &      & X    &      \\ \hline
+					U15 &      &      &      & X    &      &      &      &      \\ \hline
+					U16 &      &      &      & X    &      &      &      &      \\ \hline
+					U17 &      &      &      & X    &      &      &      &      \\ \hline
+					U18 &      &      &      & X    &      &      & X    &      \\ \hline
+					U19 &      &      &      & X    &      &      & X    &      \\ \hline
 				\end{tabular}
 			\end{table}
 		\end{enumerate}
@@ -660,8 +672,8 @@
 			\item Sulietuvintos kabutės.
 			\item 6pav. - ,,Preliuminarus'' pakeista į ,,Preliminarus''.
 			\item Ištaisytos gramatikos ir skyrybos klaidos.
-			
 		\end{itemize}
+		
     \section{Priedai}\label{priedai}
         \subsection{Pradiniai užsakovo reikalavimai sistemai}
 		\begin{enumerate}
@@ -688,55 +700,57 @@
 			\item Internetiniame puslapyje turi būti galimybė pasirinkti kitą kalbą iš lietuvių, anglų, rusų.
 			\item Internetinis puslapis turi turėti savo analogą - mobiliąją programėlę. Visas funkcionalumas, esantis internetiniame puslapyje, turi būti ir mobiliojoje programėlėje. (Optional)
 		\end{enumerate}
-	\subsection{Užsakovo reikalavimų pakeitimai} 
-		\begin{itemize}
-			\item Visi reikalavimai susisteminti ir labiau klarifikuoti.
-			\item 4 ir 5 reikalavimai sujungti į vieną.
-			\item Dėl 2, 17, 19, 21 bei 22 reikalavimų buvo susisiekta su užsakovais. Pokalbiai pateikti žemiau.
-			\item Reikalavimas numeris 17:
-				\begin{itemize}
-					\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimo numeris 17. Norėtume tiksliau sužinoti vietas, kuriuose bus pateikti rėmėjų logotipai. Iš anksto ačiū.
-					\item \textit{Užsakovas NR1:} ????
-					\item \textit{Užsakovas NR1:} Su darbo vafovu
-					\item \textit{Mes:} Ačiū už informaciją.
-					\item[ ]
-					\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimo numeris 17. Norėtume tiksliau sužinoti vietas, kuriuose bus pateikti rėmėjų logotipai. Iš anksto ačiū.
-					\item \textit{Užsakovas NR2:} Šias. \includegraphics{img/PSI4/smalllaugh.png}
-					\item \textbf{Po 18 minučių}
-					\item \textit{Užsakovas NR2:} Patikslinimas: Rėmėjų logotipams skirtos vietos yra: Puslapio viršuje, kairėje, dešinėje ir apačioje
-					\item \textit{Užsakovas NR2:} :S
-					\item \textit{Užsakovas NR2:} \includegraphics{img/PSI4/biglaugh.png}
-					\item \textit{Mes:} Ačiū už informaciją.
-				\end{itemize}
-			\item Reikalavimai numeris 21, 22:
-				\begin{itemize}
-					\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime pranešti, kad dėl laiko ir lėšų stokos mes turime atsisakyti, jūsų pateikto reikalavimo numeris 22, bei apriboti reikalavimą numeris 21 ties anglų kalba. Ar jums tinka?
-					\item \textit{Užsakovas NR3:} Užsakovai nesupyks, jei atliksite viską vėluodami viena savaite!
-					\item \textit{Mes:} Supratome, padarysime atsižvelgiant į esamus resursus.
-					\item \textit{Užsakovas NR3:} Puiku, lauksime darbo pristatymo šį antradienį. Nors mūsų peržiūroje ir nebus.
-				\end{itemize}
-			\item Reikalavimai numeris 2, 19:
-				\begin{itemize}
-					\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimų numeris 2 ir 19. Norėtume sužinoti kad bus vaizduojama naujienų skiltyje. Iš anksto ačiū.
-					\item \textit{Užsakovas NR2:} :DDDDDDDDDDD
-					\item \textit{Užsakovas NR2:} jūs dėl kiekvieno rašysit? \includegraphics{img/PSI4/smalllaugh.png}
-					\item \textit{Mes:} Kolkas kituose reikalavimuose nematome diskutuotinų objektų, todėl nematome reikalo apie juos diskutuoti. Bet jei atsiras neaiškumų tai būtinai atsiklausime, norėdami užtikrinti mūsų paslaugų kokybę.
-					\item \textit{Užsakovas NR2:} turėkit vaizduotės šiek tiek. \includegraphics{img/PSI4/wink.png}tai gali būti artėjantis koks nors įdomesnis renginys, praėjusio renginio rezultatai ir pan.
-					\item \textit{Užsakovas NR2:} tai kad jau gal dėl 5 gavome žinučių. \includegraphics{img/PSI4/smile.png}
-					\item \textit{Mes:} Primenu, kad išviso jūs pateikėte mums 22 reikalavimus
-					\item \textit{Užsakovas NR2:} dėkoju už priminimą ir atsiprašau dėl nesklandumų. Tikiuosi daugiau jų nekils. Tačiau visada galite kreiptis.
-					\item \textit{Mes:} Iškilo dar vienas klausimas: o kas ir kaip turėtų pateikti tas naujienas?
-					\item \textit{Užsakovas NR2:} Organizatoriai pasirūpins jų įkėlimu. \includegraphics{img/PSI4/smile.png}
-					\item \textit{Mes:} Supratome, dėkojame už greitus atsakymus.
-					\item \textit{Užsakovas NR2:} Visada malonu bendradarbiauti. Pagarbiai „LtNSO“
-					\item[ ]
-					\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimų numeris 2 ir 19. Norėtume sužinoti kad bus vaizduojama naujienų skiltyje. Iš anksto ačiū.
-					\item \textit{Užsakovas NR1:} Naujienos apie ateinancius ar buvusius renginiua
-					\item \textit{Užsakovas NR1:} Arba tiesiogine "live" apzvalga is pacio renginio
-					\item \textit{Mes:} Visvien neaiškų kas ir kaip turėtų pateikti tas naujienas.
-					\item \textit{Užsakovas NR1:} Tai adminai arba organizatoriai renginio0
-				\end{itemize}
-        \end{itemize}
+		
+		\subsection{Užsakovo reikalavimų pakeitimai} 
+			\begin{itemize}
+				\item Visi reikalavimai susisteminti ir labiau klarifikuoti.
+				\item 4 ir 5 reikalavimai sujungti į vieną.
+				\item Dėl 2, 17, 19, 21 bei 22 reikalavimų buvo susisiekta su užsakovais. Pokalbiai pateikti žemiau.
+				\item Reikalavimas numeris 17:
+					\begin{itemize}
+						\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimo numeris 17. Norėtume tiksliau sužinoti vietas, kuriuose bus pateikti rėmėjų logotipai. Iš anksto ačiū.
+						\item \textit{Užsakovas NR1:} ????
+						\item \textit{Užsakovas NR1:} Su darbo vafovu
+						\item \textit{Mes:} Ačiū už informaciją.
+						\item[ ]
+						\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimo numeris 17. Norėtume tiksliau sužinoti vietas, kuriuose bus pateikti rėmėjų logotipai. Iš anksto ačiū.
+						\item \textit{Užsakovas NR2:} Šias. \includegraphics{img/PSI4/smalllaugh.png}
+						\item \textbf{Po 18 minučių}
+						\item \textit{Užsakovas NR2:} Patikslinimas: Rėmėjų logotipams skirtos vietos yra: Puslapio viršuje, kairėje, dešinėje ir apačioje
+						\item \textit{Užsakovas NR2:} :S
+						\item \textit{Užsakovas NR2:} \includegraphics{img/PSI4/biglaugh.png}
+						\item \textit{Mes:} Ačiū už informaciją.
+					\end{itemize}	
+				\item Reikalavimai numeris 21, 22:
+					\begin{itemize}
+						\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime pranešti, kad dėl laiko ir lėšų stokos mes turime atsisakyti, jūsų pateikto reikalavimo numeris 22, bei apriboti reikalavimą numeris 21 ties anglų kalba. Ar jums tinka?
+						\item \textit{Užsakovas NR3:} Užsakovai nesupyks, jei atliksite viską vėluodami viena savaite!
+						\item \textit{Mes:} Supratome, padarysime atsižvelgiant į esamus resursus.
+						\item \textit{Užsakovas NR3:} Puiku, lauksime darbo pristatymo šį antradienį. Nors mūsų peržiūroje ir nebus.
+					\end{itemize}
+				\item Reikalavimai numeris 2, 19:
+					\begin{itemize}
+						\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimų numeris 2 ir 19. Norėtume sužinoti kad bus vaizduojama naujienų skiltyje. Iš anksto ačiū.
+						\item \textit{Užsakovas NR2:} :DDDDDDDDDDD
+						\item \textit{Užsakovas NR2:} jūs dėl kiekvieno rašysit? \includegraphics{img/PSI4/smalllaugh.png}
+						\item \textit{Mes:} Kolkas kituose reikalavimuose nematome diskutuotinų objektų, todėl nematome reikalo apie juos diskutuoti. Bet jei atsiras neaiškumų tai būtinai atsiklausime, norėdami užtikrinti mūsų paslaugų kokybę.
+						\item \textit{Užsakovas NR2:} turėkit vaizduotės šiek tiek. \includegraphics{img/PSI4/wink.png}tai gali būti artėjantis koks nors įdomesnis renginys, praėjusio renginio rezultatai ir pan.
+						\item \textit{Užsakovas NR2:} tai kad jau gal dėl 5 gavome žinučių. \includegraphics{img/PSI4/smile.png}
+						\item \textit{Mes:} Primenu, kad išviso jūs pateikėte mums 22 reikalavimus
+						\item \textit{Užsakovas NR2:} dėkoju už priminimą ir atsiprašau dėl nesklandumų. Tikiuosi daugiau jų nekils. Tačiau visada galite kreiptis.
+						\item \textit{Mes:} Iškilo dar vienas klausimas: o kas ir kaip turėtų pateikti tas naujienas?
+						\item \textit{Užsakovas NR2:} Organizatoriai pasirūpins jų įkėlimu. \includegraphics{img/PSI4/smile.png}
+						\item \textit{Mes:} Supratome, dėkojame už greitus atsakymus.
+						\item \textit{Užsakovas NR2:} Visada malonu bendradarbiauti. Pagarbiai „LtNSO“
+						\item[ ]
+						\item \textit{Mes:} Sveiki, rašome jums iš UAB ,,Festofilas software group LT'', norime iš jūsų gauti patikslinimą dėl reikalavimų numeris 2 ir 19. Norėtume sužinoti kad bus vaizduojama naujienų skiltyje. Iš anksto ačiū.
+						\item \textit{Užsakovas NR1:} Naujienos apie ateinancius ar buvusius renginiua
+						\item \textit{Užsakovas NR1:} Arba tiesiogine "live" apzvalga is pacio renginio
+						\item \textit{Mes:} Visvien neaiškų kas ir kaip turėtų pateikti tas naujienas.
+						\item \textit{Užsakovas NR1:} Tai adminai arba organizatoriai renginio0
+					\end{itemize}
+			\end{itemize}
+			
     \sectionnonum{Literatūros sąrašas} 
         \begin{itemize}
 			\item Doc. dr. K. Petrausko Programų Sistemų Inžinerijos kurso konspektai
