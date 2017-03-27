@@ -188,7 +188,8 @@
 					\item \textbf{Rezultatų lentelė} - rezultatų sąrašas, atvaizduojamas lentelėje, filtruojamas ir rušiuojamas pagal pasirinktą kriterijų.
 					\item \textbf{Renginio pasiūlymas} - prisijungusio arba neprisijungusio vartotojo atsiųstas renginio aprašymas, kurio administratorius dar nepublikavo.
 					\item \textbf{Administratorius} - registruotas vartotojas, turintis teisę prisijungti prie administratoriaus skilties, peržiūrėti, pridėti, ištrinti, atnaujinti naujienas, renginius, renginio rezultatus ir vaizdo įrašus, apriboti, blokuoti vartotojus, peržiūrėti visų dalyvių, renginių, darbo aplikacijų sąrašus.
-					\item \textbf{Organizatorius } - registruotas vartotojas, sukūręs arba norintis sistemoje sukurti renginį.
+					\item \textbf{Organizatorius } - registruotas vartotojas, sukūręs arba norintis sistemoje sukurti renginį
+					\item \textbf{Internetinis puslapis } - grafinė sistemos dalis, per kurią tekiamos sistemos paslaugos.
             \end{enumerate}
         \subsection{Reikalavimų - struktūrinio modelio atsekamumo matrica}\label{strukturinisDSModelis_matrica}
 			\begin{table}[H]
@@ -230,6 +231,7 @@
 				E20 &      &      & X    &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      \\ \hline
 				E21 &      &      & X    &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      \\ \hline
 				E22 &      &      & X    &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      \\ \hline
+				E23 &      &      & X    &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      \\ \hline
 				\end{tabular}
 			\end{table} 
 			
@@ -254,11 +256,11 @@
 		\newpage
 		\begin{enumerate} [label = \textbf{U\arabic*.}]
 			\item \textbf{Skaityti naujienas} \\
-				Vartotojas paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas yra puslapį ,,Naujienos'', kuriame yra naujienos. Juos vartotojas skaito.
+				Vartotojas paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas yra puslapį ,,Naujienos'', kuriame yra naujienų trupi aprašymai. Vartotojas paspaudžia ant naujienos, atidaromas visas naujienos tekstas.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-					\item Vartotojas paspaudęs ant mygtuko ,,Naujienos'' yra nukeliamas į puslapį ,,Naujienos'', kuriame nėra straipsnių, bet yra užrašas ,,Atsiprašome, šiuo metu straipsnių neturime''. 
+					\item Jei naujienų nėra, vartotojas paspaudęs ant mygtuko ,,Naujienos'' yra nukeliamas į puslapį ,,Naujienos'', kuriame nėra straipsnių, bet yra užrašas ,,Atsiprašome, šiuo metu straipsnių neturime''. 
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -269,7 +271,7 @@
 				\end{figure}
 				
 			\item \textbf{Žiūrėti renginių kalendorių} \\
-				Vartotojas spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį ,,Renginių kalendorius'', kuriame peržiūri renginius sudėtus pagal jų datas į atitinkamas kalendoriaus dienas.
+				Vartotojas spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį ,,Renginių kalendorius'', kuriame peržiūri renginius sudėtus pagal jų datas į atitinkamas kalendoriaus dienas, turint galimybę keisti mėnesius.
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
@@ -315,20 +317,23 @@
 				\end{figure}
 				
 			\item \textbf{Pateikti renginio pasiūlymą} \\
-					Vartotojas paspaudžia ant mygtuko ,,Pateikti pasiūlymą'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį su forma, kurioje reikia užpildyti savo pasiūlymo įdėją ir paspausti mygtuką ,,Baigta''.
+					Prisijungęs vartotojas paspaudžia ant mygtuko ,,Pateikti pasiūlymą'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį su forma, kurioje yra teksto laukas skirtas užpildyti savo pasiūlymo įdėja. Užpildęs įdėjos lauką, vartotojas paspaudžia mygtuką ,,Siųsti'', sistema nusiunčia pranešimą apie įdėją el. paštų administratoriui.
 							
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Vartotojas nėra prisijungęs ir privalo užpildyti elektroninio pašto lauką, nes kitaip negalima paspausti mygtuko ,,Baigta''.
+						\item Jei vartotojas nėra prisijungęs, jis privalo užpildyti elektroninio pašto lauką, nes kitaip negalima paspausti mygtuko ,,Siųsti''.
+						\item Jei vartotojas įveda netinkamo formato e-paštą ir spaudžia ,,Siųsti'', parodomas pranešimas, kad įvestas netinkamo formato e-paštas.
+						\item Jei vartotojas palieką tuščia pasiūlymo lauką ir spaudžia ,,Siųsti'', parodomas pranešimas, kad privaloma įvesti pasiūlymą.
 					\end{itemize}
 				
 			\item \textbf{Registracija} \\
-					Vartotojas, norėdamas užsiregistruoti į tinklalapį spaudžia mygtuką ,,Užsiregistruoti''. Tada vartotojas yra nukeliamas į kitą puslapį, kuriame suveda privaloma informaciją - vartotojo vardą ir slaptažodį. Tuomet, vartotojas spaudžia ,,Baigti'' ir yra nukeliamas atgal į pagrindinį puslapį - ,,Renginių kalendorius''.
+					Vartotojas, norėdamas užsiregistruoti į tinklalapį, spaudžia mygtuką ,,Užsiregistruoti''. Tada vartotojas yra nukeliamas į kitą puslapį, kuriame suveda privaloma informaciją - vartotojo vardą ir slaptažodį. Tuomet, vartotojas spaudžia ,,Baigti'', sistema patikrina ar neegzistuoja vartotojas tokiu vardu, sukuria vartotoją ir peradresuoja naudotoją atgal į pagrindinį puslapį - ,,Renginių kalendorius''.
 							
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
 						\item Vartotojas spaudžia ant užrašo ,,Daugiau informacijos'' ir tada atsiranda papildoma forma su papildomos informacijos laukais (vardas, pavardė, gimimo data, telefono numeris, gyvenamoji vieta). Juos užpildžius spaudžia mygtuką ,,Baigti''. Vartotojas nukeliamas į pagrindinį puslapį.
 						\item Vartotojui nepateikus būtinos informacijos arba užpildžius privalomus laukus nekorektiškai, prie atitinkamų laukelių parodoma klaida ir neleidžiama paspausti mygtuką ,,Baigti''.
+						\item Jei vartotojas su tokiu vardu jau egzistuoja, parodomas atitinkamas pranešimas.
 					\end{itemize}
 
 				\begin{figure}[H]
@@ -339,11 +344,12 @@
 				\end{figure}
 
 			\item \textbf{Prisijungti} \\
-					Vartotojas spaudžia mygtuką „Prisijungti''. Vartotojas įveda vartotojo vardą ir slaptažodį bei paspaudžia mygtuką ,,Baigti''. Sistema patikrina, ar įvesti duomenys yra teisingi. Sistema vartotojui atidaro prisijungusio vartotojo grafinę sąsają. Vartotojas gali naudoti prisijungusio vartotojo funkcijas. 
+					Vartotojas spaudžia mygtuką „Prisijungti''. Vartotojas įveda vartotojo vardą ir slaptažodį bei paspaudžia mygtuką ,,Baigti''. Sistema patikrina, ar įvesti duomenys yra teisingi. Sistema vartotojui atidaro prisijungusio vartotojo grafinę sąsają, kurioje vartotojas mato ir gali naudoti prisijungusio vartotojo funkcijas. 
 					
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
 						\item Vartotojui įvedus neteisingą prisijungimo informaciją ar neužpildžius, kurio nors prisijungimo laukelio, sistema paprašo dar kartą įvesti duomenis.
+						\item Vartotojui per dažnai bantant įvesti duomenis (10 neteisingų bandymų), ip adresas blokuojamas ir vartojui neleidžiama bandytis jungtis 5min. 
 				\end{itemize}
 
 				\begin{figure}[H]
@@ -358,17 +364,18 @@
 				
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
-				\item Bilietų nebėra į norimą renginį. Mygtukas ,,Pirkti bilietus'' tampa neaktyvus.
+				\item Jei įrenginį bilietai nepardavinėjami, mygtukas ,,Pirkti bilietus'' nerodomas.
+				\item Bilietų nebėra į norimą renginį. Mygtukas ,,Pirkti bilietus'' tampa neaktyvus, ant jo užvedus pelyte rodomas pranešimas, kad bilietai išparduoti.
 				\end{itemize}
 				
 			\item \textbf{Registracija į renginį} \\
-					Prisijungęs vartotojas spaudžia mygtuką ,,Registruotis''. Vartotojas yra įtraukiamas į renginio dalyvių sąrašą ir gauna patvirtinimą apie sėkmingą registraciją.
+					Prisijungęs vartotojas spaudžia mygtuką ,,Registruotis''. Vartotojas yra įtraukiamas į renginio dalyvių sąrašą, jam parodomas patvirtinimas apie sėkmingą registraciją.
 					
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
 						\item Registracijos į renginį mygtukas yra neaktyvus, jei renginys jau įvyko.
 						\item Registracijos į renginį mygtukas yra neaktyvus, jei užsiregistravo didžiausias galimas dalyvių skaičius.
-						\item Registracijos į renginį mygtukas yra neaktyvus, jei vartotojas yra jau užsiregistravęs į renginį.
+						\item Registracijos į renginį mygtukas yra nerodomas, jei vartotojas yra jau užsiregistravęs į renginį.
 				\end{itemize}
 				
 			\item \textbf{Kurti komandą} \\
@@ -764,6 +771,7 @@
 			\item Sulietuvintos kabutės.
 			\item Padalinta užduočių  diagrama į dvi diagramas.
 			\item Ištaisytos gramatikos ir skyrybos klaidos.
+			\item Renginio siūkymo formos mygtukas ,,Baigti'' pervadintas į ,,Siųsti''
 		\end{itemize}
 		
     \section{Priedai}\label{priedai}
