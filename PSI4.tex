@@ -286,13 +286,14 @@
 				\end{figure}
 				
 			\item \textbf{Peržiūrėti renginių kalendorių} (\ref{fig:uzd_reginioKalendorius} pav.)\\
-				Vartotojas spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį ,,Renginių kalendorius'', kuriame peržiūri renginius sudėtus pagal jų datas į einamojo mėnesio atitinkamas kalendoriaus dienas, turint galimybę keisti mėnesius.
-				
+				Vartotojas spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį ,,Renginių kalendorius'', kuriame peržiūri renginius sudėtus pagal jų datas į einamojo mėnesio atitinkamas kalendoriaus dienas, turint galimybę keisti mėnesius. Dešinėje puslapio pusėje prie kalendoriaus yra laukas, kuriame galima pasirinkti filtrus (sporto šaka, individualūs / komandiniai, laiko intervalas). Pasirinkus filtrus, ir paspaudus mygtuką ,,Filtruoti'' kalendoriuje parodomi filtrą atinkantys renginiai.
+					
 				\underline{Alternatyvūs scenarijai:}
 				\begin{itemize}
 					\item Jei vartotojas nori pamatyti kito mėnesio renginius, jis spaudžia viršuje esančias rodyklių mygtukas ir jam ikeliamas sekančio mėnesio renginių kalendorius 
 					\item Vartotojas nemato visų renginių vykstančių tą pačią dieną, nes jų vyksta per daug. Tada kalendoriaus dienos langelis talpina kelis renginius ir tritaškio paveiksliuką, ant kurio paspaudus atidaromas naujas puslapis su sąrašu renginių vykstančių tą dieną.
 					\item Vartotojui, norint daugiau informacijos apie renginį, paspaudžia ant renginio pavadinimo ir yra atidaromas kitas puslapis su renginio informacija.
+					\item Vartotojui netinkamai užpildžius filtro laukus, rodomas klaidos pranešimas ir mygtukas ,,Filtruoti'' tampa neaktyviu.
 				\end{itemize}
 				
 				\begin{figure}[H]
@@ -501,28 +502,41 @@
 						\item Jei vartotojas spaudžia ,,Skirti vadovu'', o pasirinktas vartotojas jau yra išėjęs iš komandos, jis pašalinamas iš sąrašo ir parodomas pranešimas kad pasirinktas vartojas nėra komandos narys.						
 					\end{itemize}
 				
-			\item \textbf{Pridėti naujienas}   \\
-					Administratorius paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Naujienos'', kurio kairėje pusėje yra pasirinkimas ,,Pridėti naujienas''. Paspaudus ant tų žodžių, atidaroma forma, kurioje vartotojas užpildo laukus (privalomi - pavadinimas, tekstas, pasirinktini - susije renginiai, nuotrauka, vaizdo įrašas, trumpas aprašymas) ir paspausdžia mygtuką ,,Sukūrti naujieną''. Sistema sukuria naują naujieną.
+			\item \textbf{Sukūrti naujieną}   \\
+				
+					\item \textbf{Pridėti naujienas} (\ref{fig:uzd_org_pridetiNaujienas} pav.)\\
+					Vartotojas paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Jei vartotojas yra organizatorius arba administratorius, atidaromas puslapis ,,Naujienos'', kurio kairėje pusėje yra mygtukas ,,Pridėti naujienas''. Paspaudus ant šio mygtuko, atidaroma forma, kurioje reikia užpildyti laukus (privalomi - pavadinimas, tekstas, jei vartotojas nera administratorius - renginys (leidžiama pasirinkti iš organizuojamų renginio), pasirinktini - susije renginiai, nuotrauka, vaizdo įrašas, trumpas aprašymas). Vartotojas užpildo laukus ir paspaudžią mygtuką ,,Įkelti'', sistema sukuria naują naujieną.
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
+						\item Jei vartotojas nėra organizatorius arba administatorius, jam atidaromas paprastas naujienų sąrašas.
 						\item Vartotojui neužpildžius privalomų laukų negalima paspausti mygtuko ,,Įkelti'' ir prie laukų, kurie nebuvo užpildyti yra parašoma - ,,Būtina užpildyti''.
 					\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI4/OrganizatoriusNaujienos-01.jpg}
+					\caption{Renginio organizatoriaus paskyra}
+					\label{fig:uzd_org_pridetiNaujienas}
+				\end{figure}
 			
-			\item \textbf{Redaguoti naujienas}   \\
-					Administratorius pasirenka naujieną kurią nori redaguoti. Atsidarius naujienos puslapiui administatorius paspaudžia mygtuką ,,Redaguoti'' ir atsidaro naujienos puslapis su redaguojamais laukais. Redagavus norimus laukus galima paspausti ,,Išsaugoti''.
+			\item \textbf{Redaguoti naujieną}   \\
+					Vartotojas pasirenka naujieną kurią nori redaguoti. Sistema patikrina ar vartotojas yra naujienos autorius arba administatorius ir atidaro naujienos puslapį su redagavimo funkcijų juosta. Atsidarius naujienos puslapiui vartotojas paspaudžia mygtuką ,,Redaguoti'' ir atsidaro naujienos puslapis su redaguojamais laukais. Redagavus norimus laukus vartojas spaudžia ,,Išsaugoti'' ir naujiena išsaugoma.
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
+						\item Jei vartotojas nėra naujienos autorius arba administatorius, jam atidaromas paprastas naujienos puslapis.
 						\item Administratorius paspaudęs ant naujienų pavadinimo nieko neredaguoja ir nori toliau ieškoti norimų naujienų. Tada jis spaudžia mygtuką ,,Išeiti''.
 					\end{itemize}	
+					
 			
-			\item \textbf{Ištrinti naujienas} (\ref{fig:uzd_admin_puslapisNaujienos} pav.)\\
-					Administratorius pasirenka naujieną kurią nori ištrinti. Atsidarius naujienos puslapiui administatorius paspaudžia mygtuką ,,Ištrinti'' ir atsidaro ištrinimo patvirtinimo dialogas. Patvirtinus ištrinimą naujiena ištrinama.
+			\item \textbf{Ištrinti naujieną} (\ref{fig:uzd_admin_puslapisNaujienos} pav.)\\
+					Vartotojas pasirenka naujieną kurią nori ištrinti. Sistema patikrina ar vartotojas yra naujienos autorius arba administatorius ir atidaro naujienos puslapį su redagavimo funkcijų juosta. Atsidarius naujienos puslapiui vartotojas paspaudžia mygtuką ,,Ištrinti'' ir atsidaro ištrinimo patvirtinimo dialogas. Patvirtinus ištrinimą naujiena ištrinama.
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Jei administratorius nepatvirtina ištrinimo, jis gražimas į naujienos puslapį.
+						\item Jei vartotojas nėra naujienos autorius arba administatorius, jam atidaromas paprastas naujienos puslapis.
+						\item Jei vartotojas nepatvirtina ištrinimo, jis gražimas į naujienos puslapį.
 					\end{itemize}
 				
 				\begin{figure}[H]
@@ -532,20 +546,19 @@
 					\label{fig:uzd_admin_puslapisNaujienos}
 				\end{figure}
 				
-			\item \textbf{Pridėti renginį}   \\
-					Administratorius paspaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Atidaromas puslapis ,,Renginių kalendorius'', kurio kairėje pusėje yra pasirinkimas ,,Pridėti renginį''. Paspaudus ant jo atsidaro naujas puslapis su forma, kurioje yra laukai (renginio pavadinimas, sporto šaka, vienos komandos dydis (intervalas), maksimalus dalyvių skaičius, registravimosi termino data, renginio data, vieta, bilietu pardavimo vieta). Įvedus visus reikalingus laukus, administratorius paspaudžia mygtuką ,,Baigti''.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Administratorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
-					\end{itemize}
-				
 			\item \textbf{Redaguoti renginį} (\ref{fig:uzd_admin_renginioKalendorius} pav.)\\
-					Administratorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje administratorius pasirenka renginį, kurį nori redaguoti. Prie renginio spaudžia mygtuką ,,Redaguoti''. Paspaudus ant jo atsidaro naujas puslapis su renginio informacijos redagavimo forma. Laukai yra užpildyti anksčiau įvesta informacija. Pakeitęs norimus laukus, administratorius paspaudžia mygtuką ,,Baigti''.
+					Kalendoriuje vartotojas pasirenka renginį, kurį nori redaguoti. Jei vartotojas yra renginio organizatorius arba administatorius, jam atidaromas renginio puslapis atidaro renginio puslapį su renginio redagavimo funkcijomis. Renginio puslapyje, vartotojas renginio spaudžia mygtuką ,,Redaguoti''. Paspaudus ant jo atsidaro naujas puslapis su renginio informacijos redagavimo forma. Laukai yra užpildyti anksčiau įvesta informacija. Pakeitęs norimus laukus, administratorius paspaudžia mygtuką ,,Išsaugoti''.
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Administratorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
+						\item Vartotojas nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
+						\item Jei vartotojas nėra renginio organizatorius ar administratorius, renginio redagavimo funkcijos nerodomos.
+					\end{itemize}
+		
+					
+					\underline{Alternatyvūs scenarijai:}
+					\begin{itemize}
+						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
 					\end{itemize}
 				
 				\begin{figure}[H]
@@ -556,11 +569,12 @@
 				\end{figure}
 				
 			\item \textbf{Ištrinti renginį}   \\
-					Administratorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje administratorius pasirenka renginį, kurį nori ištrinti. Prie renginio spaudžia mygtuką ,,Ištrinti''. Sistema parodo patvirtinimo dialogą, administratorius patvirtina ištrinimą, sistema išsiunčia visiems užregistravusiems renginio dalyviams pranešimą kad renginys atšauktas, ir renginys yra ištrinamas.
+					Kalendoriuje vartotojas pasirenka renginį, kurį nori ištrinti. Sistema patrikrina ar vartotojas yra renginio organizatorius arba administratorius ir atidaro renginio puslapį su renginio redagavimo funkcijomis. Renginio puslapyje vartotojas spaudžia mygtuką ,,Ištrinti''. Sistema parodo patvirtinimo dialogą, vartotojas patvirtina ištrinimą, sistema išsiunčia visiems užregistravusiems renginio dalyviams pranešimą kad renginys atšauktas, ir renginio busena pakeičiama į atšauktas.
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Jei administratorius atsiradus dialogui atšaukia ištrinimą, dialogas pašalinamas ir parodomas renginio puslapis.
+						\item Jei vartotojas nėra renginio organizatorius ar administratorius, renginio redagavimo funkcijos nerodomos.
+						\item Jei vartotojas atsiradus dialogui atšaukia ištrinimą, dialogas pašalinamas ir parodomas renginio puslapis.
 					\end{itemize}
 				
 			\item \textbf{Pridėti rezultatus}   \\
@@ -624,69 +638,26 @@
 						\item Jei vartotojui jau apribota arba blokuojama prieiga, prie atitinkamų mygtukų rodoma trukmė, ir paspaudus ,,Apriboti prieiga'' arba ,,Blokuoti prieigą'' mygtukus laukas užpildomas esama apribojimu trukme.						
 					\end{itemize}
 				
-			\item \textbf{Peržiūrėti renginių sąrašus}   \\
-					Administratorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius'', kuriame chronologiška tvarka lentelėje rodomas renginių sąrašas. Dešinėje pusėje prie kalendoriaus yra laukas, kuriame galima pasirinkti filtrus (sporto šaka, individualūs / komandiniai, laiko intervalas). Administratorius pažymi kokius filtrus nori taikyti peržiūrai.
-				
 			\item \textbf{Peržiūrėti darbo aplikacijų sąrašus}   \\
 					Administratorius spaudžia ant mygtuko ,,Darbo aplikacijos'', kuris yra navigacijos meniu. Atidaromas langas su darbo aplikacijų sąrašų. Viršuje yra paryškintos naujos aplikacijos. Administratorius peržiūri darbo aplikacijas ir susisiekia su pasirinktais kandidatais.
 
 			\item \textbf{Užregistruoti naują renginį}   \\
-					Renginio organizatorius paspaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Atidaromas puslapis ,,Renginių kalendorius'', kurio kairėje pusėje yra pasirinkimas ,,Pridėti renginį''. Paspaudus ant jo atsidaro naujas puslapis su forma, kurioje yra laukai (renginio pavadinimas, sporto šaka, vienos komandos dydis (intervalas), maksimalus dalyvių skaičius, registravimosi termino data, renginio data, vieta, bilietu pardavimo vieta ). Įvedus visus reikalingus laukus, administratorius paspaudžia mygtuką ,,Baigti''.
+					Renginio organizatorius ,,Renginių kalendorius'' puslapyje spaudžia mygtuką ,,Pridėti renginį''. Paspaudus ant jo atsidaro naujas puslapis su forma, kurioje yra laukai (renginio pavadinimas, sporto šaka, vienos komandos dydis (intervalas), maksimalus dalyvių skaičius, registravimosi termino data, renginio data, vieta, bilietu pardavimo vieta ). Įvedus visus reikalingus laukus, renginio organizatorius paspaudžia mygtuką .
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Renginio organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
+						\item Renginio organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Sukūrti renginį'' ir prie atitinkamų laukų rašoma klaida.
 					\end{itemize}	
 			
-			\item \textbf{Redaguoti renginį}   \\
-					Renginio organizatorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje organizatorius pasirenka savo renginį, kurį nori redaguoti. Prie renginio spaudžia mygtuką ,,Redaguoti''. Paspaudus ant jo atsidaro naujas puslapis su renginio informacijos redagavimo forma. Laukai yra užpildyti anksčiau įvesta informacija. Pakeitęs norimus laukus, administratorius paspaudžia mygtuką ,,Baigti''.
+			\item \textbf{Peržiūrėti renginio dalyvių sąrašus}   \\
+					Vartotojas atidaro renginio puslapį. Jei vartotojas yra renginio organizatorius arba administratorius, atidarytam renginio puslapyje rodomas mygtukas dalyviai. Vartotojas spaudžia mygtuką ,,Dalyviai''. Atidaromas langas, kuriame yra rodomas pasirinkto renginio dalyvių sąrašas.
 					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
-						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
-					\end{itemize}
-			
-			\item \textbf{Ištrinti renginį}   \\
-					Renginio organizatorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje organiztorius pasirenka savo organizuojama renginį, kurį nori ištrinti. Prie renginio spaudžia mygtuką ,,Ištrinti''. Sistema parodo patvirtinimo dialogą, organizatorius patvirtina ištrinimą, sistema išsiunčia visiems užregistravusiems renginio dalyviams pranešimą kad renginys atšauktas ir renginys yra ištrinamas.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Jei organizatorius atsiradus dialogui atšaukia ištrinimą, dialogas pašalinamas ir parodomas renginio puslapis.
+						\item Jei vartotojas nėra nei renginio organizatorius, nei administratorius, vartotojui nerodomas mygtukas dalyviai.
+						\item Jeigu dalyvių sąrašas yra tuščias, vartotojui yra rodomas pranešimas kad nė vienas vartotojas neužsiregsitravo.
 					\end{itemize}	
-				
-			\item \textbf{Peržiūrėti visų dalyvių sąrašus}   \\
-					Renginio organizatorius atidaro savo renginio puslapį ir spaudžia mygtuką ,,Dalyviai''. Atidaromas langas, kuriame yra rodomas pasirinkto renginio dalyvių sąrašas.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Jeigu dalyvių sąrašas yra tuščias, renginio organizatoriui yra rodomas pranešimas kad nė vienas vartotojas neužsiregsitravo.
-					\end{itemize}	
-				
-			\item \textbf{Pridėti naujienas} (\ref{fig:uzd_org_pridetiNaujienas} pav.)\\
-					Renginio organizatorius paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Naujienos'', kurio kairėje pusėje yra pasirinkimas ,,Pridėti naujienas''. Paspaudus ant šio mygtuko, atidaroma forma, kurioje reikia užpildyti laukus (privalomi - pavadinimas, tekstas, renginys (leidžiama pasirinkti iš organizuojamų renginio)). Organizatorius užpildo laukus ir paspaudžią mygtuką ,,Įkelti'', sistema sukuria naują renginį.
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Įkelti'' ir prie atitinkamų laukų rašoma klaida.
-					\end{itemize}
-				
-				\begin{figure}[H]
-					\centering
-					\includegraphics[width=\textwidth]{img/PSI4/OrganizatoriusNaujienos-01.jpg}
-					\caption{Renginio organizatoriaus paskyra}
-					\label{fig:uzd_org_pridetiNaujienas}
-				\end{figure}
-				
-			\item \textbf{Redaguoti sukurtą naujieną}   \\
-					Organizatorius paspaudžia ant naujienos kurią sukūrė, atsidarius naujienos puslapiui, paspaudžia mygtuką ,,Redaguoti''. Atsidaro naujienų redagavimo forma. Formos laukai yra užpildyti anksčiau įvesta informacija. Redagavus norimus laukus organizatorius paspaudžia ,,Išsaugoti''. Sistema atnaujina naujieną ir nukreipia į naujienos puslapį. 
-					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Išsaugoti'' ir prie atitinkamų laukų rašoma klaida.
-					\end{itemize}	
-				
-			\item \textbf{Ištrinti sukurtą naujieną}   \\
-					Organizatorius paspaudžia ant naujienos kurią sukūrė, atsidarius naujienos puslapiui, paspaudžia mygtuką ,,Ištrinti''. Sistema parodo patvirtinimo dialogą, organizatorius patvirtina ištrinimą, sistema panaikiną naujieną.
+	
 			\newpage	
 			\subsection* {Reikalavimų - užduočių atsekamumo matrica}
 			Žemiau yra pateikiama Reikalavimų - užuočių atsekamamumo matrica (\ref{tab:ReikalavimuUzduociuAtsekamumoMatrica} lentelė.), kurios pagalba, mes nustatome pagal kurį reikalavimą yra sukurta atitinkama užduotis.
@@ -785,6 +756,7 @@
 			\item Visi panaudoti paveikslėliai ir lentelės paminėti tekste.
 			\item Pašalinti vartotojo apribrežimo dviprasmiškumai.
 			\item Reikalavimų - užduočių matrica patasyta, kad būtų visi reikalavimai panaudoti.
+			\item Pataisyti reikalavimų tekstai, 7 reikalavimai sujungti (apibendrintos administratoriaus ir organizatoriaus galimybės)
 		\end{itemize}
 		
     \section{Priedai}\label{priedai}
