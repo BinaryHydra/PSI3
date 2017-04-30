@@ -61,7 +61,7 @@
             Remiantis ICONIX proceso principais, apibrėžti reikalavimus, struktūrinį srities modelį bei užduotis būsimai sistemai.
         \subsection*{Temos aktualumas} \label{ivadas_aktualumas}
             Pasaulyje vyksta įvairaus tipo sporto renginių - nuo vienos iki kelių sporto šakų, nuo vietinių iki pasaulio lygio. Tačiau visi Lietuvoje vykstantys sporto renginiai yra dažniausiai tik vienos sporto šakos ir nedidelio masto. Egzistuoja ryškus didelių, visą šalį apimančių žaidynių trūkumas. Taip pat, pasaulinio lygio renginiai teikia galimybę sekti sportininkų rezultatus ir stebėti pačias varžybas, o Lietuvoje tokios sistemos dar nėra gerai išvystytos.
-        \subsection*{Naudotojai} \label{ivadas_naudotojai}
+        \subsection*{Vartotojai} \label{ivadas_naudotojai}
             Sistema skirta vartotojams, administratoriams bei remėjams.
         \subsection*{Darbo pagrindas} \label{ivadas_pagrindas}
             Dokumentas parengtas kaip programų sistemų inžinerijos laboratorinis darbas.
@@ -173,7 +173,7 @@
 			\end{enumerate}
 
     \section{Struktūrinis dalykinės srities modelis} \label{strukturinisDSModelis}
-		Šiame skyriuje konstruojamas struktūrinis dalykinės srities modelis, t.y. apibrėžiamos pagrindinės su sistema susijusios esybės, nurodomi ryšiai tarp jų.
+		Šiame skyriuje konstruojamas struktūrinis dalykinės srities modelis, t.y. apibrėžiamos pagrindinės su sistema susijusios esybės, pateikiama jų diagrama\ref{fig:DS-klasiu-diagrama}, nurodomi ryšiai tarp esybių.
         \subsection{Esybių diagrama} \label{strukturinisDSModelis_esybiuDiagrama}
             \begin{figure}[H]
                 \centering
@@ -208,6 +208,7 @@
 					\item \textbf{Internetinis puslapis } - grafinė sistemos dalis, per kurią tekiamos sistemos paslaugos.
             \end{enumerate}
         \subsection{Reikalavimų - struktūrinio modelio atsekamumo matrica}\label{strukturinisDSModelis_matrica}
+		Žemiau pateikiama matrica atvaizduoja esybių ryšį su reikalavimais pagal kuriuos yra sukurtos esybės.
 			\begin{table}[H]
 				\centering
 				\caption{Reikalavimų - struktūrinio modelio atsekamumo matrica}
@@ -252,8 +253,7 @@
 			\end{table} 
 			
     \section{Užduotys}\label{uzduotys}
-		Šiame skyriuje pateikiamos pagrindinės neprisijungusio, prisijungusio ir paprasto vartotojo, komandos vadovo, administratoriaus ir organizatoriaus užduotys.
-		Taip pat pateikiamos UML užduočių diagramos apibrėžiančios visų šių agentų užduotis.
+		Šiame skyriuje pateikiamos pagrindinės neprisijungusio, prisijungusio ir paprasto vartotojo, komandos vadovo, administratoriaus ir organizatoriaus užduotys. Taip pat pateikiamos  nesprisijungusių, prisijungusių vartotojų ir komandos vadovo užduočių diagramą \ref{fig:uzduociu-diagrama} bei administratoriaus, organizatoriaus ir rėmėjo užduočių diagrama \ref{fig:uzduociu-diagrama2}.
 			\noindent
 			
 			\begin{figure}[H]
@@ -271,7 +271,7 @@
             \end{figure}
 		\newpage
 		\begin{enumerate} [label = \textbf{U\arabic*.}]
-			\item \textbf{Skaityti naujienas} \\
+			\item \textbf{Skaityti naujienas} \ref{fig:uzd_skaitymas}\\
 				Vartotojas paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas yra puslapį ,,Naujienos'', kuriame yra sąrašas naujienų trumpų aprašymų. Vartotojas paspaudžia ant naujienos, atidaromas visas naujienos tekstas.
 				
 				\underline{Alternatyvūs scenarijai:}
@@ -286,7 +286,7 @@
 					\label{fig:uzd_skaitymas}
 				\end{figure}
 				
-			\item \textbf{Peržiūrėti renginių kalendorių} \\
+			\item \textbf{Peržiūrėti renginių kalendorių} \ref{fig:uzd_reginioKalendorius}\\
 				Vartotojas spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį ,,Renginių kalendorius'', kuriame peržiūri renginius sudėtus pagal jų datas į einamojo mėnesio atitinkamas kalendoriaus dienas, turint galimybę keisti mėnesius.
 				
 				\underline{Alternatyvūs scenarijai:}
@@ -303,7 +303,7 @@
 						\label{fig:uzd_reginioKalendorius}
 					\end{figure}
 
-			\item \textbf{Ieškoti renginio} \\
+			\item \textbf{Ieškoti renginio} \ref{fig:uzd_renginiai}\\
 					Vartotojas paieškos laukelyje įveda paieškos frazę, susidenčia iš bent 3 ne tarpo simbolių, spaudžia paieškos mygtuką ir tada yra atidaromas naujas puslapis, kuriame yra sąrašas renginių turintys pavadinime arba aprašyme paieškos frazę.
 					
 				\underline{Alternatyvūs scenarijai:}
@@ -319,7 +319,7 @@
 					\label{fig:uzd_renginiai}
 				\end{figure}
 				
-			\item \textbf{Žiūrėti vaizdo įrašus} \\
+			\item \textbf{Žiūrėti vaizdo įrašus} \ref{fig:uzd_paleistas_vaizdoIrasas}\\
 				Vartotojas renginio puslapyje spaudžia ant mygtuko ,,Vaizdo įrašai'' ir tada jis yra nukeliamas į puslapį ,,Vaizdo įrašai'', kuriama pateikiamas su renginiu susijusiu vaizdo įrašų sąrašas. Jame vartotojas pasirenka iš vaizdo įrašų sąrašo, kurį nori žiūrėti. Pasirinkęs vaizdo įrašą paspaudžia ant jo. Vaizdo įrašas iškylą per visą ekraną ir pasileidžia.
 				
 				\underline{Alternatyvūs scenarijai:}
@@ -346,8 +346,8 @@
 						\item Jei iš to pačio ip pateikiami 5 pasiūlymai per dieną, sekantys pranešimų siuntimai blokuojami.
 					\end{itemize}
 				
-			\item \textbf{Registracija} \\
-					Vartotojas, norėdamas užsiregistruoti į tinklalapį, spaudžia mygtuką ,,Užsiregistruoti''. Tada vartotojas yra nukeliamas į kitą puslapį, kuriame suveda privaloma informaciją - vartotojo vardą ir slaptažodį. Tuomet, vartotojas spaudžia ,,Baigti'', sistema patikrina ar neegzistuoja vartotojas tokiu vardu, sukuria vartotoją ir peradresuoja naudotoją atgal į pagrindinį puslapį - ,,Renginių kalendorius''.
+			\item \textbf{Registracija} \ref{fig:uzd_registruotis}\\
+					Vartotojas, norėdamas užsiregistruoti į tinklalapį, spaudžia mygtuką ,,Užsiregistruoti''. Tada vartotojas yra nukeliamas į kitą puslapį, kuriame suveda privaloma informaciją - vartotojo vardą ir slaptažodį. Tuomet, vartotojas spaudžia ,,Baigti'', sistema patikrina ar neegzistuoja vartotojas tokiu vardu, sukuria vartotoją ir peradresuoja jį atgal į pagrindinį puslapį - ,,Renginių kalendorius''.
 							
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
@@ -363,7 +363,7 @@
 					\label{fig:uzd_registruotis}
 				\end{figure}
 
-			\item \textbf{Prisijungti} \\
+			\item \textbf{Prisijungti} \ref{fig:uzd_prisijungti}\\
 					Vartotojas spaudžia mygtuką „Prisijungti''. Vartotojas įveda vartotojo vardą ir slaptažodį bei paspaudžia mygtuką ,,Prisijungti'. Sistema patikrina, ar įvesti duomenys yra teisingi. Jei duomenys teisingi, sistema vartotojui atidaro prisijungusio vartotojo grafinę sąsają. 
 					
 				\underline{Alternatyvūs scenarijai:}
@@ -398,7 +398,7 @@
 						\item Registracijos į renginį mygtukas yra nerodomas, jei vartotojas yra jau užsiregistravęs į renginį.
 				\end{itemize}
 				
-			\item \textbf{Kurti komandą} \\
+			\item \textbf{Kurti komandą} \ref{fig:uzd_registruotiKomanda}\\
 				Prisijungęs vartotojas  spaudžia mygtuką ,,Kurti naują komandą''. Vartotojas įveda komandos pavadinimą ir kviečiamų registruotų vartotojų vardus arba el. pašto adresus. Vartotojas spaudžia mygtuką ,,Sukurti komandą'', komanda yra sukuriama ir vartotojas gauna pranešimą apie sėkmingai sukurtą komandą.
 			
 				\underline{Alternatyvūs scenarijai:}
@@ -517,7 +517,7 @@
 						\item Administratorius paspaudęs ant naujienų pavadinimo nieko neredaguoja ir nori toliau ieškoti norimų naujienų. Tada jis spaudžia mygtuką ,,Išeiti''.
 					\end{itemize}	
 			
-			\item \textbf{Ištrinti naujienas}   \\
+			\item \textbf{Ištrinti naujienas} \ref{fig:uzd_admin_puslapisNaujienos}\\
 					Administratorius paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Naujienos'', kurio kairėje pusėje yra pasirinkimas ,,Ištrinti naujienas''. Paspaudus ant jų, po jais iškrenta pasirinkimas - įvesti naujienų pavadinimą arba pasirinkti iš sąrašo. Paspaudus ant įvesti naujienų pavadinimą, atidaromas naujas puslapis su paieškos laukeliu, į kurį įvedus pavadinimą atidaro visas naujienas turinčias tą pavadinimą. Tada administratorius išsirenka, kurias nori ištrinti. Paspaudžia ant jų ir mygtuką ,,Ištrinti''.
 					
 					\underline{Alternatyvūs scenarijai:}
@@ -541,7 +541,7 @@
 						\item Administratorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
 					\end{itemize}
 				
-			\item \textbf{Redaguoti renginį}   \\
+			\item \textbf{Redaguoti renginį} \ref{fig:uzd_admin_renginioKalendorius}\\
 					Administratorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje administratorius pasirenka renginį, kurį nori redaguoti. Prie renginio spaudžia mygtuką ,,Redaguoti''. Paspaudus ant jo atsidaro naujas puslapis su renginio informacijos redagavimo forma. Laukai yra užpildyti anksčiau įvesta informacija. Pakeitęs norimus laukus, administratorius paspaudžia mygtuką ,,Baigti''.
 					
 					\underline{Alternatyvūs scenarijai:}
@@ -592,7 +592,7 @@
 						\item Mygtukas ,,Patvirtinti'' yra neaktyvus, jei administratorius nepadarė pakeitimų.
 					\end{itemize}
 				
-			\item \textbf{Pridėti vaizdo įrašą}   \\
+			\item \textbf{Pridėti vaizdo įrašą} \ref{fig:uzd_admin_vaizdoIrasas}\\
 					Administratorius spaudžia ant mygtuko “Vaizdo įrašai”, kuris yra navigacijos meniu. Paspaudus ant jo parodomas renginio vaizdo įrašų sąrašas. Administratorius spaudžia mygtuką “Pridėti”. Atsidaro naujas langas su lauku į kurį galima vaizdo įrašo nuorodą bei mygtuku “Įkelti”, kurį paspaudus leidžiama pasirinkti vaizdo įrašą iš kompiuterio. Administratorius įveda vaizdo įrašo nuorodą arba spaudžia mygtuką “Įkelti” ir pasirenka failą iš kompiuterio. Administratorius spaudžia mygtuką “Išsaugoti”.
 					
 					\underline{Alternatyvūs scenarijai:}
@@ -663,7 +663,7 @@
 						\item Jeigu dalyvių sąrašas yra tuščias, renginio organizatoriui yra rodomas pranešimas kad nė vienas vartotojas neužsiregsitravo.
 					\end{itemize}	
 				
-			\item \textbf{Pridėti naujienas}   \\
+			\item \textbf{Pridėti naujienas} \ref{fig:uzd_org_pridetiNaujienas}\\
 					Renginio organizatorius paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Naujienos'', kurio kairėje pusėje yra pasirinkimas ,,Pridėti naujienas''. Paspaudus ant šio mygtuko, atidaroma forma, kurioje reikia užpildyti laukus (privalomi - pavadinimas, tekstas, renginys (leidžiama pasirinkti iš organizuojamų renginio)). Organizatorius užpildo laukus ir paspaudžią mygtuką ,,Įkelti'', sistema sukuria naują renginį.
 					
 					\underline{Alternatyvūs scenarijai:}
@@ -690,6 +690,7 @@
 					Organizatorius paspaudžia ant naujienos kurią sukūrė, atsidarius naujienos puslapiui, paspaudžia mygtuką ,,Ištrinti''. Sistema parodo patvirtinimo dialogą, organizatorius patvirtina ištrinimą, sistema panaikiną naujieną.
 				
 			\subsection* {Reikalavimų - užduočių atsekamumo matrica}
+			Žemiau yra pateikiama Reikalavimų - užuočių atskemamumo matrica \ref{ReikalavimuUzduociuAtsekamumoMatrica}, kurios pagalba, mes nustatome pagal kurį reikalavimą yra sukurta užduotis.
 			\begin{table}[H]
 				\centering
 				\caption{Reikalavimų - užduočių atsekamumo matrica}
@@ -774,16 +775,15 @@
 		\begin{itemize}
 			\item Dalykinės srities modelis suabstraktintas, nes iš pradžių buvo per daug lįsta į technines detales.
 			\item FR2.4 Patikinti renginio organizatoriaus informaciją. ,,Patikinti'' pataisyta į ,,patikrinti''.
-			\item Užduotis ,,Matyti privačius renginius''. Alternatyvus scenarijus, leidžiantis atfiltruoti tik privačius renginius perkeltas prie pagrindinio scenarijaus.
 			\item Užduotis ,,Matyti privačius renginius''. Perrašyti alternatyvūs scenarijai.
-			\item Neužsiregistravęs vartotojas pervadintas neprisijungusiu vartotoju.
 			\item Pataisytos ir papildytos prisijungusio paprasto vartotojo užduotys.
-			\item Pataisytos neprisijungusio vartotojo užduotys.Papildyti pagrindiniai ir alternatyvūs scenarijai.
+			\item Pataisytos neprisijungusio vartotojo užduotys. Papildyti pagrindiniai ir alternatyvūs scenarijai.
 			\item Sulietuvintos kabutės.
-			\item Padalinta užduočių  diagrama į dvi diagramas.
+			\item Padalinta užduočių diagrama į dvi diagramas.
 			\item Ištaisytos gramatikos ir skyrybos klaidos.
 			\item Renginio siūkymo formos mygtukas ,,Baigti'' pervadintas į ,,Siųsti''.
 			\item Užduotyje U15 žodis ,,pasiektas'' pakeistas žodžiu ,,viršytas''.
+			\item Visi panaudoti paveikslėliai ir lentelės paminėti tekste.
 		\end{itemize}
 		
     \section{Priedai}\label{priedai}
