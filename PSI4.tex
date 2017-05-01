@@ -714,23 +714,22 @@
 			\end{table}                                                                           		
 		\end{enumerate}                                                                                                                           
 	\section{Techninė sistemos architektūra}\label{techstruktura}	
-	Šiame skyriuje pateikiame sistemos dislokavimo diagrama bei pavyzdinę duomenų saugojimo į duomabze sekvencinę diagramą.
-		\subsection{Dislokavimo diagrama} (\ref{fig:dislokavimo} pav.)
+	Šiame skyriuje pateikiame sistemos dislokavimo diagrama(ref{fig:dislokavimo} pav.) bei pavyzdinę duomenų saugojimo į duombazę sekų diagramą(\ref{fig:saugojimo} pav.).
+		\subsection{Dislokavimo diagrama}
 		Kadangi svetainė sukurta naudojant MVC modelį("Model View Controller"), todėl Html kodo generavimas iš aukštesnio lygio programavimo kalbos vyksta pagrindiniame serveryje ir klientui http protokolo pagalba paduodame sugeneruota vaizdą. Informacijos apdorojimas vyksta BLL ("Business Logic Layer") dalyje, kur yra visos su informacijos apdorojimu, saugojimu bei pateikimu taisyklės. Taip pat BLL bendrauja su išoriniais servisais(žinučių ir el.pašto), kurie perduoda informacija vartotojams. BLL jungiasi su DAL ("Data Access Layer"), kur yra saugomi sistemos naudojami modeliai, bei duombazės saugojimo logika. DAL naudojama susijungimui su duombaze ir veiksmu su jau apdorotais duomenimis darymu. Duombazės serveris yra sudarytas iš trijų duombazių - klientų, visos informacijos ir saugyklos. Klientų ir informacijos duombazės atskirtos, kadangi klientų duombazė nėra taip dažnai naudojama ir taip pat yra mažinamas krūvis ant informacijos duombazės. Atsarginė duombazė turi visada turėti paskutinius duomenis, jeigu būtų atsiradusi duomenų korupcija pagrindinėse duombazėse.
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{img/PSI5/DeployementDiagram.png}
-			\caption{Administratoriaus prieiga puslapiui ,,Vaizdo įrašai''}
+			\caption{Sistemos dislokavimo diagrama}
 			\label{fig:dislokavimo}
 		\end{figure}
 		
-		\subsection{Duomenu saugojimo sekvencijos diagrama} (\ref{fig:saugojimo} pav.)
-		Žemiau yra pateikta pavyzdinė diagrama, kaip turi atrodyti duomenų daugojimas į duombazę. Vartotojos pateikia informaciją serveriui serveris apdoroja ją ir paduoda į duomabazę, jei viskas gerai tai duombazė gražina <Success> ir serveris partotojui paduoda nauja vaizda, kur matosi, kad operacija atlikta sėkmingai. Jeigu nebuvo klaidų, tai duomenis yra atnaujinami ir atsarginėjė duombazėje. Jeigu atsirado klaida saugant duomenis pagrindinėje duombazėje, klaida yra grąžinama į serverį, kur yra apdorojama ir grąžžinama varotojui, ir vartotojas gali pakartoti pildymą ir matyti prieš tai padaryta klaidą. Jeigu atsirada klaida atsarginėje duobazėje, tai tą klaida yra grąžinama į serverį. Serveris šia klaidą apdoroja ir siunčiau programuotojui, kad būtų kuo greičiau pataisyta. 
-		
+		\subsection{Duomenu saugojimo sekų diagrama} 
+		Žemiau yra pateikta pavyzdinė diagrama, kaip turi atrodyti duomenų saugojimas į duombazę. Vartotojos pateikia informaciją serveriui, serveris apdoroja ją ir paduoda į duomabazę. Jei viskas gerai tai duombazė gražina <Success> ir serveris vartotojui paduoda naują vaizdą, kur matosi, kad operacija atlikta sėkmingai. Jeigu nebuvo klaidų, tai duomenys yra atnaujinami ir atsarginėjė duombazėje. Jeigu atsirado klaida saugant duomenys pagrindinėje duombazėje, klaida yra grąžinama į serverį, kur yra apdorojama ir grąžinama varotojui, ir vartotojas gali pakartoti pildymą ir matyti prieš tai padaryta klaidą. Jeigu atsirada klaida atsarginėje duobazėje, tai tą klaida yra grąžinama į serverį. Serveris šia klaidą apdoroja ir siunčiau programuotojui, kad būtų kuo greičiau pataisyta. 
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{img/PSI5/SavingSequence.png}
-			\caption{Administratoriaus prieiga puslapiui ,,Vaizdo įrašai''}
+			\caption{Sekų diagrama atvaizduojanti duomenų saugojima}
 			\label{fig:saugojimo}
 		\end{figure}
 		
