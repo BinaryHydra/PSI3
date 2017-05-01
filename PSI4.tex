@@ -50,14 +50,14 @@
 	\pagenumbering{arabic}
     
     \sectionnonum{Anotacija} \label{anotacija}
-		Šiame laboratoriniame darbe bus apibrėžti reikalavimai, struktūrinis srities modelis bei užduotys sistemai. Visas darbas paremtas ICONIX proceso metodologija.
+		Šiame laboratoriniame darbe siekiant patikslinti pirmojo laboratorinio darbo užduotis ir klasių diagramas bus nubraižytos robustiškumo diagramos ir aprašyta techninė sistemos architektūra. Visas darbas paremtas ICONIX proceso metodologija.
 		Darbas parengtas atsižvelgiant į pradinius užsakovo pateiktus reikalavimus ir darbo metu atsiradusius reikalavimų pakeitimus.
 		
     \sectionnonum{Įvadas} \label{ivadas}	
         \subsection*{Programų sistemos pavadinimas} \label{ivadas_psPavadinimas}
             ,,Lietuvos Nacionalinė Sporto Organizacija'' (sutrumpintas sistemos pavadinimas - ,,LtNSO'').
         \subsection*{Darbo tikslas} \label{ivadas_darboTikslas}
-            Remiantis ICONIX proceso principais, apibrėžti reikalavimus, struktūrinį srities modelį bei užduotis būsimai sistemai.
+            Remiantis ICONIX proceso principais, apibrėžti reikalavimus, struktūrinį srities modelį bei užduotis ir techninę architektūrą būsimai sistemai.
         \subsection*{Temos aktualumas} \label{ivadas_aktualumas}
             Pasaulyje vyksta įvairaus tipo sporto renginių - nuo vienos iki kelių sporto šakų, nuo vietinių iki pasaulio lygio. Tačiau visi Lietuvoje vykstantys sporto renginiai yra dažniausiai tik vienos sporto šakos ir nedidelio masto. Egzistuoja ryškus didelių, visą šalį apimančių žaidynių trūkumas. Taip pat, pasaulinio lygio renginiai teikia galimybę sekti sportininkų rezultatus ir stebėti pačias varžybas, o Lietuvoje tokios sistemos dar nėra gerai išvystytos.
         \subsection*{Vartotojai} \label{ivadas_naudotojai}
@@ -285,6 +285,13 @@
 					\label{fig:uzd_skaitymas}
 				\end{figure}
 				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U1.png}
+					\caption{Naujienų skaitymo robustiškumo diagrama}
+					\label{draw:u1}
+				\end{figure}
+				
 			\item \textbf{Peržiūrėti renginių kalendorių} (\ref{fig:uzd_reginioKalendorius} pav.)\\
 				Vartotojas spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį ,,Renginių kalendorius'', kuriame peržiūri renginius sudėtus pagal jų datas į einamojo mėnesio atitinkamas kalendoriaus dienas, turint galimybę keisti mėnesius. Dešinėje puslapio pusėje prie kalendoriaus yra laukas, kuriame galima pasirinkti filtrus (sporto šaka, individualūs / komandiniai, laiko intervalas). Pasirinkus filtrus, ir paspaudus mygtuką ,,Filtruoti'' kalendoriuje parodomi filtrą atinkantys renginiai.
 					
@@ -302,6 +309,13 @@
 						\caption{Renginio kalendorius}
 						\label{fig:uzd_reginioKalendorius}
 					\end{figure}
+					
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U2.png}
+					\caption{Renginių kalendoriaus peržiūros robustiškumo diagrama}
+					\label{draw:u2}
+				\end{figure}	
 
 			\item \textbf{Ieškoti renginio} (\ref{fig:uzd_renginiai} pav.)\\
 					Vartotojas paieškos laukelyje įveda paieškos frazę, susidenčia iš bent 3 ne tarpo simbolių, spaudžia paieškos mygtuką ir tada yra atidaromas naujas puslapis, kuriame yra sąrašas renginių turintys pavadinime arba aprašyme paieškos frazę.
@@ -317,6 +331,13 @@
 					\includegraphics[width=\textwidth]{img/PSI4/renginioPuslapis-01.jpg}
 					\caption{Renginio puslapis}
 					\label{fig:uzd_renginiai}
+				\end{figure}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U3.png}
+					\caption{Renginių ieškojimo robustiškumo diagrama}
+					\label{draw:u3}
 				\end{figure}
 				
 			\item \textbf{Žiūrėti vaizdo įrašus} (\ref{fig:uzd_paleistas_vaizdoIrasas} pav.)\\
@@ -335,6 +356,13 @@
 					\label{fig:uzd_paleistas_vaizdoIrasas}
 				\end{figure}
 				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U4.png}
+					\caption{Vaizdo įrašų peržiūrėjimo robastiškumo diagrama}
+					\label{draw:u4}
+				\end{figure}
+				
 			\item \textbf{Pateikti renginio pasiūlymą} \\
 					Prisijungęs vartotojas paspaudžia ant mygtuko ,,Pateikti pasiūlymą'', kuris yra navigacijos meniu. Tada vartotojas yra nukeliamas į puslapį su forma, kurioje yra teksto laukas skirtas užpildyti savo pasiūlymo įdėja. Užpildęs įdėjos lauką, vartotojas paspaudžia mygtuką ,,Siųsti'', sistema nusiunčia pranešimą apie įdėją el. paštų administratoriui.
 							
@@ -345,6 +373,13 @@
 						\item Jei vartotojas palieką tuščia pasiūlymo lauką ir spaudžia ,,Siųsti'', parodomas pranešimas, kad privaloma įvesti pasiūlymą.
 						\item Jei iš to pačio ip pateikiami 5 pasiūlymai per dieną, sekantys pranešimų siuntimai blokuojami.
 					\end{itemize}
+					
+					\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U5.png}
+					\caption{Renginio pasiūlymo robustiškumo diagrama}
+					\label{draw:u5}
+				\end{figure}
 				
 			\item \textbf{Registracija} (\ref{fig:uzd_registruotis} pav.)\\
 					Vartotojas, norėdamas užsiregistruoti į tinklalapį, spaudžia mygtuką ,,Užsiregistruoti''. Tada vartotojas yra nukeliamas į kitą puslapį, kuriame suveda privaloma informaciją - vartotojo vardą ir slaptažodį. Tuomet, vartotojas spaudžia ,,Baigti'', sistema patikrina ar neegzistuoja vartotojas tokiu vardu, sukuria vartotoją ir peradresuoja jį atgal į pagrindinį puslapį - ,,Renginių kalendorius''.
@@ -356,11 +391,18 @@
 						\item Jei vartotojas su tokiu vardu jau egzistuoja, parodomas atitinkamas pranešimas.
 					\end{itemize}
 
-				\begin{figure}[H]
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI4/registracija-01.jpg}
+						\caption{Registracijos langas}
+						\label{fig:uzd_registruotis}
+					\end{figure}
+					
+					\begin{figure}[H]
 					\centering
-					\includegraphics[width=\textwidth]{img/PSI4/registracija-01.jpg}
-					\caption{Registracijos langas}
-					\label{fig:uzd_registruotis}
+					\includegraphics[width=\textwidth]{img/PSI5/U6.png}
+					\caption{Registracijos robustiškumo diagrama}
+					\label{draw:u6}
 				\end{figure}
 
 			\item \textbf{Prisijungti} (\ref{fig:uzd_prisijungti} pav.)\\
@@ -378,6 +420,13 @@
 					\caption{Prisijungimo langas}
 					\label{fig:uzd_prisijungti}
 				\end{figure}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U7.png}
+					\caption{Prisijungimo robustiškumo diagrama}
+					\label{draw:u7}
+				\end{figure}
 			
 			\item \textbf{Pirkti bilietus} \\
 				Vartotojas, norintis pirkti bilietą į renginį, nueina į norimo renginio puslapį. Paspaudžia mygtuką ,,Pirkti bilietus'' ir tada yra nukreipimas į bilietų pardavimo punktą.
@@ -388,6 +437,13 @@
 				\item Bilietų nebėra į norimą renginį. Mygtukas ,,Pirkti bilietus'' tampa neaktyvus, ant jo užvedus pelyte rodomas pranešimas, kad bilietai išparduoti.
 				\end{itemize}
 				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U8.png}
+					\caption{Bilietų pirkimo robustiškumo diagrama}
+					\label{draw:u8}
+				\end{figure}
+				
 			\item \textbf{Registracija į renginį} \\
 					Prisijungęs vartotojas renginio puslapyje spaudžia mygtuką ,,Registruotis''. Vartotojas yra įtraukiamas į renginio dalyvių sąrašą, jam parodomas patvirtinimas apie sėkmingą registraciją.
 					
@@ -397,6 +453,13 @@
 						\item Registracijos į renginį mygtukas yra neaktyvus ir rodomas pranešimas, jei užsiregistravo didžiausias galimas dalyvių skaičius.
 						\item Registracijos į renginį mygtukas yra nerodomas, jei vartotojas yra jau užsiregistravęs į renginį.
 				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U9.png}
+					\caption{Registracijos į renginį robustiškumo diagrama}
+					\label{draw:u9}
+				\end{figure}
 				
 			\item \textbf{Kūrti komandą} (\ref{fig:uzd_registruotiKomanda} pav.)\\
 				Prisijungęs vartotojas  spaudžia mygtuką ,,Kurti naują komandą''. Vartotojas įveda komandos pavadinimą ir kviečiamų registruotų vartotojų vardus arba el. pašto adresus. Vartotojas spaudžia mygtuką ,,Sukurti komandą'', komanda yra sukuriama ir komandos nariai gauna pakvietimus į komandą, vartotojas nukeliamas į komandos puslapį.
@@ -415,6 +478,13 @@
 					\caption{Komandos registracija}
 					\label{fig:uzd_registruotiKomanda}
 				\end{figure}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U10.png}
+					\caption{Komandos kūrimo robustiškumo diagrama}
+					\label{draw:u10}
+				\end{figure}
 
 			\item \textbf{Priimti kvietimą į komandą} \\
 					Vartotojas gavęs pakvietimą į komandą el paštu, paspaudžia nuorodą, kuri nukelia jį į komandos peržiūros puslapį, tada ji peržiūri pakvietimą ir nusprendęs, kad nori prisijungti prie komandos spaudžia mygtuką ,,Priimti kvietimą'', sistema prideda vartotoją į komandą ir ištrina pakvietimą.
@@ -427,6 +497,13 @@
 					\item Jei komanda yra ištrinta, paspaudus nuorodą, atsidaro puslapis su pranešimu, kad komanda nebeegzistuoja.
 				\end{itemize}
 				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U11.png}
+					\caption{Pakvietimo į komandą priėmimo robustiškumo diagrama}
+					\label{draw:u11}
+				\end{figure}
+				
 			\item \textbf{Išeiti iš komandos} \\
 				Vartotojas būdamas komandos puslapyje paspaudžia mygtuką ,,Išeiti iš komandos''. Iššokusiame lange, kur klausia ,,Ar tikrai norite išeiti iš šios komandos'' paspaudžia mygtuką ,,Taip''. Vartotojas pašalinamas iš komandos ir gražinamas į pagrindinį langą.
 				
@@ -434,7 +511,14 @@
 				\begin{itemize}
 					\item Vartotojas bando išeiti iš komandos, dalyvaujančios tuo metu vykstančiame renginyje. Tokiu atveju paspaudus ant mygtuko  ,,Išeiti iš komandos'' parodomas pranešimas, kad komanda vis dar dalyvauja renginyję ir vartotojui bus skaičiuojami visi taškai kaip ir per varžybas. Vartotojui paspaudus ,,Supratau, tęsti išėjima iš komandos'' vartotojas pašalinamas iš komandos, bet jis vis dar rodomas prie visų tuo metu vykstančių renginių stataistikos.
 					\item Vartotojas paspaudžia mygtuką ,,Ne'', vartotojas nukeliamas atgal į komandos puslapį.
-					\end{itemize}
+				\end{itemize}
+					
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U12.png}
+					\caption{Išeijimo iš komandos robustiškumo diagrama}
+					\label{draw:u12}
+				\end{figure}
 
 			\item \textbf{Pateikti prašymą priimti į komandą} \\
 				Prisijungęs vartotojas komandos puslapyje  spaudžia mygtuką ,,Pateiktį prašymą priimti į komandą''. Vartotojas yra pridedamas į pasirinktos komandos sąrašą, kaip norintis prisijungti.
@@ -444,6 +528,13 @@
 					\item Mygtukas ,,Pateikti'' yra nerodomas, jei vartotojas jau priklauso komandai.
 					\item Mygtukas ,,Pateikti'' yra neaktyvus, jei vartotojas jau pateikė prašymą priimti į komandą, kurios pavadinimą įvedė.
 				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U13.png}
+					\caption{Prašymo priimti į komandą robustiškumo diagrama}
+					\label{draw:u13}
+				\end{figure}
 				
 			\item \textbf{Registruoti komandą į renginį} \\
 				Vartotojas spaudžia mygtuką ,,Registruoti komandą''. Vartotojui yra parodomas jo sukurtų komandų sąrašas. Vartotojas pasirenka komandą ir spaudžia mygtuką ,,Registruoti''. Komanda yra pridedama į renginio dalyvių sąrašą.
@@ -455,6 +546,13 @@
 					\item Jei vartotojas neturi komandų, jis nukeliamas į komandos kūrimo puslapį.
 				\end{itemize}
 				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U14.png}
+					\caption{Komandos registravimo į renginį robustiškumo diagrama}
+					\label{draw:u14}
+				\end{figure}
+				
 			\item \textbf{Aplikuoti į darbo poziciją} \\
 				Prisijungęs vartotojas spaudžia ant puslapio ,,Darbo pasiūlymai'' atsidaro darbo pasiūlymų sąrašas. Sarašė pasirinkus darbo pasiūlymą, atsidaro dominančios darbo pozicijos aprašymas. Jei nori aplikuoti į darbo pozicija, kurios aprašymą yra atidaręs, spaudžia mygtuką ,,Aplikuoti''. Į teksto lauką įveda savo žinutę ir, paspaudęs mygtuką ,,Pridėti failą'', prisega iki 10-ies, 2 MB arba mažesnių failų. Spaudžia mygtuką ,,Siųsti''. Aplikaciją į darbo poziciją yra siunčiama administratoriui į e-paštą.
 				
@@ -465,6 +563,13 @@
 					\item Mygtukas ,,Pridėti failą'' yra neaktyvus, jei vartotojas jau įkėlė 10 failų.
 				\end{itemize}
 				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/U15.png}
+					\caption{Aplikavimo į darbo poziciją robustiškumo diagrama}
+					\label{draw:u15}
+				\end{figure}
+				
 			\item \textbf{Papildyti asmeninę informaciją} \\
 				Prisijungęs vartotojas spaudžia mygtuką ,,Keisti asmeninę informaciją''. Atidaroma forma su teksto laukais, turinčiais etiketes ,,Vardas'', ,,Pavardė'', ,,Gimimo data'', ,,Telefono numeris'', ,,El-pašto adresas''. Teksto laukuose yra informacija, kurią vartotojas pateikė anksčiau. Vartotojas pakeičia norimą informaciją ir spaudžia ,,Saugoti''. Nauja informacija yra išsaugoma.
 				
@@ -472,14 +577,29 @@
 				\begin{itemize}
 					\item Mygtukas ,,Saugoti'' yra neaktyvus, jei vartotojas įveda netinkamo formato informaciją ir prie atinkamų laukų rodomi klaidos pranešimai.
 				\end{itemize}
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=\textwidth]{img/PSI5/u16.png}
+					\caption{Asmeninės informacijos robustiškumo diagrama}
+					\label{draw:u16}
+				\end{figure}
 
 			\item \textbf{Pašalinti vartotoją iš komandos} \\
 					Komandos kapitonas komandų saraše paspaudžia ant komandos, kurios sudėtį nori keisti, pavadinimo. Atidaromas tos komandos narių, pakviestų vartotojų ir vartotojų, kurie nori prisijungti sąrašas. Prie kiekvieno komandos naro vardo yra mygtukai ,,Pašalinti iš komandos'' ir ,,Skirti vadovu''. Paspaudus ant mygtuko ,,Pašalinti iš komandos'' atidaromas patvirtinimo dialogas, ir vartotojui patvirtinus šalinimą, vartotojas pašalinamas iš komandos. 
+					
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
 						\item Jei vartotojas spaudžia ,,Pašalinti iš komandos'', o pasirinktas vartotojas jau yra išėjęs iš komandos, jis pašalinamas iš sąrašo ir parodomas pranešimas kad pasirinktas vartojas nėra komandos narys.
 					\end{itemize}
 				
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u17.png}
+						\caption{Vartotojo pašalinimo iš komandos robustiškumo diagrama}
+						\label{draw:u17}
+					\end{figure}
+					
 			\item \textbf{Pakviesti registruotą vartotoją į komandą}   \\
 					Komandos kapitonas komandų saraše paspaudžia ant komandos, kurios vadovo pareigas nori perleisti, pavadinimo. Atidaromas tos komandos narių, pakviestų vartotojų ir vartotojų, kurie nori prisijungti sąrašas.  
 					Vartotojas spaudžia, po sąrašu esantį, mygtuką ,,Pridėti naują vartotoją''. Vartotojui parodomas laukas, į kurį vartotojas įveda kviečiamo registruoto vartotojo vardą. Įvedęs vardą, vartotojas spaudžia mygtuką ,,Kviesti'' ir nurodytam vartotojui yra išsiunčiamas kvietimas.
@@ -489,6 +609,13 @@
 						\item Jei vartotojas palieka teksto lauką tuščią, mygtukas ,,Kviesti'' yra neaktyvus.
 						\item Jei įvedamas neegzistuojantis vardas, rodomas klaidos pranešimas.
 					\end{itemize}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u18.png}
+						\caption{Registruoto vartotojo pakvietimo į komandą robustiškumo diagrama}
+						\label{draw:u18}
+					\end{figure}
 				
 			\item \textbf{Perleisti komandos vadovo pareigas kitam vartotojui}   \\
 					Komandos kapitonas komandų saraše paspaudžia ant komandos, į kurią nori pakviesti naują narį, pavadinimo. Atidaromas tos komandos narių, pakviestų vartotojų ir vartotojų, kurie nori prisijungti sąrašas. Pasirinkęs komandos narį, kuriam nori perleisti vadovo pareigas, spaudžia prie jo vardo esantį mygtuką ,,Skirti vadovu''. Vartotojui parodomas patvirtinimo langas su mygtuku ,,Patvirtinti''. Vartotojas spaudžia mygtuką ,,Patvirtinti'' ir komandos vadovas yra pakeičiamas.
@@ -499,6 +626,12 @@
 						\item Jei vartotojas spaudžia ,,Skirti vadovu'', o pasirinktas vartotojas jau yra išėjęs iš komandos, jis pašalinamas iš sąrašo ir parodomas pranešimas kad pasirinktas vartojas nėra komandos narys.						
 					\end{itemize}
 				
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u19.png}
+						\caption{Komandos vadovo pareigų perleidimo robustiškumo diagrama}
+						\label{draw:u19}
+					\end{figure}
 			
 				\item \textbf{Sukūrti naujieną} (\ref{fig:uzd_org_pridetiNaujienas} pav.)\\
 					Vartotojas paspaudžia ant mygtuko ,,Naujienos'', kuris yra navigacijos meniu. Jei vartotojas yra organizatorius arba administratorius, atidaromas puslapis ,,Naujienos'', kurio kairėje pusėje yra mygtukas ,,Pridėti naujienas''. Paspaudus ant šio mygtuko, atidaroma forma, kurioje reikia užpildyti laukus (privalomi - pavadinimas, tekstas, jei vartotojas nera administratorius - renginys (leidžiama pasirinkti iš organizuojamų renginio), pasirinktini - susije renginiai, nuotrauka, vaizdo įrašas, trumpas aprašymas). Vartotojas užpildo laukus ir paspaudžią mygtuką ,,Įkelti'', sistema sukuria naują naujieną.
@@ -509,12 +642,19 @@
 						\item Vartotojui neužpildžius privalomų laukų negalima paspausti mygtuko ,,Įkelti'' ir prie laukų, kurie nebuvo užpildyti yra parašoma - ,,Būtina užpildyti''.
 					\end{itemize}
 				
-				\begin{figure}[H]
-					\centering
-					\includegraphics[width=\textwidth]{img/PSI4/OrganizatoriusNaujienos-01.jpg}
-					\caption{Renginio organizatoriaus paskyra}
-					\label{fig:uzd_org_pridetiNaujienas}
-				\end{figure}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI4/OrganizatoriusNaujienos-01.jpg}
+						\caption{Renginio organizatoriaus paskyra}
+						\label{fig:uzd_org_pridetiNaujienas}
+					\end{figure}
+				
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u20.png}
+						\caption{Naujienos sukūrimo robustiškumo diagrama}
+						\label{draw:u20}
+					\end{figure}
 			
 			\item \textbf{Redaguoti naujieną}   \\
 					Vartotojas pasirenka naujieną kurią nori redaguoti. Sistema patikrina ar vartotojas yra naujienos autorius arba administatorius ir atidaro naujienos puslapį su redagavimo funkcijų juosta. Atsidarius naujienos puslapiui vartotojas paspaudžia mygtuką ,,Redaguoti'' ir atsidaro naujienos puslapis su redaguojamais laukais. Redagavus norimus laukus vartojas spaudžia ,,Išsaugoti'' ir naujiena išsaugoma.
@@ -525,6 +665,12 @@
 						\item Administratorius paspaudęs ant naujienų pavadinimo nieko neredaguoja ir nori toliau ieškoti norimų naujienų. Tada jis spaudžia mygtuką ,,Išeiti''.
 					\end{itemize}	
 					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u21.png}
+						\caption{Naujienos redagavimo robustiškumo diagrama}
+						\label{draw:u21}
+					\end{figure}
 			
 			\item \textbf{Ištrinti naujieną} (\ref{fig:uzd_admin_puslapisNaujienos} pav.)\\
 					Vartotojas pasirenka naujieną kurią nori ištrinti. Sistema patikrina ar vartotojas yra naujienos autorius arba administatorius ir atidaro naujienos puslapį su redagavimo funkcijų juosta. Atsidarius naujienos puslapiui vartotojas paspaudžia mygtuką ,,Ištrinti'' ir atsidaro ištrinimo patvirtinimo dialogas. Patvirtinus ištrinimą naujiena ištrinama.
@@ -535,12 +681,19 @@
 						\item Jei vartotojas nepatvirtina ištrinimo, jis gražimas į naujienos puslapį.
 					\end{itemize}
 				
-				\begin{figure}[H]
-					\centering
-					\includegraphics[width=\textwidth]{img/PSI4/AdminNaujienos-01.jpg}
-					\caption{Administratoriaus prieiga puslapiui ,,Naujienos''}
-					\label{fig:uzd_admin_puslapisNaujienos}
-				\end{figure}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI4/AdminNaujienos-01.jpg}
+						\caption{Administratoriaus prieiga puslapiui ,,Naujienos''}
+						\label{fig:uzd_admin_puslapisNaujienos}
+					\end{figure}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u22.png}
+						\caption{Naujienos ištrinimo robustiškumo diagrama}
+						\label{draw:u22}
+					\end{figure}
 				
 			\item \textbf{Redaguoti renginį} (\ref{fig:uzd_admin_renginioKalendorius} pav.)\\
 					Kalendoriuje vartotojas pasirenka renginį, kurį nori redaguoti. Jei vartotojas yra renginio organizatorius arba administatorius, jam atidaromas renginio puslapis atidaro renginio puslapį su renginio redagavimo funkcijomis. Renginio puslapyje, vartotojas renginio spaudžia mygtuką ,,Redaguoti''. Paspaudus ant jo atsidaro naujas puslapis su renginio informacijos redagavimo forma. Laukai yra užpildyti anksčiau įvesta informacija. Pakeitęs norimus laukus, administratorius paspaudžia mygtuką ,,Išsaugoti''.
@@ -551,18 +704,19 @@
 						\item Jei vartotojas nėra renginio organizatorius ar administratorius, renginio redagavimo funkcijos nerodomos.
 					\end{itemize}
 		
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI4/AdminRenginioKalendorius-01.jpg}
+						\caption{Administratoriaus prieiga puslapiui ,,Renginio kalendorius''}
+						\label{fig:uzd_admin_renginioKalendorius}
+					\end{figure}
 					
-					\underline{Alternatyvūs scenarijai:}
-					\begin{itemize}
-						\item Organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Baigti'' ir prie atitinkamų laukų rašoma klaida.
-					\end{itemize}
-				
-				\begin{figure}[H]
-					\centering
-					\includegraphics[width=\textwidth]{img/PSI4/AdminRenginioKalendorius-01.jpg}
-					\caption{Administratoriaus prieiga puslapiui ,,Renginio kalendorius''}
-					\label{fig:uzd_admin_renginioKalendorius}
-				\end{figure}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u23.png}
+						\caption{Renginio redagavimo robustiškumo diagrama}
+						\label{draw:u23}
+					\end{figure}
 				
 			\item \textbf{Ištrinti renginį}   \\
 					Kalendoriuje vartotojas pasirenka renginį, kurį nori ištrinti. Sistema patrikrina ar vartotojas yra renginio organizatorius arba administratorius ir atidaro renginio puslapį su renginio redagavimo funkcijomis. Renginio puslapyje vartotojas spaudžia mygtuką ,,Ištrinti''. Sistema parodo patvirtinimo dialogą, vartotojas patvirtina ištrinimą, sistema išsiunčia visiems užregistravusiems renginio dalyviams pranešimą kad renginys atšauktas, ir renginio busena pakeičiama į atšauktas.
@@ -572,6 +726,13 @@
 						\item Jei vartotojas nėra renginio organizatorius ar administratorius, renginio redagavimo funkcijos nerodomos.
 						\item Jei vartotojas atsiradus dialogui atšaukia ištrinimą, dialogas pašalinamas ir parodomas renginio puslapis.
 					\end{itemize}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u24.png}
+						\caption{Renginio ištrinimo robustiškumo diagrama}
+						\label{draw:u24}
+					\end{figure}
 				
 			\item \textbf{Pridėti rezultatus}   \\
 					Administratorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori pridėti. Prie renginio spaudžia mygtuką ,,Rezultatai''. Paspaudus ant jo parodoma renginio formatą atitinkanti lentelė, kurią galima užpildyti renginio rezultatais. Administratorius suveda renginio rezultatus ir spaudžia mygtuką ,,Patvirtinti''.
@@ -583,6 +744,13 @@
 						\item Mygtukas ,,Patvirtinti'' yra neaktyvus, jei administratorius rezultatų nesuvedė.
 					\end{itemize}
 					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u25.png}
+						\caption{Rezultatų pridėjimo robustiškumo diagrama}
+						\label{draw:u25}
+					\end{figure}
+					
 			\item \textbf{Redaguoti rezultatus}   \\
 					Administratorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori pridėti. Prie renginio spaudžia mygtuką ,,Rezultatai''. Paspaudus ant jo parodoma renginio formatą atitinkanti lentelė, kurioje galima matyti ir redaguoti renginio rezultatais. Administratorius pakeičia rezultatus ir spaudžia mygtuką ,,Patvirtinti''.
 					
@@ -591,6 +759,13 @@
 						\item Metamos klaidos, jei rezultatai yra vedami neteisingai (pvz.: kai į skaitinius laukus bandomos įvesti raidės).
 						\item Mygtukas ,,Patvirtinti'' yra neaktyvus, jei administratorius nepadarė pakeitimų.
 					\end{itemize}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u26.png}
+						\caption{Rezultatų redagavimo robustiškumo diagrama}
+						\label{draw:u26}
+					\end{figure}
 				
 			\item \textbf{Ištrinti rezultatus}   \\
 					Administratorius spaudžia ant mygtuko ,,Renginių kalendorius'', kuris yra navigacijos meniu. Tada atidaromas puslapis ,,Renginių kalendorius''. Kalendoriuje administratorius pasirenka renginį, kurio rezultatus nori ištrinti. Prie renginio spaudžia mygtuką ,,Rezultatai''. Paspaudus ant jo parodoma renginio formatą atitinkanti lentelė, kurioje galima matyti ir redaguoti renginio rezultatais. Administratorius spaudžia mygtuką ,,Išvalyti'' ir mygtuką ,,Patvirtinti''.
@@ -600,6 +775,13 @@
 						\item Mygtukas ,,Išvalyti'' yra neaktyvus, jei rezultatų lentelė yra tuščia.
 						\item Mygtukas ,,Patvirtinti'' yra neaktyvus, jei administratorius nepadarė pakeitimų.
 					\end{itemize}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u27.png}
+						\caption{Rezultatų ištrinimo robustiškumo diagrama}
+						\label{draw:u27}
+					\end{figure}
 				
 			\item \textbf{Pridėti vaizdo įrašą} (\ref{fig:uzd_admin_vaizdoIrasas} pav.)\\
 					Administratorius spaudžia ant mygtuko “Vaizdo įrašai”, kuris yra navigacijos meniu. Paspaudus ant jo parodomas renginio vaizdo įrašų sąrašas. Administratorius spaudžia mygtuką “Pridėti”. Atsidaro naujas langas su lauku į kurį galima įrašyti vaizdo įrašo nuorodą bei mygtuku “Įkelti”, kurį paspaudus leidžiama pasirinkti vaizdo įrašą iš kompiuterio. Administratorius įveda vaizdo įrašo nuorodą arba spaudžia mygtuką “Įkelti” ir pasirenka failą iš kompiuterio. Administratorius spaudžia mygtuką “Išsaugoti”.
@@ -610,12 +792,19 @@
 						\item Metama klaida, jei bando talpinti netinkamo formato failą.
 					\end{itemize}
 				
-				\begin{figure}[H]
-					\centering
-					\includegraphics[width=\textwidth]{img/PSI4/AdminVaizdoirasai-01.jpg}
-					\caption{Administratoriaus prieiga puslapiui ,,Vaizdo įrašai''}
-					\label{fig:uzd_admin_vaizdoIrasas}
-				\end{figure}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI4/AdminVaizdoirasai-01.jpg}
+						\caption{Administratoriaus prieiga puslapiui ,,Vaizdo įrašai''}
+						\label{fig:uzd_admin_vaizdoIrasas}
+					\end{figure}
+				
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u28.png}
+						\caption{Vaizdo įrašų pridėjimo robustiškumo diagrama}
+						\label{draw:u28}
+					\end{figure}
 					
 			\item \textbf{Ištrinti vaizdo įrašą}   \\
 					Administratorius spaudžia ant mygtuko “Vaizdo įrašai”, kuris yra navigacijos meniu. Paspaudus ant jo parodomas renginio vaizdo įrašų sąrašas. Prie kiekvieno vaizdo įrašo yra mygtukas “Ištrinti”. Administratorius spaudžia mygtuką “Ištrinti” prie pasirinkto vaizdo įrašo. Parodomas langas, kuriame prašoma patvirtinti, kad nori ištrinti vaizdo įrašą. Administratorius spaudžia mygtuką “Patvirtinti”. Vaizdo įrašas ištrinamas.
@@ -625,6 +814,13 @@
 						\item Administratorius spaudžia mygtuką ,,Ištrinti'' ir uždaro patvirtinimo langą. Vaizdo įrašas nėra ištrinamas.
 					\end{itemize}
 					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u29.png}
+						\caption{Vaizdo įrašų ištrinimo robustiškumo diagrama}
+						\label{draw:u29}
+					\end{figure}
+					
 			\item \textbf{Apriboti, blokuoti, ištrinti vartotojus}   \\
 					Administratorius užeina į atitinkamo vartotojo puslapį pasirenka, ką nori daryti ir atitinkamai paspaudžia mygtukus ,,Apriboti prieiga'', ,,Blokuoti prieigą'', ,,Ištrinti vartotoją''. Pasirinkęs ,,Apriboti prieiga'' arba ,,Blokuoti prieigą'' administratorius iššokusiame lange pasirenka iki kada jis nori, kad tai galiotų ir spaudžia ,,Patvirtinti''. Jei administratorius paspaudžia ,,Ištrinti vartotoją'', atsidaro patvirtinimo langas, ir administratoriui patvirtinus ištrinimą, vartotojas ištrinamas.
 					
@@ -633,9 +829,23 @@
 						\item Administratorius bando atlikti vieną iš šių veiksmų kito administratoriaus paskyrai. Tokiu atveju mygtukai yra neaktyvūs ir virš jų atsiranda užrašas, kad administratoriai negali redaguoti kitų administratorių prieigos.
 						\item Jei vartotojui jau apribota arba blokuojama prieiga, prie atitinkamų mygtukų rodoma trukmė, ir paspaudus ,,Apriboti prieiga'' arba ,,Blokuoti prieigą'' mygtukus laukas užpildomas esama apribojimu trukme.						
 					\end{itemize}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u30.png}
+						\caption{Vartotojų apribojimo, blokavimo, ištrintimo robustiškumo diagrama}
+						\label{draw:u30}
+					\end{figure}
 				
 			\item \textbf{Peržiūrėti darbo aplikacijų sąrašus}   \\
 					Administratorius spaudžia ant mygtuko ,,Darbo aplikacijos'', kuris yra navigacijos meniu. Atidaromas langas su darbo aplikacijų sąrašų. Viršuje yra paryškintos naujos aplikacijos. Administratorius peržiūri darbo aplikacijas ir susisiekia su pasirinktais kandidatais.
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u31.png}
+						\caption{Darbo aplikacijų peržiūros robustiškumo diagrama}
+						\label{draw:u31}
+					\end{figure}
 
 			\item \textbf{Užregistruoti naują renginį}   \\
 					Renginio organizatorius ,,Renginių kalendorius'' puslapyje spaudžia mygtuką ,,Pridėti renginį''. Paspaudus ant jo atsidaro naujas puslapis su forma, kurioje yra laukai (renginio pavadinimas, sporto šaka, vienos komandos dydis (intervalas), maksimalus dalyvių skaičius, registravimosi termino data, renginio data, vieta, bilietu pardavimo vieta ). Įvedus visus reikalingus laukus, renginio organizatorius paspaudžia mygtuką ,,Sukurti renginį'', sistema sukuria renginį ir nukelia organizatorių į sukūrto renginio puslapį.
@@ -643,7 +853,14 @@
 					\underline{Alternatyvūs scenarijai:}
 					\begin{itemize}
 						\item Renginio organizatorius nesuveda visų privalomų laukų. Jam neleidžia paspausti mygtuko ,,Sukūrti renginį'' ir prie atitinkamų laukų rašoma klaida.
-					\end{itemize}	
+					\end{itemize}
+
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u32.png}
+						\caption{Naujo renginio registravimo robustiškumo diagrama}
+						\label{draw:u32}
+					\end{figure}
 			
 			\item \textbf{Peržiūrėti renginio dalyvių sąrašus}   \\
 					Vartotojas atidaro renginio puslapį. Jei vartotojas yra renginio organizatorius arba administratorius, atidarytam renginio puslapyje rodomas mygtukas dalyviai. Vartotojas spaudžia mygtuką ,,Dalyviai''. Atidaromas langas, kuriame yra rodomas pasirinkto renginio dalyvių sąrašas.
@@ -652,7 +869,14 @@
 					\begin{itemize}
 						\item Jei vartotojas nėra nei renginio organizatorius, nei administratorius, vartotojui nerodomas mygtukas dalyviai.
 						\item Jeigu dalyvių sąrašas yra tuščias, vartotojui yra rodomas pranešimas kad nė vienas vartotojas neužsiregsitravo.
-					\end{itemize}	
+					\end{itemize}
+
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{img/PSI5/u33.png}
+						\caption{Renginio dalyvių peržiūros robustiškumo diagrama}
+						\label{draw:u33}
+					\end{figure}
 		
 			\subsection* {Reikalavimų - užduočių atsekamumo matrica}
 			Žemiau yra pateikiama Reikalavimų - užuočių atsekamamumo matrica (\ref{tab:ReikalavimuUzduociuAtsekamumoMatrica} lentelė.), kurios pagalba, mes nustatome pagal kurį reikalavimą yra sukurta atitinkama užduotis.
@@ -721,7 +945,7 @@
 		\end{figure}
 		
 		\subsection{Duomenu saugojimo sekų diagrama} 
-		Žemiau yra pateikta pavyzdinė diagrama, kaip turi atrodyti duomenų saugojimas į duombazę. Vartotojos pateikia informaciją serveriui, serveris apdoroja ją ir paduoda į duomabazę. Jei viskas gerai tai duombazė gražina <Success> ir serveris vartotojui paduoda naują vaizdą, kur matosi, kad operacija atlikta sėkmingai. Jeigu nebuvo klaidų, tai duomenys yra atnaujinami ir atsarginėjė duombazėje. Jeigu atsirado klaida saugant duomenys pagrindinėje duombazėje, klaida yra grąžinama į serverį, kur yra apdorojama ir grąžinama varotojui, ir vartotojas gali pakartoti pildymą ir matyti prieš tai padaryta klaidą. Jeigu atsirada klaida atsarginėje duobazėje, tai tą klaida yra grąžinama į serverį. Serveris šia klaidą apdoroja ir siunčiau programuotojui, kad būtų kuo greičiau pataisyta. 
+		Žemiau yra pateikta pavyzdinė diagrama, kaip turi atrodyti duomenų saugojimas į duombazę. Vartotojos pateikia informaciją serveriui, serveris apdoroja ją ir paduoda į duomabazę. Jei viskas gerai tai duombazė gražina <Success> ir serveris vartotojui paduoda naują vaizdą, kur matosi, kad operacija atlikta sėkmingai. Jeigu nebuvo klaidų, tai duomenys yra atnaujinami ir atsarginėjė duombazėje. Jeigu atsirado klaida saugant duomenys pagrindinėje duombazėje, klaida yra grąžinama į serverį, kur yra apdorojama ir grąžinama varotojui, ir vartotojas gali pakartoti pildymą ir matyti prieš tai padaryta klaidą. Jeigu atsirada klaida atsarginėje duobazėje, tai tą klaida yra grąžinama į serverį. Serveris šia klaidą apdoroja ir siunčia programuotojui, kad būtų kuo greičiau pataisyta. 
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{img/PSI5/SavingSequence.png}
