@@ -656,8 +656,7 @@
 						\item Jei vartotojas nėra nei renginio organizatorius, nei administratorius, vartotojui nerodomas mygtukas dalyviai.
 						\item Jeigu dalyvių sąrašas yra tuščias, vartotojui yra rodomas pranešimas kad nė vienas vartotojas neužsiregsitravo.
 					\end{itemize}	
-	
-			\newpage	
+		
 			\subsection* {Reikalavimų - užduočių atsekamumo matrica}
 			Žemiau yra pateikiama Reikalavimų - užuočių atsekamamumo matrica (\ref{tab:ReikalavimuUzduociuAtsekamumoMatrica} lentelė.), kurios pagalba, mes nustatome pagal kurį reikalavimą yra sukurta atitinkama užduotis.
 			\begin{table}[H]
@@ -714,7 +713,7 @@
 			\end{table}                                                                           		
 		\end{enumerate}                                                                                                                           
 	\section{Techninė sistemos architektūra}\label{techstruktura}	
-	Šiame skyriuje pateikiame sistemos dislokavimo diagrama(ref{fig:dislokavimo} pav.) bei pavyzdinę duomenų saugojimo į duombazę sekų diagramą(\ref{fig:saugojimo} pav.).
+	Šiame skyriuje pateikiame sistemos dislokavimo diagrama(\ref{fig:dislokavimo} pav.) bei pavyzdinę duomenų saugojimo į duombazę sekų diagramą(\ref{fig:saugojimo} pav.).
 		\subsection{Dislokavimo diagrama}
 		Kadangi svetainė sukurta naudojant MVC modelį("Model View Controller"), todėl Html kodo generavimas iš aukštesnio lygio programavimo kalbos vyksta pagrindiniame serveryje ir klientui http protokolo pagalba paduodame sugeneruota vaizdą. Informacijos apdorojimas vyksta BLL ("Business Logic Layer") dalyje, kur yra visos su informacijos apdorojimu, saugojimu bei pateikimu taisyklės. Taip pat BLL bendrauja su išoriniais servisais(žinučių ir el.pašto), kurie perduoda informacija vartotojams. BLL jungiasi su DAL ("Data Access Layer"), kur yra saugomi sistemos naudojami modeliai, bei duombazės saugojimo logika. DAL naudojama susijungimui su duombaze ir veiksmu su jau apdorotais duomenimis darymu. Duombazės serveris yra sudarytas iš trijų duombazių - klientų, visos informacijos ir saugyklos. Klientų ir informacijos duombazės atskirtos, kadangi klientų duombazė nėra taip dažnai naudojama ir taip pat yra mažinamas krūvis ant informacijos duombazės. Atsarginė duombazė turi visada turėti paskutinius duomenis, jeigu būtų atsiradusi duomenų korupcija pagrindinėse duombazėse.
 		\begin{figure}[H]
