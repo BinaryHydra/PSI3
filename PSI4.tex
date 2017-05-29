@@ -954,38 +954,38 @@
 		\end{figure}
 		
 	\section{Testavimo planas ir scenarijai}
-		Šiame skyriuje pateikiamas testavimo planas ir į jį įeinantys testavimo scenarijai. Kiekvienam scenarijui pateikiamos tikslas, kurio siekiama vykdant scenarijų, sąlygos - būtina programos būsena prieš pradendant vykdytį testavimo scenarijų, pats testavimo scenarijus - veiksmų seką, kurią reikia įvykdyti norint patikrinti programos teisingą veikimą, ir rezultatas - programos būsena įvykdžius visus testavimo scenarijaus žingsius.  
+		Šiame skyriuje pateikiamas testavimo planas ir į jį įeinantys testavimo scenarijai. Kiekvienam scenarijui pateikiamos tikslas, kurio siekiama vykdant scenarijų, sąlygos - būtina programos būsena prieš pradendant vykdytį testavimo scenarijų, pats testavimo scenarijus - veiksmų seką, kurią reikia įvykdyti norint patikrinti programos teisingą veikimą, ir rezultatas - programos būsena įvykdžius visus testavimo scenarijaus žingsius. Testavimo planai suskirtyti pagal programos langus. Testų scenarijai parašyti taip, kad juos būtų lengva automatizuoti.  
 		
 		
 		\subsection{Vartotojo meniu}
 		
-		\begin{enumerate}
-		\item
-			\begin{itemize}			
-					\item \textbf{Tikslas:} Patikrinti ar teisingai atvaizduojami puslapio elementai neprisijungusiam vartotojui
-					\item \textbf{Sąlygos:} Būvimas bet kurime tinklalapio puslapyje neprisijungus 
-					\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Registruotis".
-					\item \textbf{Rezultatas:} Atidaromas registracijos puslapis.
-					\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Prisijungti".
-					\item \textbf{Rezultatas:} Atidaromas prisijungimo puslapis.
-					\item \textbf{Scenarijus:} Patikriname ar matomas mygtukas mano "Mano meniu".
-					\item \textbf{Rezultatas:} Mygtukas "Mano meniu" nematomas.
-			\end{itemize}
-		\item 
-			\begin{itemize}			
-					\item \textbf{Tikslas:} Patikrinti ar teisingai atvaizduojami puslapio elementai prisijungusiam vartotojui
-					\item \textbf{Sąlygos:} Būvimas bet kurime tinklalapio puslapyje prisijungus 
-					\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Mano meniu"
-					\item \textbf{Rezultatas:} Atidaromas vartotojo meniu langas. 
-					\item \textbf{Scenarijus:} Patikriname ar matomi mygtukai "Prisijungti" ir "Registruotis".
-					\item \textbf{Rezultatas:} Mygtukai "Prisijungti" ir "Registruotis" nematomi.
-			\end{itemize}
-		\end{enumerate}
+				Vartotojo meniu, būnant neprisjungusiu ar prisijungusiu vartotoju, peržiūros lango funkcionalumo testavimo scenarijai. 
+		
+				\begin{itemize} [noitemsep]			
+						\item \textbf{Tikslas:} Patikrinti ar teisingai atvaizduojami puslapio elementai neprisijungusiam vartotojui
+						\item \textbf{Sąlygos:} Būvimas bet kurime tinklalapio puslapyje neprisijungus 
+						\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Registruotis".
+						\item \textbf{Rezultatas:} Atidaromas registracijos puslapis.
+						\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Prisijungti".
+						\item \textbf{Rezultatas:} Atidaromas prisijungimo puslapis.
+						\item \textbf{Scenarijus:} Patikriname ar matomas mygtukas mano "Mano meniu".
+						\item \textbf{Rezultatas:} Mygtukas "Mano meniu" nematomas.
+				\end{itemize}
+
+				\begin{itemize}	[noitemsep]		
+						\item \textbf{Tikslas:} Patikrinti ar teisingai atvaizduojami puslapio elementai prisijungusiam vartotojui
+						\item \textbf{Sąlygos:} Būvimas bet kurime tinklalapio puslapyje prisijungus 
+						\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Mano meniu"
+						\item \textbf{Rezultatas:} Atidaromas vartotojo meniu langas. 
+						\item \textbf{Scenarijus:} Patikriname ar matomi mygtukai "Prisijungti" ir "Registruotis".
+						\item \textbf{Rezultatas:} Mygtukai "Prisijungti" ir "Registruotis" nematomi.
+				\end{itemize}
 		
 		\subsection{Prisijungimo langas}
-			\begin{enumerate}
-			\item
-				\begin{itemize}			
+		
+				Vartotojo prisijungimo būnant neprisjungusiu vartotoju peržiūros lango funkcionalumo testavimo scenarijai. 
+		
+				\begin{itemize}	[noitemsep]		
 						\item \textbf{Tikslas:} Patikrinti ar teisingai veikia prisijungimo laukų validacija ir prisjungimo funkcija. 
 						\item \textbf{Sąlygos:} Būvimas prisijungimo puslapyje, sukurtas bent vienas vartotojas.
 						\item \textbf{Scenarijus:} Spaudžiame "Prisijugti" nesuvedus duomenų.
@@ -999,12 +999,12 @@
 						\item \textbf{Scenarijus:} Spaudžiame "Prisijugti" suvedus egzistuojančio vartotojo vardą ir slaptažodį.
 						\item \textbf{Rezultatas:} Vartotojas prijungimas prie sistemos ir atidaromas prijungusio vartotojo sąsaja.
 				\end{itemize}
-			\end{enumerate}
 		
 		\subsection{Registracijos langas}	
-			\begin{enumerate}
-			\item
-				\begin{itemize}			
+		
+				Vartotojo registracijos būnant neprisjungusiu vartotoju peržiūros lango funkcionalumo testavimo scenarijai. 
+		
+				\begin{itemize}	[noitemsep]		
 						\item \textbf{Tikslas:} Patikrinti ar teisingai veikia registracijos laukų validacija ir registracijos funkcija. 
 						\item \textbf{Sąlygos:} Būvimas registracijos puslapyje, sukurtas bent vienas vartotojas.
 						\item \textbf{Scenarijus:} Spaudžiame "Registruotis" nesuvedus duomenų.
@@ -1020,58 +1020,147 @@
 						\item \textbf{Scenarijus:} Spaudžiame "Registruotis" suvedus teisingai užpilde regisracijos formą.
 						\item \textbf{Rezultatas:} Vartotojas nukreipiamas į prisijungimo puslapį ir parodomas pranešimas registracija sėkminga.
 				\end{itemize}
-			\end{enumerate}
 		
 		\subsection{Renginių kalendorius}
-			\begin{enumerate}
-			\item 
-				\begin{itemize}
+				
+				Renginių kalendoriaus, būnant neprisjungusiu ar prisijungusiu vartotoju, peržiūros lango funkcionalumo testavimo scenarijai. 
+		
+				\begin{itemize} [noitemsep]
 						\item \textbf{Tikslas:} Patikrinti ar kalendorius gerai nukreipia į renginius. 
 						\item \textbf{Sąlygos:} Esama kaip renginių kalendoriaus puslapyje. Sukurtas bent 1 renginys.
 						\item \textbf{Scenarijus:} Spaudžiama ant renginio įrašo kalendoriuje.
 						\item \textbf{Rezultatas:} Atidaromas pasirinkto renginio puslapis.
 				\end{itemize}
 
-				\begin{itemize}
+				\begin{itemize} [noitemsep]
 						\item \textbf{Tikslas:} Patikrinti ar kalendoriuje parodomas sukurtas renginys. 
 						\item \textbf{Sąlygos:} Prisijungimas kaip administratorius.
 						\item \textbf{Scenarijus:} Sukurimas naujas renginys. Nueinama į renginių kalendoriaus puslapį, pasirenkamas renginio menuo.
 						\item \textbf{Rezultatas:} Sukurto renginio dienos laukelyje matomas sukurto renginio įrašas.
 				\end{itemize}
-				\item 
-				\begin{itemize}
+				
+				\begin{itemize} [noitemsep]
 						\item \textbf{Tikslas:} Patikrinti ar teisingai rodomi renginiai neprijungusiam vartotojui. 
 						\item \textbf{Sąlygos:} Egzistuoja sukurti renginiai, esama renginių kalendoriaus puslapyje. 
 						\item \textbf{Scenarijus:} Kečiami kalendoriaus menesiai.
 						\item \textbf{Rezultatas:} Menuo pakeičiamas, atitinkamuose langeliuose parodomi tą dieną vykstantys renginiai.
 						\item \textbf{Scenarijus:} Pasirenkama diena kurią vyksta daugiau renginių nei telpą į kalendoriaus langenį. Spaudžiamas tritaškio ikona.
-						\item \textbf{Rezultatas:} Atidaromas tą dieną vykstačių renginių sąrašas.
+						\item \textbf{Rezultatas:} Atidaromas pilnas tą dieną vykstačių renginių sąrašas.
 				\end{itemize}
-			\end{enumerate}
+				
 		\subsection{Naujienos}
 		
-		\subsection{Komandos langas}
+				Naujienų puslapio testavimo scenarijai.
 		
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar tinkamai rodomas naujienų sąrašas. 
+						\item \textbf{Sąlygos:} Egzistuoja sukurta bent viena naujiena. 
+						\item \textbf{Scenarijus:} Spaudžiamas meniu mygtukas "Naujienos", atsidariusiame naujienų lange spaudžiamas naujienos pavadinimas.
+						\item \textbf{Rezultatas:} Atidaromas naujienos puslapis.
+				\end{itemize}
+				
+		\subsection{Komandos puslapis} 
+		
+				Vartotojo nesančio komandos nariu, esančiu komandos nariu arba kapitonu komandos peržiūros lango testavimo scenarijai.
+		
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar galima sukurti komanda. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju. 
+						\item \textbf{Scenarijus:} Spaudžimas mygtukas "Mano meniu". Saraše pasirenkame mygtuką "Mano komandos". Atsidariusiame puslapyje spaudžiama sukurti komandą. Atsidariusiame komandos puslapyje įvedamas komandos pavadinimas, pasirenkami kokius narius bus norima kviesti. Spaudžiamas mygtukas sukurti komandą.
+						\item \textbf{Rezultatas:} Sukuriama komanda, pasirinkties nariams išsiunčiamas pakvietimas į komandą, vartotojas nukreipimas į komandos puslapį.
+				\end{itemize}
+				
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti komandos kūrimo validacija. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, komandos kurimo puslapyje. 
+						\item \textbf{Scenarijus:} Komandos puslapyje įvedamas komandos pavadinimas susidedantis iš mažiau nei 3 simbolių, pasirenkami kokius narius bus norima kviesti. Spaudžiamas mygtukas sukurti komandą.
+						\item \textbf{Rezultatas:} Parodomas klaidos pranešimas: "Komandos pavadininimas turi susidaryti bent iš 3 simbolių".
+				\end{itemize}
+				
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ne komandos nariui rodomą komandos informaciją. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, egzistuoja bent 1 komanda, vartotojas nėra jos narys. 
+						\item \textbf{Scenarijus:} Atidaromas komandos puslapis.
+						\item \textbf{Rezultatas:} Komandos puspalyje rodomas komandos kapitonas, nariai ir pavadinimas, kuriuose renginiuose komanda užėmė prizines vietas.
+				\end{itemize}
+				
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar vartotojas gali išeiti iš komandos. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, buvimas bent vienoje komandoje ne komandos kapitonu. Buvimas komandos puslapyje.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką išeiti iš komandos. Atidariusiame patvirtino lange paspaudžia mygtuką patvirtinti.
+						\item \textbf{Rezultatas:} Vartotojas pašalimas iš komandos.
+				\end{itemize}
+				
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar komandos kapitonas gali išeiti iš komandos. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, buvimas bent vienoje komandoje komandos kapitonu. Buvimas komandos puslapyje.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką išeiti iš komandos. Atidariusiame patvirtino lange komandos kaptionas pasirenka kuriam komandos nariui nori perversti komandos kapitono pareigas ir spaudžia patvirtinti.
+						\item \textbf{Rezultatas:} Vartotojas pašalimas iš komandos, nauju komandos kapitonu tampa pasirinktas narys.
+				\end{itemize}
+				
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar komandos kapitonas gali ištrinti komandą. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, buvimas bent vienoje komandoje komandos kapitonu. Buvimas komandos puslapyje.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką ištrinti komandą. Atidariusiame patvirtino lange komandos kaptionas pasirenka kuriam komandos nariui nori perversti komandos kaptiono pareigas. Vartotojas pasirenka vartotoja ir spaudžia patvirtinti.
+						\item \textbf{Rezultatas:} Vartotojas pašalimas iš komandos, nauju komandos kapitonu tampa pasirinktas narys.
+				\end{itemize}
+				
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar komandos kapitonas gali ištrinti komandą. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, buvimas bent vienoje komandoje komandos kapitonu. Buvimas komandos puslapyje.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką ištrinti komandą. Atsidariusiame patvirtino lange kapitonas spaudžia patvirtiniti ištrinimą.
+						\item \textbf{Rezultatas:} Komandos būsena pakeičiama į ištrintą. Ji neberodama komandos nariams prie jų komandų sąrašo. 
+				\end{itemize}
+				
+				
 		\subsection{Pakvietimo į komandą peržiūros langas}
 		
-		\subsection{Renginio puslapis}
+			Vartotojo pakviesto į komandą, pakvietimų peržiūros lango testavimo scenarijai.
 		
-		\subsection{Vaizdo įrašo peržiūros puslapis}
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar vartojas gali atmesti/ priimti pakvietimą į komanda. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, turimas bent vienas galiojantis pakvietimas į komandą.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką pakvietimai. Atsidariusiame pakvietimų į komandą puslapyje pasirenkamas pavietimas, spaudžiama priimti pakvietimą.
+						\item \textbf{Rezultatas:} Vartotojas priimamas į komandą, pakvietimas pašalinamas.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką pakvietimai. Atsidariusiame pakvietimų į komandą puslapyje pasirenkamas pavietimas, spaudžiama atmesti pakvietimą.
+						\item \textbf{Rezultatas:} Pakvietimas pašalinamas. 						
+				\end{itemize}
+		
+		\subsection{Renginio puslapis}
+				
+				\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar vartojas gali registruoti į renginį. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, buvimas renginio, kuriame dar nedalyvauja, puslapyje.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką "Registuotis į renginį".
+						\item \textbf{Rezultatas:} Vartotojas įtraukimas į renginio dalyvių sąrašą, mygtukas "Registuotis į renginį" neberodomas. 						
+				\end{itemize}
+				
+					\begin{itemize} [noitemsep]
+						\item \textbf{Tikslas:} Patikrinti ar komandos kapitonas gali registruoti komandą į renginį. 
+						\item \textbf{Sąlygos:} Buvimas prisjungusiu vartotoju, komandos kapitonu, buvimas renginio, kuriame dar nedalyvauja jo komanda, puslapyje.
+						\item \textbf{Scenarijus:} Vartotojas spaudžia mygtuką "Registuoti komandą į renginį". Atsiradusiame lange pasirenkama
+						\item \textbf{Rezultatas:} Vartotojas įtraukimas į renginio dalyvių sąrašą, mygtukas "Registuotis į renginį" neberodomas. 						
+				\end{itemize}
+		
 		
 		\subsection{Administratoriaus funkcijų langas}
 		
-		\subsection{Renginio remimo puslapis}
+		\subsection{Registracija į puslapį}
 		
 		\subsection{Bendri atvėjai}
 		
+			\begin{itemize} [noitemsep]
+					\item \textbf{Tikslas:} Patikrinti prisijungę ar vartotojai gali pasiekti tik jiems pasiekimas funkijas. 
+					\item \textbf{Sąlygos:} Esame prisijunge kaip paprastas vartotojas.
+					\item \textbf{Scenarijus:} Bandoma į pakeisti adresą į administratoriui tik prieinamo puslapio adresą.
+					\item \textbf{Rezultatas:} Vartotojas nukreipiamas į pagrindinį puslapį.
+					\item \textbf{Scenarijus:} Bandoma į pakeisti adresą į prisijungimo arba registracijos puslapio adresą.
+					\item \textbf{Rezultatas:} Vartotojas nukreipiamas į pagrindinį puslapį.
+			\end{itemize}
+			
+			
 		
-		
-		
-		
-		
-		
-		
-		//TODO REMOVE
+			//TODO filtravimas REMOVE 
 		\subsection{Neprisijungusio vartotojo funkcijos}
 		Šiame skyreliuje narginėjamos neprisijungusiam vartotojui skirtų fuckcijų testavimo scenarijai, kurių tikslas užtikrinti sistemos veikimą nepriklausomai nuo vartotojo duomenų. 
 			
