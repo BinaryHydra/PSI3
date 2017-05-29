@@ -954,18 +954,153 @@
 		\end{figure}
 		
 	\section{Testavimo planas ir scenarijai}
-		Šiame skyriuje pateikiamas testavimo planas ir į jį įeinantys testavimo scenarijai. Kiekvienam scenarijui pateikiamos tikslas, kurio siekiama vykdant scenarijų, prieš-sąlygos - būtina programos būsena prieš pradendant vykdytį testavimo scenarijų, pats testavimo scenarijus - veiksmų seką, kurią reikia įvykdyti norint patikrinti programos teisingą veikimą, ir rezultatas - programos būsena įvykdžius visus testavimo scenarijaus žingsius.  
+		Šiame skyriuje pateikiamas testavimo planas ir į jį įeinantys testavimo scenarijai. Kiekvienam scenarijui pateikiamos tikslas, kurio siekiama vykdant scenarijų, sąlygos - būtina programos būsena prieš pradendant vykdytį testavimo scenarijų, pats testavimo scenarijus - veiksmų seką, kurią reikia įvykdyti norint patikrinti programos teisingą veikimą, ir rezultatas - programos būsena įvykdžius visus testavimo scenarijaus žingsius.  
 		
+		
+		\subsection{Vartotojo meniu}
+		
+		\begin{enumerate}
+		\item
+			\begin{itemize}			
+					\item \textbf{Tikslas:} Patikrinti ar teisingai atvaizduojami puslapio elementai neprisijungusiam vartotojui
+					\item \textbf{Sąlygos:} Būvimas bet kurime tinklalapio puslapyje neprisijungus 
+					\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Registruotis".
+					\item \textbf{Rezultatas:} Atidaromas registracijos puslapis.
+					\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Prisijungti".
+					\item \textbf{Rezultatas:} Atidaromas prisijungimo puslapis.
+					\item \textbf{Scenarijus:} Patikriname ar matomas mygtukas mano "Mano meniu".
+					\item \textbf{Rezultatas:} Mygtukas "Mano meniu" nematomas.
+			\end{itemize}
+		\item 
+			\begin{itemize}			
+					\item \textbf{Tikslas:} Patikrinti ar teisingai atvaizduojami puslapio elementai prisijungusiam vartotojui
+					\item \textbf{Sąlygos:} Būvimas bet kurime tinklalapio puslapyje prisijungus 
+					\item \textbf{Scenarijus:} Dešiniajame puslapio kampe spaudžiame mygtuką "Mano meniu"
+					\item \textbf{Rezultatas:} Atidaromas vartotojo meniu langas. 
+					\item \textbf{Scenarijus:} Patikriname ar matomi mygtukai "Prisijungti" ir "Registruotis".
+					\item \textbf{Rezultatas:} Mygtukai "Prisijungti" ir "Registruotis" nematomi.
+			\end{itemize}
+		\end{enumerate}
+		
+		\subsection{Prisijungimo langas}
+			\begin{enumerate}
+			\item
+				\begin{itemize}			
+						\item \textbf{Tikslas:} Patikrinti ar teisingai veikia prisijungimo laukų validacija ir prisjungimo funkcija. 
+						\item \textbf{Sąlygos:} Būvimas prisijungimo puslapyje, sukurtas bent vienas vartotojas.
+						\item \textbf{Scenarijus:} Spaudžiame "Prisijugti" nesuvedus duomenų.
+						\item \textbf{Rezultatas:} Paromomi klaidos pranešimai "Laukas privalomas" prie vartotojo vardo ir slaptažodžio laukų.
+						\item \textbf{Scenarijus:} Spaudžiame "Prisijugti" nesuvedus dalies duomenų.
+						\item \textbf{Rezultatas:} Paromomi klaidos pranešimai "Laukas privalomas" prie neužpildytų laukų.
+						\item \textbf{Scenarijus:} Spaudžiame "Prisijugti" suvedus neegzistuojančio vartotojo duomenis.
+						\item \textbf{Rezultatas:} Paromomas klaidos pranešimas "Vartotojas su tokiu vardu nerastas".
+						\item \textbf{Scenarijus:} Spaudžiame "Prisijugti" suvedus neteisingą vartotojo slaptažodį.
+						\item \textbf{Rezultatas:} Paromomas klaidos pranešimas "Neteisingas slaptažodis".
+						\item \textbf{Scenarijus:} Spaudžiame "Prisijugti" suvedus egzistuojančio vartotojo vardą ir slaptažodį.
+						\item \textbf{Rezultatas:} Vartotojas prijungimas prie sistemos ir atidaromas prijungusio vartotojo sąsaja.
+				\end{itemize}
+			\end{enumerate}
+		
+		\subsection{Registracijos langas}	
+			\begin{enumerate}
+			\item
+				\begin{itemize}			
+						\item \textbf{Tikslas:} Patikrinti ar teisingai veikia registracijos laukų validacija ir registracijos funkcija. 
+						\item \textbf{Sąlygos:} Būvimas registracijos puslapyje, sukurtas bent vienas vartotojas.
+						\item \textbf{Scenarijus:} Spaudžiame "Registruotis" nesuvedus duomenų.
+						\item \textbf{Rezultatas:} Paromomi klaidos pranešimai "Laukas privalomas" prie vartotojo vardo ir slaptažodžių laukų.
+						\item \textbf{Scenarijus:} Suvedame dalį privalomų duomenų, spaudžiame "Registruotis".
+						\item \textbf{Rezultatas:} Paromomi klaidos pranešimai "Laukas privalomas" prie neužpildytų laukų.
+						\item \textbf{Scenarijus:} Suvedame naują vartotojo vardą, suvedame skirtingus slaptažodius į laukus "Slaptažodis" ir "Pakartokite splatažodį", spaudžiame "Registruotis".
+						\item \textbf{Rezultatas:} Paromomi klaidos pranešimas "Slaptažodžiai nesutapta".
+						\item \textbf{Scenarijus:} Užpildome registracijos formą įvesdami jau egzistuojančio vartotojo vardą ir spaudžiame "Registruotis".
+						\item \textbf{Rezultatas:} Paromomas klaidos pranešimas "Vartotojas su tokiu vardu jau egzistuoja".
+						\item \textbf{Scenarijus:} Užpildome registracijos formą įvesdami jau egzistuojančio elektroninį paštą ir spaudžiame "Registruotis".
+						\item \textbf{Rezultatas:} Paromomas klaidos pranešimas "Vartotojas su tokiu elektoniniu paštu jau egzistuoja".
+						\item \textbf{Scenarijus:} Spaudžiame "Registruotis" suvedus teisingai užpilde regisracijos formą.
+						\item \textbf{Rezultatas:} Vartotojas nukreipiamas į prisijungimo puslapį ir parodomas pranešimas registracija sėkminga.
+				\end{itemize}
+			\end{enumerate}
+		
+		\subsection{Renginių kalendorius}
+			\begin{enumerate}
+			\item 
+				\begin{itemize}
+						\item \textbf{Tikslas:} Patikrinti ar kalendorius gerai nukreipia į renginius. 
+						\item \textbf{Sąlygos:} Esama kaip renginių kalendoriaus puslapyje. Sukurtas bent 1 renginys.
+						\item \textbf{Scenarijus:} Spaudžiama ant renginio įrašo kalendoriuje.
+						\item \textbf{Rezultatas:} Atidaromas pasirinkto renginio puslapis.
+				\end{itemize}
+
+				\begin{itemize}
+						\item \textbf{Tikslas:} Patikrinti ar kalendoriuje parodomas sukurtas renginys. 
+						\item \textbf{Sąlygos:} Prisijungimas kaip administratorius.
+						\item \textbf{Scenarijus:} Sukurimas naujas renginys. Nueinama į renginių kalendoriaus puslapį, pasirenkamas renginio menuo.
+						\item \textbf{Rezultatas:} Sukurto renginio dienos laukelyje matomas sukurto renginio įrašas.
+				\end{itemize}
+				\item 
+				\begin{itemize}
+						\item \textbf{Tikslas:} Patikrinti ar teisingai rodomi renginiai neprijungusiam vartotojui. 
+						\item \textbf{Sąlygos:} Egzistuoja sukurti renginiai, esama renginių kalendoriaus puslapyje. 
+						\item \textbf{Scenarijus:} Kečiami kalendoriaus menesiai.
+						\item \textbf{Rezultatas:} Menuo pakeičiamas, atitinkamuose langeliuose parodomi tą dieną vykstantys renginiai.
+						\item \textbf{Scenarijus:} Pasirenkama diena kurią vyksta daugiau renginių nei telpą į kalendoriaus langenį. Spaudžiamas tritaškio ikona.
+						\item \textbf{Rezultatas:} Atidaromas tą dieną vykstačių renginių sąrašas.
+				\end{itemize}
+			\end{enumerate}
+		\subsection{Naujienos}
+		
+		\subsection{Komandos langas}
+		
+		\subsection{Pakvietimo į komandą peržiūros langas}
+		
+		\subsection{Renginio puslapis}
+		
+		\subsection{Vaizdo įrašo peržiūros puslapis}
+		
+		\subsection{Administratoriaus funkcijų langas}
+		
+		\subsection{Renginio remimo puslapis}
+		
+		\subsection{Bendri atvėjai}
+		
+		
+		
+		
+		
+		
+		
+		
+		//TODO REMOVE
 		\subsection{Neprisijungusio vartotojo funkcijos}
 		Šiame skyreliuje narginėjamos neprisijungusiam vartotojui skirtų fuckcijų testavimo scenarijai, kurių tikslas užtikrinti sistemos veikimą nepriklausomai nuo vartotojo duomenų. 
 			
 			\subsubsection{Renginio paieška}
 			\subsubsection{Naujienų sąrašas}
-			\subsubsection{Renginių kalendoriu}
+			\subsubsection{Renginių kalendorius}
 			\subsubsection{Vaizdo įrašų peržiūra}
 			\subsubsection{Renginio pasiūlymas}
 			\subsubsection{Prisijungimas}
 			\subsubsection{Registracija}
+		
+		\subsection{Prisijungusio vartotojo fuckcijos}
+			\subsubsection{Renginio paieška}
+			\subsubsection{Naujienų sąrašas}
+			\subsubsection{Renginių kalendorius}
+			\subsubsection{Vaizdo įrašų peržiūra}
+			\subsubsection{Renginio pasiūlymas}
+			\subsubsection{Komandos kurimas}
+			\subsubsection{Kvietimo į komandą priėmimas}
+			\subsubsection{Kvietimo į komandą atmetimas}
+			\subsubsection{Išėjimas iš komandos}
+			\subsubsection{Registracija į komandinį renginį}
+			\subsubsection{Registracija į individualų renginį renginį}
+			\subsubsection{Pirkti bilietus}
+			
+		\subsection{Komandos vadovo funkcijos}
+			\subsubsection{}
+			
+		
 		
     \section{Peržiūros metu rastos klaidos}
 		\begin{itemize}
